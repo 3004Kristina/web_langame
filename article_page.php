@@ -1,15 +1,17 @@
 <?php require __DIR__ . '/.header.php'; ?>
 <!--SECTION ARTICLE PAGE MAIN BANNER START-->
 <section class="article_page_main_banner_wrapper">
-    <div class="article_page_main_banner_img_wrapper">
-        <div class="article_page_main_banner_img">
-            <img src="/img/article.png" alt="image">
-        </div>
-        <div class="article_page_main_banner_title">
-            <h2>Как выбрать компьютерный клуб?</h2>
+    <div class="container-fluid">
+        <div class="article_page_main_banner_img_wrapper">
+            <div class="article_page_main_banner_img">
+                <img src="/img/article.png" alt="image">
+            </div>
+            <div class="article_page_main_banner_title">
+                <h2>Как выбрать компьютерный клуб?</h2>
+            </div>
+            <a href="/articles.php" class="go_back">Назад</a>
         </div>
     </div>
-
 </section>
 <!--SECTION ARTICLE PAGE MAIN BANNER END-->
 

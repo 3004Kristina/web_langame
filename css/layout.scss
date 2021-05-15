@@ -24,15 +24,333 @@ html, body {
 }
 
 .container {
-    width: 1325px;
+    width: 968px;
     margin: 0 auto;
 }
 
 .container-fluid {
-    max-width: 1920px;
+    width: 1316px;
     margin: 0 auto;
-    width: 100%;
-    padding: 0 48px;
+}
+
+.club_card {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    border-radius: 14px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    height: 100%;
+
+    .search_club_img_wrapper {
+        position: relative;
+
+        .search_club_img {
+            img {
+                width: 100%;
+                border-radius: 14px 14px 0 0;
+            }
+        }
+
+        .club_services {
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 4px 8px;
+            margin: 0 -4px;
+            background: rgba(85, 85, 85, 0.5);
+            backdrop-filter: blur(10.4615px);
+            border-radius: 8px;
+
+            img {
+                display: block;
+                width: 18px;
+                height: 18px;
+                margin: 0 4px;
+            }
+        }
+
+        .club_distance {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 4px 8px 4px 12px;
+            background: rgba(85, 85, 85, 0.5);
+            backdrop-filter: blur(10.4615px);
+            border-radius: 8px;
+
+            img {
+                display: block;
+                width: 18px;
+                height: 18px;
+                margin-right: 8px;
+            }
+
+            span {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.2;
+                color: #ffffff;
+            }
+        }
+
+        .club_promotion {
+            position: absolute;
+            top: 25px;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 50px;
+            height: 26px;
+            background-color: #dc0000;
+
+            span {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.2;
+                color: #ffffff;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 100%;
+                display: block;
+                height: 100%;
+                width: 5px;
+                border: 13px solid #dc0000;
+                border-right: 6px solid transparent;
+            }
+        }
+    }
+
+    .search_club_info {
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+
+        .club_name {
+            margin-bottom: 8px;
+
+            span {
+                position: relative;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 1.2;
+                color: #000000;
+            }
+
+            &.approve {
+                span:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: -30px;
+                    display: block;
+                    width: 19px;
+                    height: 19px;
+                    transform: translate(0, -50%);
+                    background-image: url("../img/ok.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 19px 19px;
+                }
+            }
+        }
+
+        .rating_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 16px;
+
+            .rating_stars {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: stretch;
+                margin: 0 11px 0 -4px;
+
+                img {
+                    display: block;
+                    width: 18px;
+                    height: 18px;
+                    margin: 0 4px;
+                }
+            }
+
+            .reviews_qty {
+                span {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 1.2;
+                    color: #000000;
+                }
+            }
+        }
+
+        .club_subway_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 12px;
+
+            .subway_img_wrapper {
+                margin-right: 8px;
+
+                img {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .subway_station {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.3;
+                color: #000000;
+            }
+        }
+
+        .club_address_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 52px;
+            margin-bottom: 20px;
+
+            .address_img_wrapper {
+                margin-right: 10px;
+
+                img {
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            .club_address {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 1.3;
+                color: #000000;
+            }
+        }
+
+        .club_features_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            margin: 0 -15px 60px;
+
+            .club_features_item {
+                margin: 0 15px;
+                position: relative;
+
+                .club_features_img_wrapper {
+                    img {
+                        display: block;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                .club_features_qty {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background: #dc0000;
+                    border-radius: 6px;
+                    padding: 3px 4px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 1;
+                    text-align: center;
+                    color: #ffffff;
+                    transform: translate(50%, -50%);
+                }
+            }
+        }
+
+        .club_price_wrapper {
+            position: absolute;
+            right: 0;
+            bottom: 12px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 34px;
+            width: 100%;
+            padding: 0 12px;
+
+            .club_price {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 1;
+                color: #000000;
+            }
+
+            .club_close {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1;
+                color: #dc0000;
+            }
+
+            .club_booking, .club_calling {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                width: 151px;
+                height: 34px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 30px;
+                text-align: center;
+                color: #ffffff;
+                border-radius: 12px;
+            }
+
+            .club_booking {
+                background-color: #dc0000;
+            }
+
+            .club_calling {
+                background-color: #000000;
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 15px #9c9c9c;
+    }
 }
 
 .show_more {
@@ -42,7 +360,7 @@ html, body {
     margin: 0 auto;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1;
     color: #000000;
     border-bottom: 1px solid transparent;
@@ -72,8 +390,8 @@ html, body {
             a {
                 display: block;
                 text-decoration: none;
-                width: 274px;
-                height: 64px;
+                width: 198px;
+                height: 46px;
 
                 img {
                     display: block;
@@ -84,14 +402,14 @@ html, body {
         }
 
         .select_city_wrapper {
-            width: 196px;
+            width: 136px;
             margin-left: 47px;
 
             .select2 {
                 display: block;
-                height: 48px;
+                height: 34px;
                 background: #dc0000;
-                border-radius: 16px;
+                border-radius: 12px;
 
                 .selection {
                     display: block;
@@ -103,41 +421,43 @@ html, body {
                     background-color: #dc0000;
                     border: none;
                     outline: none;
-                    border-radius: 16px;
+                    border-radius: 12px;
 
                     .select2-selection__rendered {
                         width: 100%;
-                        padding: 12px 12px 12px 64px;
+                        padding: 8px 8px 8px 42px;
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 24px;
+                        font-size: 18px;
                         line-height: 1;
                         color: #ffffff;
 
                         &:before {
                             content: '';
                             display: block;
-                            width: 28px;
-                            height: 28px;
+                            width: 22px;
+                            height: 22px;
                             position: absolute;
-                            top: 9px;
-                            left: 19px;
+                            top: 50%;
+                            left: 12px;
                             background-image: url(../img/bx-world.svg);
                             background-repeat: no-repeat;
                             background-position: center;
-                            background-size: 28px 28px;
+                            background-size: 22px 22px;
+                            transform: translateY(-50%);
                         }
                     }
 
                     .select2-selection__arrow {
                         width: 12px;
                         height: 8px;
-                        top: 20px;
-                        right: 20px;
+                        top: 50%;
+                        right: 12px;
                         background-image: url("../img/role.svg");
                         background-repeat: no-repeat;
                         background-size: 12px 8px;
                         background-position: center;
+                        transform: translateY(-50%);
                         transition: transform 0.2s;
 
                         b {
@@ -149,7 +469,7 @@ html, body {
                 &.select2-container--open {
                     .select2-selection {
                         .select2-selection__arrow {
-                            transform: rotate(180deg);
+                            transform: rotate(180deg) translateY(50%);
                         }
                     }
                 }
@@ -167,7 +487,7 @@ html, body {
                         border-radius: 12px;
 
                         .select2-results__option {
-                            font-size: 20px;
+                            font-size: 18px;
                             line-height: 22px;
 
                             &--highlighted[aria-selected] {
@@ -189,16 +509,16 @@ html, body {
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: center;
-                margin: 0 -18px;
+                margin: 0 -12px;
 
                 li {
                     a {
                         display: block;
-                        margin: 0 18px;
+                        margin: 0 12px;
                         text-decoration: none;
                         font-style: normal;
-                        font-weight: normal;
-                        font-size: 24px;
+                        font-weight: 500;
+                        font-size: 18px;
                         line-height: 1;
                         color: #000000;
                         transition: color 0.2s;
@@ -221,14 +541,14 @@ section.choose_club_info_wrapper {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 27px 0 64px;
+        padding: 32px 0 32px;
 
         .choose_club_info_title {
             h1 {
                 font-family: 'Gilroy', sans-serif;
                 font-style: normal;
                 font-weight: 600;
-                font-size: 48px;
+                font-size: 34px;
                 line-height: 1;
                 letter-spacing: 0.25px;
                 color: #000000;
@@ -236,8 +556,8 @@ section.choose_club_info_wrapper {
         }
 
         .choose_club_info_img {
-            width: 588px;
-            height: 392px;
+            width: 424px;
+            height: 282px;
 
             img {
                 display: block;
@@ -275,10 +595,10 @@ section.search_club_wrapper {
                 align-items: center;
 
                 .search_club_result {
-                    margin-right: 18px;
+                    margin-right: 12px;
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 24px;
+                    font-size: 18px;
                     line-height: 1;
                     color: #000000;
 
@@ -296,21 +616,21 @@ section.search_club_wrapper {
                     .sort_by_title {
                         font-style: normal;
                         font-weight: 700;
-                        font-size: 24px;
+                        font-size: 18px;
                         line-height: 1;
                         color: #000000;
-                        margin-right: 20px;
+                        margin-right: 13px;
                     }
 
                     a {
                         display: block;
                         position: relative;
-                        margin-right: 20px;
-                        padding: 8px 0 8px 35px;
+                        margin-right: 12px;
+                        padding: 6px 0 6px 24px;
                         text-decoration: none;
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 24px;
+                        font-size: 18px;
                         line-height: 1;
                         color: #000000;
                         border-bottom: 4px solid transparent;
@@ -319,14 +639,15 @@ section.search_club_wrapper {
                         &:before {
                             content: '';
                             display: block;
-                            width: 24px;
-                            height: 24px;
+                            width: 18px;
+                            height: 18px;
                             position: absolute;
                             top: 6px;
                             left: 0;
                             background-image: url("../img/sort.svg");
                             background-repeat: no-repeat;
                             background-position: center;
+                            background-size: 18px 18px;
                             opacity: 0;
                         }
 
@@ -355,27 +676,28 @@ section.search_club_wrapper {
                         margin-right: 30px;
                         position: relative;
                         text-decoration: none;
-                        padding: 12px 18px 12px 55px;
+                        padding: 8px 12px 8px 42px;
                         background: #dc0000;
-                        border-radius: 16px;
+                        border-radius: 12px;
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 24px;
+                        font-size: 18px;
                         line-height: 1;
                         color: #ffffff;
 
                         &:before {
                             content: '';
                             display: block;
-                            width: 24px;
-                            height: 25px;
+                            width: 22px;
+                            height: 22px;
                             position: absolute;
-                            top: 12px;
-                            left: 18px;
+                            top: 50%;
+                            left: 12px;
                             background-image: url("../img/list.svg");
                             background-repeat: no-repeat;
                             background-position: center;
-                            background-size: contain;
+                            background-size: 18px 18px;
+                            transform: translateY(-50%);
                         }
                     }
                 }
@@ -387,22 +709,24 @@ section.search_club_wrapper {
                         text-decoration: none;
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 24px;
+                        font-size: 18px;
                         line-height: 1;
                         color: #000000;
-                        padding: 12px 0 12px 35px;
+                        padding: 8px 0 8px 30px;
 
                         &:before {
                             content: '';
                             position: absolute;
-                            top: 11px;
+                            top: 50%;
                             left: 0;
                             display: block;
-                            width: 23px;
-                            height: 28px;
+                            width: 22px;
+                            height: 22px;
                             background-image: url("../img/point.svg");
                             background-repeat: no-repeat;
                             background-position: center;
+                            background-size: 16px 20px;
+                            transform: translateY(-50%);
                         }
                     }
                 }
@@ -416,322 +740,11 @@ section.search_club_wrapper {
             justify-content: flex-start;
             align-items: stretch;
             flex-wrap: wrap;
-            margin: 0 -30px;
+            margin: 0 -22px;
 
             .search_club_item {
-                width: calc(100% / 3 - 60px);
-                margin: 0 30px 60px;
-                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-                border-radius: 20px;
-
-                a {
-                    display: block;
-                    text-decoration: none;
-                    border-radius: 20px;
-
-                    .search_club_img_wrapper {
-                        position: relative;
-
-                        .search_club_img {
-                            img {
-                                width: 100%;
-                                border-radius: 20px 20px 0 0;
-                            }
-                        }
-
-                        .club_services {
-                            position: absolute;
-                            left: 16px;
-                            bottom: 20px;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: center;
-                            padding: 6px 12px;
-                            margin: 0 -5px;
-                            background: rgba(85, 85, 85, 0.5);
-                            backdrop-filter: blur(10.4615px);
-                            border-radius: 10px;
-
-                            img {
-                                display: block;
-                                margin: 0 5px;
-                            }
-                        }
-
-                        .club_distance {
-                            position: absolute;
-                            right: 16px;
-                            bottom: 20px;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: center;
-                            padding: 6px 12px 6px 15px;
-                            background: rgba(85, 85, 85, 0.5);
-                            backdrop-filter: blur(10.4615px);
-                            border-radius: 10px;
-
-                            img {
-                                display: block;
-                                margin-right: 10px;
-                            }
-
-                            span {
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 20px;
-                                line-height: 1.2;
-                                color: #ffffff;
-                            }
-                        }
-
-                        .club_promotion {
-                            position: absolute;
-                            top: 25px;
-                            left: 0;
-                            display: flex;
-                            align-items: center;
-                            justify-content: flex-end;
-                            width: 72px;
-                            height: 36px;
-                            background-color: #dc0000;
-
-                            span {
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 20px;
-                                line-height: 1.2;
-                                color: #ffffff;
-                            }
-
-                            &:before {
-                                content: '';
-                                position: absolute;
-                                top: 0;
-                                left: 100%;
-                                display: block;
-                                height: 100%;
-                                width: 5px;
-                                border: 18px solid #dc0000;
-                                border-right: 6px solid transparent;
-                            }
-                        }
-                    }
-
-                    .search_club_info {
-                        display: flex;
-                        flex-direction: column;
-                        padding: 16px;
-
-                        .club_name {
-                            margin-bottom: 10px;
-
-                            span {
-                                position: relative;
-                                font-style: normal;
-                                font-weight: 700;
-                                font-size: 26px;
-                                line-height: 1.2;
-                                color: #000000;
-                            }
-
-                            &.approve {
-                                span:before {
-                                    content: '';
-                                    position: absolute;
-                                    top: 50%;
-                                    right: -40px;
-                                    display: block;
-                                    width: 26px;
-                                    height: 26px;
-                                    transform: translate(0, -50%);
-                                    background-image: url("../img/ok.svg");
-                                    background-repeat: no-repeat;
-                                    background-position: center;
-                                    background-size: 26px 26px;
-                                }
-                            }
-                        }
-
-                        .rating_wrapper {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: center;
-                            margin-bottom: 24px;
-
-                            .rating_stars {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
-                                align-items: stretch;
-                                margin: 0 11px 0 -6px;
-
-                                img {
-                                    display: block;
-                                    width: 28px;
-                                    height: 28px;
-                                    margin: 0 6px;
-                                }
-                            }
-
-                            .reviews_qty {
-                                span {
-                                    font-style: normal;
-                                    font-weight: 400;
-                                    font-size: 22px;
-                                    line-height: 1.2;
-                                    color: #000000;
-                                }
-                            }
-                        }
-
-                        .club_subway_wrapper {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: center;
-                            margin-bottom: 12px;
-
-                            .subway_img_wrapper {
-                                margin-right: 10px;
-
-                                img {
-                                    display: block;
-                                    width: 26px;
-                                    height: 26px;
-                                }
-                            }
-
-                            .subway_station {
-                                font-style: normal;
-                                font-weight: normal;
-                                font-size: 20px;
-                                line-height: 1.3;
-                                color: #000000;
-                            }
-                        }
-
-                        .club_address_wrapper {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: center;
-                            min-height: 52px;
-                            margin-bottom: 22px;
-
-                            .address_img_wrapper {
-                                margin-right: 13px;
-
-                                img {
-                                    display: block;
-                                    width: 21px;
-                                    height: 26px;
-                                }
-                            }
-
-                            .club_address {
-                                font-style: normal;
-                                font-weight: normal;
-                                font-size: 20px;
-                                line-height: 1.3;
-                                color: #000000;
-                            }
-                        }
-
-                        .club_features_wrapper {
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: flex-start;
-                            align-items: stretch;
-                            margin: 0 -10px 37px;
-
-                            .club_features_item {
-                                margin: 0 10px;
-                                position: relative;
-
-                                .club_features_img_wrapper {
-                                    img {
-                                        display: block;
-                                        width: 40px;
-                                        height: 40px;
-                                    }
-                                }
-
-                                .club_features_qty {
-                                    display: block;
-                                    position: absolute;
-                                    top: 0;
-                                    right: 0;
-                                    background: #dc0000;
-                                    border-radius: 8px;
-                                    padding: 2px 6px;
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    font-size: 20px;
-                                    line-height: 1;
-                                    text-align: center;
-                                    color: #ffffff;
-                                    transform: translate(50%, -50%);
-                                }
-                            }
-                        }
-
-                        .club_price_wrapper {
-                            margin-top: auto;
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-between;
-                            align-items: center;
-                            min-height: 48px;
-
-                            .club_price {
-                                font-style: normal;
-                                font-weight: bold;
-                                font-size: 26px;
-                                line-height: 1;
-                                color: #000000;
-                            }
-
-                            .club_close {
-                                font-style: normal;
-                                font-weight: normal;
-                                font-size: 24px;
-                                line-height: 1;
-                                color: #dc0000;
-                            }
-
-                            .club_booking, .club_calling {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: center;
-                                align-items: center;
-                                width: 200px;
-                                height: 48px;
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 24px;
-                                line-height: 30px;
-                                text-align: center;
-                                color: #ffffff;
-                                border-radius: 16px;
-                            }
-
-                            .club_booking {
-                                background-color: #dc0000;
-                            }
-
-                            .club_calling {
-                                background-color: #000000;
-                            }
-                        }
-                    }
-
-                    &:hover {
-                        box-shadow: 0 0 15px #9c9c9c;
-                    }
-                }
+                width: calc(100% / 3 - 44px);
+                margin: 0 22px 32px;
             }
         }
     }
@@ -740,13 +753,13 @@ section.search_club_wrapper {
 
 /*! SECTION ARTICLES START */
 section.articles_wrapper {
-    padding: 64px 0 128px;
+    padding: 32px 0 122px;
 
     h2 {
         margin: 0;
         font-style: normal;
         font-weight: 500;
-        font-size: 48px;
+        font-size: 34px;
         line-height: 1.2;
         text-align: left;
         color: #000000;
@@ -762,56 +775,57 @@ section.articles_wrapper {
             justify-content: flex-start;
             align-items: stretch;
             flex-wrap: wrap;
-            margin: 0 -49.5px;
-            padding: 32px 0;
+            margin: 0 -35px;
+            padding: 32px 0 0;
 
             .articles_item {
-                width: calc(100% / 3 - 99px);
-                margin: 0 49.5px 60px;
-                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-                border-radius: 20px;
+                width: calc(100% / 3 - 70px);
+                margin: 0 35px 60px;
 
                 a {
                     display: block;
                     text-decoration: none;
-                    border-radius: 20px;
+                    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                    border-radius: 14px;
+                    height: 100%;
 
                     .article_img_wrapper {
                         img {
                             display: block;
                             width: 100%;
-                            border-radius: 20px 20px 0 0;
+                            border-radius: 14px 14px 0 0;
                         }
                     }
 
                     .article_content_wrapper {
-                        padding: 16px;
+                        padding: 12px 12px 18px;
 
                         .article_title {
                             font-style: normal;
                             font-weight: 700;
-                            font-size: 26px;
-                            line-height: 1;
+                            font-size: 20px;
+                            line-height: 1.3;
                             color: #000000;
                             margin-bottom: 12px;
                         }
 
                         .article_descr {
                             font-style: normal;
-                            font-weight: normal;
-                            font-size: 24px;
-                            line-height: 1;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 1.3;
                             color: #000000;
                             margin-bottom: 16px;
                         }
 
                         p {
+                            margin: 0;
                             align-self: flex-end;
                             text-decoration: none;
                             font-style: normal;
-                            font-weight: normal;
-                            font-size: 24px;
-                            line-height: 30px;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
                             text-align: right;
                             color: #dc0000;
                         }
@@ -831,27 +845,58 @@ section.articles_wrapper {
 
 /*! SECTION ARTICLE PAGE MAIN BANNER START */
 section.article_page_main_banner_wrapper {
+    padding-top: 64px;
+
     .article_page_main_banner_img_wrapper {
         position: relative;
+        border-radius: 20px;
+        overflow: hidden;
 
         .article_page_main_banner_img {
             img {
                 display: block;
+                width: 100%;
             }
         }
 
         .article_page_main_banner_title {
             position: absolute;
-            left: 48px;
-            bottom: 48px;
+            left: 32px;
+            bottom: 32px;
 
             h2 {
                 margin: 0;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 48px;
+                font-size: 34px;
                 line-height: 1;
                 color: #ffffff;
+            }
+        }
+
+        .go_back {
+            position: absolute;
+            top: 37px;
+            left: 21px;
+            display: block;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 5px 5px 30px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                display: block;
+                width: 22px;
+                height: 22px;
+                background-image: url("../img/arrow-back.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                transform: translateY(-50%);
             }
         }
     }
@@ -863,7 +908,8 @@ section.article_page_main_content_wrapper {
     padding: 32px 0 112px;
 
     .article_page_main_content {
-        font-size: 24px;
+        font-size: 18px;
+        line-height: 1.3;
     }
 }
 /*! SECTION ARTICLE PAGE MAIN CONTENT END */
@@ -873,7 +919,7 @@ section.privacy_policy_content_wrapper {
     padding: 64px 0 128px;
 
     .privacy_policy_content {
-        font-size: 24px;
+        font-size: 18px;
 
         h2 {
             margin: 0 0 32px;
@@ -882,7 +928,7 @@ section.privacy_policy_content_wrapper {
                 position: relative;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 48px;
+                font-size: 34px;
                 line-height: 1;
                 color: #000000;
 
@@ -890,14 +936,14 @@ section.privacy_policy_content_wrapper {
                     content: '';
                     position: absolute;
                     top: -3px;
-                    right: -74px;
+                    right: -54px;
                     display: block;
-                    width: 64px;
-                    height: 64px;
+                    width: 43px;
+                    height: 43px;
                     background-image: url("../img/lock.svg");
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: 64px 64px;
+                    background-size: 43px 43px;
                 }
             }
         }
@@ -910,7 +956,7 @@ section.terms_of_use_content_wrapper {
     padding: 64px 0 128px;
 
     .terms_of_use_content {
-        font-size: 24px;
+        font-size: 18px;
 
         h2 {
             margin: 0 0 32px;
@@ -919,7 +965,7 @@ section.terms_of_use_content_wrapper {
                 position: relative;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 48px;
+                font-size: 34px;
                 line-height: 1;
                 color: #000000;
 
@@ -927,14 +973,14 @@ section.terms_of_use_content_wrapper {
                     content: '';
                     position: absolute;
                     top: -3px;
-                    right: -74px;
+                    right: -54px;
                     display: block;
-                    width: 64px;
-                    height: 64px;
+                    width: 43px;
+                    height: 43px;
                     background-image: url("../img/hand.svg");
                     background-repeat: no-repeat;
                     background-position: center;
-                    background-size: 64px 64px;
+                    background-size: 43px 43px;
                 }
             }
         }
@@ -949,16 +995,16 @@ section.personal_page_wrapper {
         flex-direction: row;
         justify-content: flex-start;
         align-items: stretch;
-        padding: 32px 0 128px;
+        padding: 64px 0 128px;
 
         .personal_menu_wrapper {
-            margin-right: 48px;
+            margin-right: 64px;
 
             h2 {
                 margin: 0 0 32px;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 48px;
+                font-size: 34px;
                 line-height: 1;
                 color: #000000;
             }
@@ -969,17 +1015,17 @@ section.personal_page_wrapper {
                     flex-direction: row;
                     justify-content: flex-start;
                     align-items: center;
-                    width: 318px;
-                    padding: 19px 18px;
+                    width: 259px;
+                    padding: 13.5px;
                     margin-bottom: 10px;
                     text-decoration: none;
-                    border-radius: 20px;
+                    border-radius: 14px;
                     background-color: transparent;
 
                     span {
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 26px;
+                        font-size: 18px;
                         line-height: 1;
                         color: #000000;
                     }
@@ -987,6 +1033,8 @@ section.personal_page_wrapper {
                     svg {
                         margin-right: 18px;
                         fill: #000000;
+                        width: 24px;
+                        height: 24px;
                     }
 
                     &.active {
@@ -1015,13 +1063,13 @@ section.personal_page_wrapper {
 
         .personal_main_content_wrapper {
             .user_profile_form_wrapper {
-                padding: 86px 0 0;
+                padding: 70px 0 0;
 
                 #user-profile-form {
-                    width: 930px;
+                    width: 670px;
 
                     .forma {
-                        margin-bottom: 68px;
+                        margin-bottom: 32px;
 
                         .form-group {
                             display: flex;
@@ -1033,21 +1081,21 @@ section.personal_page_wrapper {
                             label {
                                 font-style: normal;
                                 font-weight: 500;
-                                font-size: 26px;
+                                font-size: 18px;
                                 line-height: 1;
                                 color: #000000;
                             }
 
                             input {
                                 display: block;
-                                width: 516px;
-                                height: 64px;
+                                width: 372px;
+                                height: 46px;
                                 border: 2px solid rgba(0, 0, 0, 0.25);
-                                border-radius: 20px;
+                                border-radius: 14px;
                                 font-weight: 500;
-                                font-size: 26px;
+                                font-size: 18px;
                                 line-height: 1;
-                                color: rgba(0, 0, 0, 0.25);
+                                color: rgba(0, 0, 0, 1);
                                 text-align: center;
                                 outline: none;
 
@@ -1057,13 +1105,12 @@ section.personal_page_wrapper {
                             }
 
                             .select_user_position_wrapper {
-                                width: 516px;
+                                width: 372px;
 
                                 .select2 {
                                     display: block;
-                                    height: 64px;
-
-                                    border-radius: 20px;
+                                    height: 46px;
+                                    border-radius: 14px;
 
                                     .selection {
                                         display: block;
@@ -1077,26 +1124,31 @@ section.personal_page_wrapper {
 
                                         .select2-selection__rendered {
                                             width: 100%;
-                                            padding: 17px;
+                                            padding: 12px;
                                             font-style: normal;
                                             font-weight: 500;
-                                            font-size: 26px;
+                                            font-size: 18px;
                                             line-height: 1;
-                                            border-radius: 20px;
+                                            border-radius: 14px;
                                             border: 2px solid rgba(0, 0, 0, 0.25);
-                                            color: rgba(0, 0, 0, 0.25);
+                                            color: rgba(0, 0, 0, 1);
                                             text-align: center;
+
+                                            .select2-selection__placeholder {
+                                                color: rgba(0, 0, 0, 0.25);
+                                            }
                                         }
 
                                         .select2-selection__arrow {
-                                            width: 18px;
-                                            height: 12px;
-                                            top: 28px;
+                                            width: 13px;
+                                            height: 8px;
+                                            top: 50%;
                                             right: 20px;
                                             background-image: url("../img/role-gray.svg");
                                             background-repeat: no-repeat;
-                                            background-size: 18px 12px;
+                                            background-size: 13px 8px;
                                             background-position: center;
+                                            transform: translateY(-50%);
                                             transition: transform 0.2s;
 
                                             b {
@@ -1108,7 +1160,7 @@ section.personal_page_wrapper {
                                     &.select2-container--open {
                                         .select2-selection {
                                             .select2-selection__arrow {
-                                                transform: rotate(180deg);
+                                                transform: rotate(180deg) translateY(50%);
                                             }
                                         }
                                     }
@@ -1126,8 +1178,13 @@ section.personal_page_wrapper {
                                             border-radius: 12px;
 
                                             .select2-results__option {
-                                                font-size: 24px;
-                                                line-height: 1.2;
+                                                font-size: 18px;
+                                                line-height: 22px;
+
+                                                &--highlighted[aria-selected] {
+                                                    color: #dc0000;
+                                                    background-color: #ffffff;
+                                                }
                                             }
                                         }
                                     }
@@ -1138,32 +1195,49 @@ section.personal_page_wrapper {
                                 display: flex;
                                 flex-direction: row;
                                 justify-content: flex-start;
-                                margin: 0 -6px;
+                                margin: 0 -4px;
 
                                 input {
-                                    width: 252px;
-                                    margin: 0 6px 0;
+                                    width: 182px;
+                                    margin: 0 4px 0;
                                 }
                             }
 
                             &.password {
-                                margin-top: 80px;
+                                margin-top: 32px;
+                            }
+
+                            &.required {
+                                label {
+                                    position: relative;
+
+                                    &:before {
+                                        content: '*';
+                                        position: absolute;
+                                        top: 0;
+                                        right: -10px;
+                                        display: block;
+                                        width: 3px;
+                                        height: 3px;
+                                        color: #dc0000;
+                                    }
+                                }
                             }
                         }
                     }
 
                     .user_profile_submit {
                         display: block;
-                        width: 200px;
-                        padding: 19px 0;
+                        width: 153px;
+                        padding: 14px 0;
                         margin-left: auto;
                         background: #dc0000;
                         border: none;
                         outline: none;
-                        border-radius: 20px;
+                        border-radius: 14px;
                         font-style: normal;
                         font-weight: 500;
-                        font-size: 26px;
+                        font-size: 18px;
                         line-height: 1;
                         text-align: center;
                         color: #ffffff;
@@ -1200,7 +1274,7 @@ section.personal_page_wrapper {
                             text-decoration: none;
                             font-style: normal;
                             font-weight: 500;
-                            font-size: 26px;
+                            font-size: 18px;
                             line-height: 1;
                             color: #000000;
                             padding: 5px 0;
@@ -1219,9 +1293,9 @@ section.personal_page_wrapper {
                                     left: 0;
                                     display: block;
                                     width: 100%;
-                                    height: 4px;
+                                    height: 3px;
                                     background-color: #dc0000;
-                                    border-radius: 4px;
+                                    border-radius: 2px;
                                 }
                             }
                         }
@@ -1231,16 +1305,16 @@ section.personal_page_wrapper {
                 .add_club {
                     display: block;
                     position: relative;
-                    padding: 19px 18px;
+                    padding: 14px 32px;
                     margin-left: 60px;
                     border: none;
                     outline: none;
-                    width: 202px;
+                    width: 179px;
                     background: #dc0000;
-                    border-radius: 20px;
+                    border-radius: 14px;
                     font-style: normal;
                     font-weight: 500;
-                    font-size: 26px;
+                    font-size: 18px;
                     line-height: 1;
                     text-align: right;
                     color: #ffffff;
@@ -1250,14 +1324,14 @@ section.personal_page_wrapper {
                         content: '';
                         position: absolute;
                         top: 50%;
-                        left: 15px;
+                        left: 35px;
                         display: block;
-                        width: 34px;
-                        height: 34px;
+                        width: 24px;
+                        height: 24px;
                         background-image: url("../img/add.svg");
                         background-repeat: no-repeat;
                         background-position: center;
-                        background-size: 34px 34px;
+                        background-size: 24px 24px;
                         transform: translateY(-50%);
 
                     }
@@ -1269,379 +1343,1801 @@ section.personal_page_wrapper {
             }
 
             .club_list_content_tabs {
+                width: 666px;
                 padding: 38px 0 0;
 
                 .tab {
-                    a {
-                        display: block;
-                        text-decoration: none;
-                        border-radius: 20px;
-                        box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-                        width: 408px;
+                    .club_list_content {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: stretch;
+                        margin: 0 -39px;
 
-                        .search_club_img_wrapper {
-                            position: relative;
-
-                            .search_club_img {
-                                img {
-                                    width: 100%;
-                                    border-radius: 20px 20px 0 0;
-                                }
-                            }
-
-                            .club_services {
-                                position: absolute;
-                                left: 16px;
-                                bottom: 20px;
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
-                                align-items: center;
-                                padding: 6px 12px;
-                                margin: 0 -5px;
-                                background: rgba(85, 85, 85, 0.5);
-                                backdrop-filter: blur(10.4615px);
-                                border-radius: 10px;
-
-                                img {
-                                    display: block;
-                                    margin: 0 5px;
-                                }
-                            }
-
-                            .club_distance {
-                                position: absolute;
-                                right: 16px;
-                                bottom: 20px;
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
-                                align-items: center;
-                                padding: 6px 12px 6px 15px;
-                                background: rgba(85, 85, 85, 0.5);
-                                backdrop-filter: blur(10.4615px);
-                                border-radius: 10px;
-
-                                img {
-                                    display: block;
-                                    margin-right: 10px;
-                                }
-
-                                span {
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    font-size: 20px;
-                                    line-height: 1.2;
-                                    color: #ffffff;
-                                }
-                            }
-
-                            .club_promotion {
-                                position: absolute;
-                                top: 25px;
-                                left: 0;
-                                display: flex;
-                                align-items: center;
-                                justify-content: flex-end;
-                                width: 72px;
-                                height: 36px;
-                                background-color: #dc0000;
-
-                                span {
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    font-size: 20px;
-                                    line-height: 1.2;
-                                    color: #ffffff;
-                                }
-
-                                &:before {
-                                    content: '';
-                                    position: absolute;
-                                    top: 0;
-                                    left: 100%;
-                                    display: block;
-                                    height: 100%;
-                                    width: 5px;
-                                    border: 18px solid #dc0000;
-                                    border-right: 6px solid transparent;
-                                }
-                            }
+                        .club_list_item {
+                            width: calc(100% / 2 - 78px);
+                            margin: 0 39px 32px;
                         }
 
-                        .search_club_info {
-                            display: flex;
-                            flex-direction: column;
-                            padding: 16px;
-
-                            .club_name {
-                                margin-bottom: 10px;
-
-                                span {
-                                    position: relative;
-                                    font-style: normal;
-                                    font-weight: 700;
-                                    font-size: 26px;
-                                    line-height: 1.2;
-                                    color: #000000;
-                                }
-
-                                &.approve {
-                                    span:before {
-                                        content: '';
-                                        position: absolute;
-                                        top: 50%;
-                                        right: -40px;
-                                        display: block;
-                                        width: 26px;
-                                        height: 26px;
-                                        transform: translate(0, -50%);
-                                        background-image: url("../img/ok.svg");
-                                        background-repeat: no-repeat;
-                                        background-position: center;
-                                        background-size: 26px 26px;
-                                    }
-                                }
-                            }
-
-                            .rating_wrapper {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
-                                align-items: center;
-                                margin-bottom: 24px;
-
-                                .rating_stars {
-                                    display: flex;
-                                    flex-direction: row;
-                                    justify-content: flex-start;
-                                    align-items: stretch;
-                                    margin: 0 11px 0 -6px;
-
-                                    img {
-                                        display: block;
-                                        width: 28px;
-                                        height: 28px;
-                                        margin: 0 6px;
-                                    }
-                                }
-
-                                .reviews_qty {
-                                    span {
-                                        font-style: normal;
-                                        font-weight: 400;
-                                        font-size: 22px;
-                                        line-height: 1.2;
-                                        color: #000000;
-                                    }
-                                }
-                            }
-
-                            .club_subway_wrapper {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
-                                align-items: center;
-                                margin-bottom: 12px;
-
-                                .subway_img_wrapper {
-                                    margin-right: 10px;
-
-                                    img {
-                                        display: block;
-                                        width: 26px;
-                                        height: 26px;
-                                    }
-                                }
-
-                                .subway_station {
-                                    font-style: normal;
-                                    font-weight: normal;
-                                    font-size: 20px;
-                                    line-height: 1.3;
-                                    color: #000000;
-                                }
-                            }
-
-                            .club_address_wrapper {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
-                                align-items: center;
-                                min-height: 52px;
-                                margin-bottom: 22px;
-
-                                .address_img_wrapper {
-                                    margin-right: 13px;
-
-                                    img {
-                                        display: block;
-                                        width: 21px;
-                                        height: 26px;
-                                    }
-                                }
-
-                                .club_address {
-                                    font-style: normal;
-                                    font-weight: normal;
-                                    font-size: 20px;
-                                    line-height: 1.3;
-                                    color: #000000;
-                                }
-                            }
-
-                            .club_features_wrapper {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-start;
-                                align-items: stretch;
-                                margin: 0 -10px 37px;
-
-                                .club_features_item {
-                                    margin: 0 10px;
-                                    position: relative;
-
-                                    .club_features_img_wrapper {
-                                        img {
-                                            display: block;
-                                            width: 40px;
-                                            height: 40px;
-                                        }
-                                    }
-
-                                    .club_features_qty {
-                                        display: block;
-                                        position: absolute;
-                                        top: 0;
-                                        right: 0;
-                                        background: #dc0000;
-                                        border-radius: 8px;
-                                        padding: 2px 6px;
-                                        font-style: normal;
-                                        font-weight: 500;
-                                        font-size: 20px;
-                                        line-height: 1;
-                                        text-align: center;
-                                        color: #ffffff;
-                                        transform: translate(50%, -50%);
-                                    }
-                                }
-                            }
-
-                            .club_price_wrapper {
-                                margin-top: auto;
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: space-between;
-                                align-items: center;
-                                min-height: 48px;
-
-                                .club_price {
-                                    font-style: normal;
-                                    font-weight: bold;
-                                    font-size: 26px;
-                                    line-height: 1;
-                                    color: #000000;
-                                }
-
-                                .club_close {
-                                    font-style: normal;
-                                    font-weight: normal;
-                                    font-size: 24px;
-                                    line-height: 1;
-                                    color: #dc0000;
-                                }
-
-                                .club_booking, .club_calling {
-                                    display: flex;
-                                    flex-direction: row;
-                                    justify-content: center;
-                                    align-items: center;
-                                    width: 200px;
-                                    height: 48px;
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    font-size: 24px;
-                                    line-height: 30px;
-                                    text-align: center;
-                                    color: #ffffff;
-                                    border-radius: 16px;
-                                }
-
-                                .club_booking {
-                                    background-color: #dc0000;
-                                }
-
-                                .club_calling {
-                                    background-color: #000000;
-                                }
-                            }
-                        }
-
-                        &:hover {
-                            box-shadow: 0 0 15px #9c9c9c;
-                        }
                     }
                 }
             }
-
         }
     }
 }
 /*! SECTION PERSONAL PAGE END */
 
+/*! SECTION CLUB PAGE START */
+section.club_page_main_info_wrapper {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    background-color: #f5f5f5;
+    padding: 24px 0;
+    transition: background-color 0.2s, box-shadow 0.2s;
+
+    .club_page_main_info_top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .main_info_title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 1.2;
+            color: #000000;
+        }
+
+        .main_info_btn_wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: flex-end;
+
+            button {
+                display: block;
+                padding: 14px 32px;
+                border: none;
+                outline: none;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1;
+                text-align: center;
+                color: #ffffff;
+                border-radius: 14px;
+                cursor: pointer;
+                transition: box-shadow 0.2s;
+
+                &.club_calling {
+                    margin-right: 18px;
+                    background: #000000;
+
+                    &:hover {
+                        box-shadow: 0 0 8px #000000;
+                    }
+                }
+
+                &.club_booking {
+                    background: #dc0000;
+
+                    &:hover {
+                        box-shadow: 0 0 8px #dc0000;
+                    }
+                }
+            }
+        }
+    }
+
+    .club_page_main_info_bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        .rating_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0 32px 0 0;
+
+            .rating_stars {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: stretch;
+                margin: 0 12px 0 -5px;
+
+                img {
+                    display: block;
+                    width: 23px;
+                    height: 23px;
+                    margin: 0 5px;
+                }
+            }
+
+            .reviews_qty {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1;
+                color: #000000;
+            }
+        }
+
+        .club_subway_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-right: 15px;
+
+            .subway_img_wrapper {
+                margin-right: 8px;
+
+                img {
+                    display: block;
+                    width: 23px;
+                    height: 23px;
+                }
+            }
+
+            .subway_station {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 1;
+                color: #000000;
+            }
+
+        }
+
+        .club_address_wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            margin-right: 36px;
+
+            .address_img_wrapper {
+                margin-right: 10px;
+
+                img {
+                    display: block;
+                    width: 18px;
+                    height: 23px;
+                }
+            }
+
+            .club_address {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 1.3;
+                color: #000000;
+            }
+        }
+
+        .club_distance {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            img {
+                display: block;
+                width: 23px;
+                height: 23px;
+                margin-right: 8px;
+            }
+
+            span {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1;
+                color: #000000;
+            }
+        }
+    }
+
+    &.not-sticky {
+        box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    &.sticky {
+        background-color: #ffffff;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    }
+}
+
+section.club_page_content_wrapper {
+    background: #f5f5f5;
+
+    .club_page_title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 1;
+        color: #000000;
+        margin-bottom: 32px;
+
+        &.club_page_toggle_content {
+            span {
+                position: relative;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: -30px;
+                    display: block;
+                    width: 18px;
+                    height: 18px;
+                    background-image: url("../img/role-black.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 13px 9px;
+                    transform: translateY(-50%);
+                }
+            }
+
+            &.active {
+                span {
+                    &:before {
+                        transform: rotate(180deg) translateY(50%);
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    .club_page_photo_wrapper {
+        padding: 32px 0 0;
+        margin-bottom: 32px;
+
+        .club_page_photo_list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 12px;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+
+            .club_page_photo_item {
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:first-child {
+                    grid-row: 1/2 span;
+                    grid-column: 1/2 span;
+                }
+            }
+
+            button {
+                position: absolute;
+                right: 32px;
+                bottom: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 177px;
+                height: 35px;
+                background: rgba(85, 85, 85, 0.5);
+                backdrop-filter: blur(10.4615px);
+                border-radius: 8px;
+                border: none;
+                outline: none;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1;
+                text-align: center;
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .club_page_services_wrapper {
+        margin-bottom: 32px;
+
+        .club_page_services_list {
+            display: grid;
+            grid-auto-flow: column;
+            grid-template-rows: repeat(6, auto);
+            column-gap: 35px;
+            row-gap: 29px;
+            padding: 24px;
+            background: #ffffff;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+
+            .club_page_services_item {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+
+                img {
+                    display: block;
+                    width: 35px;
+                    height: 35px;
+                    margin-right: 12px;
+                }
+
+                span {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #000000;
+                }
+            }
+        }
+    }
+
+    .club_page_prices_wrapper {
+        margin-bottom: 18px;
+
+        .club_page_prices {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 24px;
+            background: #ffffff;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+
+            .club_page_min_price {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1;
+                color: #000000;
+                margin-right: 60px;
+            }
+
+            .show_price_list {
+                position: relative;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1;
+                text-decoration: underline;
+                color: #000000;
+                cursor: pointer;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: -28px;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background-image: url("../img/price_list.svg");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 20px 23px;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    .club_page_marketing_event_wrapper {
+        margin-bottom: 32px;
+
+        .marketing_event_title {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1;
+            color: #000000;
+            margin-bottom: 16px;
+        }
+
+        .club_page_marketing_event_list {
+            padding: 24px;
+            background: #ffffff;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+
+            ul {
+                li {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #000000;
+                }
+
+                li + li {
+                    margin-top: 28px;
+                }
+            }
+        }
+    }
+
+    .club_page_payment_wrapper {
+        margin-bottom: 32px;
+
+        .club_page_payment_title {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 1;
+            color: #000000;
+            margin-bottom: 32px;
+        }
+
+        .club_page_payment_list {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            margin: 0 -4px;
+
+            .club_page_payment_item {
+                background: #000000;
+                border: 2px solid #000000;
+                border-radius: 19px;
+                padding: 14px 16px;
+                margin: 0 4px;
+
+                span {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    .club_page_pc_configuration_wrapper {
+        margin-bottom: 32px;
+
+        .club_page_pc_configuration_list {
+            display: none;
+            padding: 24px;
+            background: #ffffff;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+            width: 920px;
+
+            .table_wrapper {
+                width: 872px;
+                overflow: auto;
+
+                table {
+                    width: 100%;
+                    border: none;
+                    border-collapse: collapse;
+                    //table-layout: fixed;
+
+                    thead {
+                        tr {
+                            th {
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 18px;
+                                line-height: 1;
+                                color: #000000;
+                                padding: 0 0 26px 0;
+                                text-align: center;
+                                min-width: 170px;
+
+                                &:first-child {
+                                    text-align: left;
+                                }
+
+                                &:nth-child(1) {
+                                    min-width: 200px;
+                                }
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 18px;
+                                line-height: 1;
+                                color: #000000;
+                                padding: 14px 32px;
+                                text-align: center;
+
+                                &:first-child {
+                                    text-align: left;
+                                    padding: 14px 32px 14px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .club_page_map_wrapper {
+        margin-bottom: 32px;
+
+        .club_page_map {
+            width: 100%;
+            height: 408px;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+    }
+
+    .club_page_reviews_wrapper {
+        margin-bottom: 32px;
+        overflow: hidden;
+
+        .club_page_reviews {
+
+            .club_page_reviews_list {
+
+                .slick-list {
+                    padding: 10px;
+                    overflow: visible;
+                }
+
+                .slick-arrow {
+                    display: none !important;
+                }
+
+                .club_page_reviews_item {
+                    width: 378px;
+                    height: 320px;
+                    flex-shrink: 0;
+                    background: #ffffff;
+                    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+                    border-radius: 14px;
+                    padding: 12px;
+                    margin: 0 16px;
+
+
+                    .user_info {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin-bottom: 5px;
+
+                        .user_avatar {
+                            margin-right: 8px;
+
+                            img {
+                                width: 32px;
+                                height: 32px;
+                                border-radius: 50%;
+                                object-fit: contain;
+                            }
+                        }
+
+                        .user_name {
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1.3;
+                            color: #000000;
+                        }
+                    }
+
+                    .rating_wrapper {
+                        padding-left: 40px;
+                        margin-bottom: 12px;
+
+                        .rating_stars {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            margin: 0 -4px;
+
+                            img {
+                                display: block;
+                                width: 16px;
+                                height: 16px;
+                                margin: 0 4px;
+                            }
+                        }
+                    }
+
+                    .review_content_wrapper {
+                        height: 210px;
+                        overflow: auto;
+
+                        .review_content {
+                            height: auto;
+                            padding-left: 40px;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 1.2;
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .club_page_description_wrapper {
+        margin-bottom: 32px;
+
+        .club_page_description {
+            padding: 24px;
+            background: #ffffff;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+
+            p {
+                margin: 0;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 1.5;
+                color: #000000;
+            }
+        }
+    }
+
+    .club_page_contacts_wrapper {
+        padding: 0 0 120px;
+
+        .club_page_contacts_list {
+            display: none;
+            padding: 24px;
+            background: #ffffff;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 14px;
+
+            .club_page_contacts_list_title {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 1;
+                color: #000000;
+                margin-bottom: 30px;
+            }
+
+            .club_page_schedule {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: stretch;
+                margin: 0 -10px 30px;
+
+                .club_page_schedule_item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 10px;
+
+                    span {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                    }
+
+                    span + span {
+                        margin-top: 40px;
+                    }
+                }
+            }
+
+            .club_page_contacts_item {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin-bottom: 25px;
+                padding-left: 16px;
+
+                .club_city {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #000000;
+                }
+
+                .club_subway_wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin-right: 11px;
+
+                    .subway_img_wrapper {
+                        margin-right: 7px;
+
+                        img {
+                            display: block;
+                            width: 23px;
+                            height: 23px;
+                        }
+                    }
+
+                    .subway_station {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                    }
+
+                }
+
+                .club_address_wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    .address_img_wrapper {
+                        margin-right: 10px;
+
+                        img {
+                            display: block;
+                            width: 18px;
+                            height: 23px;
+                        }
+                    }
+
+                    .club_address {
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 18px;
+                        line-height: 1.3;
+                        color: #000000;
+                    }
+                }
+
+                .club_contact {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    img {
+                        display: block;
+                        width: 23px;
+                        height: 23px;
+                        margin-right: 12px;
+                    }
+
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                        transition: color 0.2s;
+
+                        &:hover {
+                            color: #dc0000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*! SECTION CLUB PAGE END */
+
+/*! SECTION CONTACTS PAGE START */
+section.contacts_page_content_wrapper {
+    padding: 64px 0 77px;
+
+    .contacts_page_title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 1;
+        color: #000000;
+        margin-bottom: 43px;
+    }
+
+    .contacts_page_info_wrapper {
+        margin-bottom: 43px;
+
+        .info_item {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin-bottom: 25px;
+
+            .club_address_wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+
+                .address_img_wrapper {
+                    margin-right: 10px;
+
+                    img {
+                        display: block;
+                        width: 18px;
+                        height: 23px;
+                    }
+                }
+
+                .club_address {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 1.3;
+                    color: #000000;
+                }
+            }
+
+            .club_contact {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+
+                img {
+                    display: block;
+                    width: 23px;
+                    height: 23px;
+                    margin-right: 12px;
+                }
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #000000;
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: #dc0000;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact_us_wrapper {
+        form {
+            width: 670px;
+
+            .forma {
+                margin-bottom: 32px;
+
+                .form-group {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    label {
+                        max-width: 238px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                    }
+
+                    input {
+                        flex-shrink: 0;
+                        display: block;
+                        width: 372px;
+                        height: 46px;
+                        border: 2px solid rgba(0, 0, 0, 0.25);
+                        border-radius: 14px;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: rgba(0, 0, 0, 1);
+                        text-align: center;
+                        outline: none;
+
+                        &::placeholder {
+                            color: rgba(0, 0, 0, 0.25);
+                        }
+
+                        &#min-price-input {
+                            background-image: url("../img/rub.svg");
+                            background-repeat: no-repeat;
+                            background-size: 12px 18px;
+                            background-position: center right 10px;
+                        }
+                    }
+
+                    &.required {
+                        label {
+                            position: relative;
+
+                            &:before {
+                                content: '*';
+                                position: absolute;
+                                top: 0;
+                                right: -10px;
+                                display: block;
+                                width: 3px;
+                                height: 3px;
+                                color: #dc0000;
+                            }
+                        }
+                    }
+
+                    &.descr {
+                        align-items: flex-start;
+
+                        label {
+                            margin-top: 20px;
+                        }
+
+                        textarea {
+                            display: block;
+                            padding: 12px;
+                            width: 372px;
+                            height: 230px;
+                            border: 2px solid rgba(0, 0, 0, 0.25);
+                            border-radius: 14px;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: rgba(0, 0, 0, 1);
+                            outline: none;
+                            resize: none;
+                        }
+                    }
+                }
+            }
+
+            button {
+                display: block;
+                border: none;
+                background: #dc0000;
+                border-radius: 14px;
+                padding: 14px 32px;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1;
+                text-align: center;
+                color: #ffffff;
+                margin-left: auto;
+
+                &:hover {
+                    box-shadow: 0 0 6px #dc0000;
+                }
+            }
+        }
+    }
+}
+/*! SECTION CONTACTS PAGE END */
+
+/*! SECTION LOG IN PAGE START */
+section.log_in_page_wrapper {
+    padding: 64px 0 0;
+    height: calc(100vh - 361px);
+
+    .log_in_page_content {
+        width: 670px;
+        margin: 0 auto;
+
+        .log_in_page_title {
+            margin: 0 0 32px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        .log_in_wrapper {
+            form {
+                width: 100%;
+
+                .forma {
+                    margin-bottom: 46px;
+
+                    .form-group {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 20px;
+
+                        label {
+                            max-width: 238px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #000000;
+                        }
+
+                        input {
+                            flex-shrink: 0;
+                            display: block;
+                            width: 372px;
+                            height: 46px;
+                            border: 2px solid rgba(0, 0, 0, 0.25);
+                            border-radius: 14px;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: rgba(0, 0, 0, 1);
+                            text-align: center;
+                            outline: none;
+
+                            &::placeholder {
+                                color: rgba(0, 0, 0, 0.25);
+                            }
+
+                            &#min-price-input {
+                                background-image: url("../img/rub.svg");
+                                background-repeat: no-repeat;
+                                background-size: 12px 18px;
+                                background-position: center right 10px;
+                            }
+                        }
+
+                        .input_wrapper {
+                            .forgot_password {
+                                display: block;
+                                text-decoration: none;
+                                margin-top: 20px;
+                                background: none;
+                                border: none;
+                                outline: none;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 1;
+                                color: #bfbfbf;
+                                cursor: pointer;
+                            }
+                        }
+
+                        &.required {
+                            label {
+                                position: relative;
+
+                                &:before {
+                                    content: '*';
+                                    position: absolute;
+                                    top: 0;
+                                    right: -10px;
+                                    display: block;
+                                    width: 3px;
+                                    height: 3px;
+                                    color: #dc0000;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .btn_wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    button {
+                        display: block;
+                        border: none;
+                        outline: none;
+                        background: #dc0000;
+                        border-radius: 14px;
+                        padding: 14px 32px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #ffffff;
+                        cursor: pointer;
+
+                        &:hover {
+                            box-shadow: 0 0 6px #dc0000;
+                        }
+                    }
+
+                    .registration {
+                        display: block;
+                        outline: none;
+                        text-decoration: none;
+                        border-radius: 14px;
+                        padding: 14px 32px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #000000;
+                    }
+                }
+            }
+        }
+    }
+}
+/*! SECTION LOG IN PAGE END */
+
+/*! SECTION ADD CLUB START PAGE START */
+section.add_club_page_start_wrapper {
+    padding: 64px 0 0;
+    height: calc(100vh - 361px);
+
+    .add_club_page_start_content {
+        width: 670px;
+        margin: 0 auto;
+
+        .add_club_page_title {
+            margin: 0 0 32px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 1.3;
+            color: #000000;
+        }
+
+        .add_club_start_wrapper {
+            form {
+                width: 100%;
+
+                .forma {
+                    margin-bottom: 46px;
+
+                    .add_club_start_info {
+                        margin-bottom: 32px;
+
+                        p {
+                            margin: 0;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 18px;
+                            line-height: 1.3;
+                            color: #000000;
+                        }
+                    }
+
+
+                    .form-group {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 20px;
+
+                        label {
+                            max-width: 238px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #000000;
+                        }
+
+                        input {
+                            flex-shrink: 0;
+                            display: block;
+                            width: 372px;
+                            height: 46px;
+                            border: 2px solid rgba(0, 0, 0, 0.25);
+                            border-radius: 14px;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: rgba(0, 0, 0, 1);
+                            text-align: center;
+                            outline: none;
+
+                            &::placeholder {
+                                color: rgba(0, 0, 0, 0.25);
+                            }
+
+                            &#min-price-input {
+                                background-image: url("../img/rub.svg");
+                                background-repeat: no-repeat;
+                                background-size: 12px 18px;
+                                background-position: center right 10px;
+                            }
+                        }
+
+
+                        &.required {
+                            label {
+                                position: relative;
+
+                                &:before {
+                                    content: '*';
+                                    position: absolute;
+                                    top: 0;
+                                    right: -10px;
+                                    display: block;
+                                    width: 3px;
+                                    height: 3px;
+                                    color: #dc0000;
+                                }
+                            }
+                        }
+                    }
+
+                    .checkbox_wrapper {
+                        .checkbox_item {
+                            label {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: flex-start;
+
+                                input {
+                                    opacity: 0;
+                                    position: absolute;
+                                    z-index: -1;
+                                }
+
+                                input:checked + .activator {
+                                    border-color: #dc0000;
+
+                                    span {
+                                        background-color: #dc0000;
+                                    }
+                                }
+
+                                .activator {
+                                    flex-shrink: 0;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 28px;
+                                    height: 28px;
+                                    border: 3px solid #000000;
+                                    border-radius: 6px;
+                                    margin-right: 12px;
+                                    transition: border-color 0.2s;
+
+                                    span {
+                                        display: block;
+                                        background-color: transparent;
+                                        border-radius: 2px;
+                                        width: 16px;
+                                        height: 16px;
+                                        transition: background-color 0.2s;
+                                    }
+                                }
+
+                                span {
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: #000000;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .btn_wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    button {
+                        display: block;
+                        border: none;
+                        outline: none;
+                        background: #dc0000;
+                        border-radius: 14px;
+                        padding: 14px 32px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #ffffff;
+                        cursor: pointer;
+
+                        &:hover {
+                            box-shadow: 0 0 6px #dc0000;
+                        }
+                    }
+
+                    .log_in {
+                        display: block;
+                        outline: none;
+                        text-decoration: none;
+                        border-radius: 14px;
+                        padding: 14px 32px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #000000;
+                    }
+                }
+            }
+        }
+    }
+}
+/*! SECTION ADD CLUB START PAGE END */
+
+/*! SECTION LANGAME SOFTWARE START */
+section.langame_software_wrapper {
+    .langame_software_content {
+        width: 739px;
+        margin: 0 auto;
+        padding: 64px 0 83px;
+
+        .langame_software_title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 1;
+            color: #000000;
+            margin-bottom: 32px;
+
+            &.text_decor {
+                color: #dc0000;
+            }
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.3;
+            color: #000000;
+            margin: 0 0 32px;
+        }
+
+        .club_list_navigation_wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 50px;
+
+            .club_list_navigation_tabs {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin: 0 -9px;
+
+                li {
+                    a {
+                        display: block;
+                        position: relative;
+                        text-decoration: none;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                        padding: 5px 0;
+                        margin: 0 9px;
+
+                        &.active {
+
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                display: block;
+                                width: 100%;
+                                height: 3px;
+                                background-color: #dc0000;
+                                border-radius: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .club_list_content_tabs {
+            margin-bottom: 40px;
+
+            .tab {
+                .content_wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    margin: 0 -46px;
+
+                    .content_item {
+                        margin: 0 46px;
+
+                        ul {
+                            list-style: none;
+                            margin: 0;
+                            padding: 0;
+                            width: 292px;
+
+                            li {
+                                position: relative;
+                                padding-left: 32px;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 1.3;
+                                color: #000000;
+
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 0;
+                                    display: block;
+                                    width: 20px;
+                                    height: 20px;
+                                    background: #dc0000;
+                                    border-radius: 6px;
+                                    transform: translateY(-50%);
+
+                                }
+                            }
+
+                            li + li {
+                                margin-top: 28px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .marketing_offer_wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 64px;
+            background: #dc0000;
+            border-radius: 14px;
+            margin-bottom: 32px;
+
+            span {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 34px;
+                line-height: 1;
+                text-transform: uppercase;
+                color: #ffffff;
+            }
+        }
+
+        .add_club_request_wrapper {
+            form {
+                width: 100%;
+
+                .forma {
+                    margin-bottom: 32px;
+
+                    .form-group {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 20px;
+
+                        label {
+                            max-width: 238px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #000000;
+                        }
+
+                        input {
+                            flex-shrink: 0;
+                            display: block;
+                            width: 372px;
+                            height: 46px;
+                            border: 2px solid rgba(0, 0, 0, 0.25);
+                            border-radius: 14px;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: rgba(0, 0, 0, 1);
+                            text-align: center;
+                            outline: none;
+
+                            &::placeholder {
+                                color: rgba(0, 0, 0, 0.25);
+                            }
+
+                            &#min-price-input {
+                                background-image: url("../img/rub.svg");
+                                background-repeat: no-repeat;
+                                background-size: 12px 18px;
+                                background-position: center right 10px;
+                            }
+                        }
+
+                        .select2_wrapper {
+                            width: 372px;
+
+                            .select2 {
+                                display: block;
+                                height: 46px;
+                                border-radius: 14px;
+
+                                .selection {
+                                    display: block;
+                                    width: 100%;
+                                    height: 100%;
+                                }
+
+                                .select2-selection {
+                                    height: 100%;
+                                    border: none;
+                                    outline: none;
+                                    border-radius: 14px;
+
+                                    .select2-selection__rendered {
+                                        width: 100%;
+                                        height: 100%;
+                                        border: 2px solid rgba(0, 0, 0, 0.25);
+                                        border-radius: 14px;
+                                        padding: 12px;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: rgba(0, 0, 0, 1);
+                                        text-align: center;
+
+                                        .select2-selection__placeholder {
+                                            color: rgba(0, 0, 0, 0.25);
+                                        }
+                                    }
+
+                                    .select2-selection__arrow {
+                                        width: 13px;
+                                        height: 9px;
+                                        top: 50%;
+                                        right: 20px;
+                                        background-image: url("../img/role-gray.svg");
+                                        background-repeat: no-repeat;
+                                        background-size: 13px 9px;
+                                        background-position: center;
+                                        transition: transform 0.2s;
+                                        transform: translateY(-50%);
+
+                                        b {
+                                            border-width: 0;
+                                        }
+                                    }
+                                }
+
+                                &.select2-container--open {
+                                    .select2-selection {
+                                        .select2-selection__arrow {
+                                            transform: rotate(180deg) translateY(50%);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .select2-container {
+                                .select2-dropdown {
+                                    border: none;
+
+                                    .select2-results {
+                                        box-shadow: 0 0 27px rgba(0, 2, 4, 0.09);
+                                        background-color: #ffffff;
+                                        padding: 15px 10px;
+                                        margin-top: 0;
+                                        border-radius: 12px;
+
+                                        .select2-results__option {
+                                            font-size: 18px;
+                                            line-height: 20px;
+
+                                            &--highlighted[aria-selected] {
+                                                color: #dc0000;
+                                                background-color: #ffffff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.required {
+                            label {
+                                position: relative;
+
+                                &:before {
+                                    content: '*';
+                                    position: absolute;
+                                    top: 0;
+                                    right: -10px;
+                                    display: block;
+                                    width: 3px;
+                                    height: 3px;
+                                    color: #dc0000;
+                                }
+                            }
+                        }
+                    }
+
+                    .checkbox_wrapper {
+                        .checkbox_item {
+                            label {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                justify-content: flex-start;
+
+                                input {
+                                    opacity: 0;
+                                    position: absolute;
+                                    z-index: -1;
+                                }
+
+                                input:checked + .activator {
+                                    border-color: #dc0000;
+
+                                    span {
+                                        background-color: #dc0000;
+                                    }
+                                }
+
+                                .activator {
+                                    flex-shrink: 0;
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 28px;
+                                    height: 28px;
+                                    border: 3px solid #000000;
+                                    border-radius: 6px;
+                                    margin-right: 12px;
+                                    transition: border-color 0.2s;
+
+                                    span {
+                                        display: block;
+                                        background-color: transparent;
+                                        border-radius: 2px;
+                                        width: 16px;
+                                        height: 16px;
+                                        transition: background-color 0.2s;
+                                    }
+                                }
+
+                                span {
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: #000000;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    display: block;
+                    border: none;
+                    background: #dc0000;
+                    border-radius: 14px;
+                    padding: 14px 32px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    text-align: center;
+                    color: #ffffff;
+                    margin-left: auto;
+
+                    &:hover {
+                        box-shadow: 0 0 6px #dc0000;
+                    }
+                }
+            }
+        }
+    }
+}
+/*! SECTION LANGAME SOFTWARE END */
+
 /*! MODALS START */
-body .remodal-wrapper {
-    padding: 0;
+.person_add_club_modal_wrapper .remodal-wrapper {
+    padding: 0 0 50px 0;
     text-align: unset;
+    background-color: #ffffff;
 
     .remodal.person_add_club_modal {
         vertical-align: top;
         max-width: 100%;
         width: 100%;
-        height: 100%;
-        padding: 88px 0 20px;
+        min-height: 100%;
+        padding: 142px 0 20px;
         background-color: #ffffff;
 
         .remodal-close {
+            width: 129px;
             top: 43px;
             left: unset;
-            right: 130px;
+            right: 60px;
             font-style: normal;
             font-weight: 500;
-            font-size: 26px;
+            font-size: 18px;
             line-height: 1;
             color: #dc0000;
 
             &:before {
                 content: '';
                 display: block;
-                width: 26px;
-                height: 26px;
+                width: 23px;
+                height: 23px;
                 position: absolute;
                 top: 50%;
-                left: -40px;
+                left: -2px;
                 background-image: url("../img/close.svg");
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: 26px 26px;
+                background-size: 23px 23px;
                 transform: translateY(-50%);
             }
         }
 
         .remodal-content {
             #add-club-form {
-                width: 930px;
+                width: 670px;
                 margin: 0 auto;
 
                 .forma {
                     .form_tab_wrapper {
+                        margin-bottom: 42px;
+
                         .form_tab {
                             .form_tab_title {
-                                margin-bottom: 40px;
+                                margin-bottom: 46px;
                                 font-style: normal;
                                 font-weight: 500;
-                                font-size: 26px;
+                                font-size: 18px;
                                 line-height: 1.2;
                                 color: #000000;
                             }
@@ -1654,9 +3150,10 @@ body .remodal-wrapper {
                                 margin-bottom: 20px;
 
                                 label {
+                                    max-width: 238px;
                                     font-style: normal;
                                     font-weight: 500;
-                                    font-size: 26px;
+                                    font-size: 18px;
                                     line-height: 1;
                                     color: #000000;
                                 }
@@ -1664,19 +3161,45 @@ body .remodal-wrapper {
                                 input {
                                     flex-shrink: 0;
                                     display: block;
-                                    width: 516px;
-                                    height: 64px;
+                                    width: 372px;
+                                    height: 46px;
                                     border: 2px solid rgba(0, 0, 0, 0.25);
-                                    border-radius: 20px;
+                                    border-radius: 14px;
                                     font-weight: 500;
-                                    font-size: 26px;
+                                    font-size: 18px;
                                     line-height: 1;
-                                    color: rgba(0, 0, 0, 0.25);
+                                    color: rgba(0, 0, 0, 1);
                                     text-align: center;
                                     outline: none;
 
                                     &::placeholder {
                                         color: rgba(0, 0, 0, 0.25);
+                                    }
+
+                                    &#min-price-input {
+                                        background-image: url("../img/rub.svg");
+                                        background-repeat: no-repeat;
+                                        background-size: 12px 18px;
+                                        background-position: center right 10px;
+                                    }
+                                }
+
+                                &.descr {
+                                    align-items: flex-start;
+
+                                    textarea {
+                                        display: block;
+                                        padding: 12px;
+                                        width: 372px;
+                                        height: 230px;
+                                        border: 2px solid rgba(0, 0, 0, 0.25);
+                                        border-radius: 14px;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: rgba(0, 0, 0, 1);
+                                        outline: none;
+                                        resize: none;
                                     }
                                 }
 
@@ -1708,11 +3231,11 @@ body .remodal-wrapper {
                                         .activator {
                                             display: block;
                                             position: relative;
-                                            width: 72px;
-                                            height: 40px;
+                                            width: 52px;
+                                            height: 28px;
                                             background-color: #000000;
-                                            border-radius: 20px;
-                                            margin-right: 16px;
+                                            border-radius: 14px;
+                                            margin-right: 12px;
                                             transition: background-color 0.2s;
 
                                             span {
@@ -1720,8 +3243,8 @@ body .remodal-wrapper {
                                                 top: 50%;
                                                 left: 4px;
                                                 display: block;
-                                                width: 32px;
-                                                height: 32px;
+                                                width: 22px;
+                                                height: 22px;
                                                 border-radius: 50%;
                                                 background-color: #ffffff;
                                                 transform: translateY(-50%);
@@ -1736,14 +3259,861 @@ body .remodal-wrapper {
                                     }
                                 }
 
-                                .input_qty_wrapper {
+                                .add_file_wrapper {
+                                    label {
+                                        position: relative;
+                                        flex-shrink: 0;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 372px;
+                                        max-width: unset;
+                                        height: 46px;
+                                        border: 2px solid rgba(0, 0, 0, 1);
+                                        border-radius: 14px;
+                                        outline: none;
+                                        background-color: transparent;
+                                        transition: background-color 0.2s, border-color 0.2s;
+
+                                        input {
+                                            opacity: 0;
+                                            position: absolute;
+                                            z-index: -1;
+                                        }
+
+                                        span {
+                                            font-weight: 500;
+                                            font-size: 18px;
+                                            line-height: 1;
+                                            color: #000000;
+                                            transition: color 0.2s;
+                                        }
+
+                                        &:before {
+                                            content: '';
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 10px;
+                                            display: block;
+                                            width: 24px;
+                                            height: 24px;
+                                            background-image: url("../img/fill.svg");
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            background-size: 24px 24px;
+                                            transform: translateY(-50%);
+                                        }
+
+                                        &:hover {
+                                            background-color: #dc0000;
+                                            border-color: #dc0000;
+
+                                            span {
+                                                color: #ffffff;
+                                            }
+
+                                            &:before {
+                                                background-image: url("../img/fill-white.svg");
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .input_wrapper {
+                                    position: relative;
+
                                     &.block_active {
-                                        background-color: red;
+                                        opacity: 1;
                                     }
 
                                     &.block_disabled {
-                                        background-color: blue;
+                                        opacity: 0;
+                                        pointer-events: none;
+                                        transition: opacity 0.2s;
                                     }
+
+                                    .error {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 100%;
+                                        display: block;
+                                        width: 100%;
+                                        text-align: center;
+                                        color: rgba(220, 0, 0, 0.4);
+                                    }
+
+                                    .work_time_select {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: flex-start;
+                                        align-items: stretch;
+                                        margin: 0 -12px;
+
+                                        .select2_wrapper {
+                                            width: 161px;
+                                            margin: 0 12px;
+
+                                            .select2 {
+                                                height: 46px;
+
+                                                .select2-selection__rendered {
+                                                    padding: 12px;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .pc_config_select {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: flex-start;
+                                        align-items: stretch;
+                                        width: 392px;
+                                        margin: 0 -10px;
+
+                                        .select2_wrapper {
+                                            width: calc(50% - 20px);
+                                            margin: 0 10px;
+                                        }
+                                    }
+
+                                    .console_select {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: flex-start;
+
+                                        .select2_wrapper {
+                                            width: 180px;
+                                            margin-right: 12px;
+                                        }
+
+                                        input {
+                                            width: 180px;
+                                        }
+                                    }
+                                }
+
+                                .select2_wrapper {
+                                    width: 372px;
+
+                                    .select2 {
+                                        display: block;
+                                        height: 46px;
+                                        border-radius: 14px;
+
+                                        .selection {
+                                            display: block;
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+
+                                        .select2-selection {
+                                            height: 100%;
+                                            border: none;
+                                            outline: none;
+                                            border-radius: 14px;
+
+                                            .select2-selection__rendered {
+                                                width: 100%;
+                                                height: 100%;
+                                                border: 2px solid rgba(0, 0, 0, 0.25);
+                                                border-radius: 14px;
+                                                padding: 12px;
+                                                font-style: normal;
+                                                font-weight: 500;
+                                                font-size: 18px;
+                                                line-height: 1;
+                                                color: rgba(0, 0, 0, 1);
+                                                text-align: center;
+
+                                                .select2-selection__placeholder {
+                                                    color: rgba(0, 0, 0, 0.25);
+                                                }
+                                            }
+
+                                            .select2-selection__arrow {
+                                                width: 13px;
+                                                height: 9px;
+                                                top: 50%;
+                                                right: 20px;
+                                                background-image: url("../img/role-gray.svg");
+                                                background-repeat: no-repeat;
+                                                background-size: 13px 9px;
+                                                background-position: center;
+                                                transition: transform 0.2s;
+                                                transform: translateY(-50%);
+
+                                                b {
+                                                    border-width: 0;
+                                                }
+                                            }
+                                        }
+
+                                        &.select2-container--open {
+                                            .select2-selection {
+                                                .select2-selection__arrow {
+                                                    transform: rotate(180deg) translateY(50%);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .select2-container {
+                                        .select2-dropdown {
+                                            border: none;
+
+                                            .select2-results {
+                                                box-shadow: 0 0 27px rgba(0, 2, 4, 0.09);
+                                                background-color: #ffffff;
+                                                padding: 15px 10px;
+                                                margin-top: 0;
+                                                border-radius: 12px;
+
+                                                .select2-results__option {
+                                                    font-size: 18px;
+                                                    line-height: 20px;
+
+                                                    &--highlighted[aria-selected] {
+                                                        color: #dc0000;
+                                                        background-color: #ffffff;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .pc_config {
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: #000000;
+
+                                    input {
+                                        width: 372px;
+                                        border: none;
+                                        outline: none;
+                                        text-align: center;
+                                        font-weight: 700;
+                                        color: #000000;
+                                    }
+                                }
+
+                                &.required {
+                                    label {
+                                        position: relative;
+
+                                        &:before {
+                                            content: '*';
+                                            position: absolute;
+                                            top: 0;
+                                            right: -10px;
+                                            display: block;
+                                            width: 3px;
+                                            height: 3px;
+                                            color: #dc0000;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .payment_method_wrapper {
+                                padding: 48px 0 0;
+                                max-width: 670px;
+
+                                .payment_method_title {
+                                    margin-bottom: 20px;
+
+                                    span {
+                                        position: relative;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: #000000;
+
+                                        &:before {
+                                            content: '*';
+                                            position: absolute;
+                                            top: 0;
+                                            right: -10px;
+                                            display: block;
+                                            width: 3px;
+                                            height: 3px;
+                                            color: #dc0000;
+                                        }
+                                    }
+                                }
+
+                                .payment_method_list {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    align-items: stretch;
+                                    flex-wrap: wrap;
+                                    margin: 0 -3px;
+
+                                    .payment_method_item {
+                                        margin: 0 3px 20px;
+
+                                        label {
+                                            input {
+                                                opacity: 0;
+                                                position: absolute;
+                                                z-index: -1;
+                                            }
+
+                                            input:checked + .activator {
+                                                background-color: #000000;
+
+                                                span {
+                                                    color: #ffffff;
+                                                }
+                                            }
+
+                                            .activator {
+                                                display: block;
+                                                padding: 14px 16px;
+                                                border: 2px solid #000000;
+                                                border-radius: 14px;
+                                                background-color: #ffffff;
+                                                transition: background-color 0.2s;
+
+                                                span {
+                                                    font-style: normal;
+                                                    font-weight: 500;
+                                                    font-size: 18px;
+                                                    line-height: 1;
+                                                    color: #000000;
+                                                    transition: color 0.2s;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .add_photo_wrapper {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                align-items: center;
+                                padding: 32px 0;
+
+                                .add_photo_title {
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: #000000;
+                                    margin-right: 32px;
+                                }
+
+                                .add_photo_list {
+                                    display: grid;
+                                    grid-template-columns: repeat(6, 46px);
+                                    grid-template-rows: repeat(2, 46px);
+                                    grid-gap: 8px;
+                                    margin-right: 42px;
+
+                                    .add_photo_item {
+                                        width: 46px;
+                                        height: 46px;
+                                        background: #d3d3d3;
+                                        border-radius: 14px;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: #ffffff;
+
+
+                                        &:first-child {
+                                            grid-column: 1/3;
+                                            grid-row: 1/3;
+                                            width: 100px;
+                                            height: 100px;
+                                            background-image: url("../img/fill-white.svg");
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            background-size: 46px 46px;
+                                        }
+                                    }
+                                }
+
+                                .add_photo {
+                                    label {
+                                        position: relative;
+                                        flex-shrink: 0;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 237px;
+                                        max-width: unset;
+                                        height: 46px;
+                                        border: 2px solid rgba(0, 0, 0, 1);
+                                        border-radius: 14px;
+                                        outline: none;
+                                        background-color: transparent;
+                                        transition: background-color 0.2s, border-color 0.2s;
+
+                                        input {
+                                            opacity: 0;
+                                            position: absolute;
+                                            z-index: -1;
+                                        }
+
+                                        span {
+                                            font-weight: 500;
+                                            font-size: 18px;
+                                            line-height: 1;
+                                            color: #000000;
+                                            transition: color 0.2s;
+                                        }
+
+                                        &:before {
+                                            content: '';
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 10px;
+                                            display: block;
+                                            width: 24px;
+                                            height: 24px;
+                                            background-image: url("../img/fill.svg");
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            background-size: 24px 24px;
+                                            transform: translateY(-50%);
+                                        }
+
+                                        &:hover {
+                                            background-color: #dc0000;
+                                            border-color: #dc0000;
+
+                                            span {
+                                                color: #ffffff;
+                                            }
+
+                                            &:before {
+                                                background-image: url("../img/fill-white.svg");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .marketing_event_wrapper {
+                                padding: 48px 0 0;
+
+                                .checkbox_wrapper {
+                                    margin-bottom: 20px;
+
+                                    label {
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: flex-start;
+
+                                        input {
+                                            opacity: 0;
+                                            position: absolute;
+                                            z-index: -1;
+                                        }
+
+                                        input:checked + .activator {
+                                            border-color: #dc0000;
+
+                                            span {
+                                                background-color: #dc0000;
+                                            }
+                                        }
+
+                                        .activator {
+                                            flex-shrink: 0;
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 28px;
+                                            height: 28px;
+                                            border: 3px solid #000000;
+                                            border-radius: 6px;
+                                            margin-right: 12px;
+                                            transition: border-color 0.2s;
+
+                                            span {
+                                                display: block;
+                                                background-color: transparent;
+                                                border-radius: 2px;
+                                                width: 16px;
+                                                height: 16px;
+                                                transition: background-color 0.2s;
+                                            }
+                                        }
+
+                                        span {
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            font-size: 18px;
+                                            line-height: 1;
+                                            color: #000000;
+                                        }
+                                    }
+                                }
+
+                                .marketing_event {
+                                    .marketing_event_list {
+                                        counter-reset: count_marketing;
+
+                                        .form-group {
+                                            position: relative;
+
+                                            label {
+                                                position: relative;
+                                                margin-left: 41px;
+                                                counter-increment: count_marketing;
+
+                                                &:after {
+                                                    content: counter(count_marketing);
+                                                    display: inline;
+                                                    font-style: normal;
+                                                    font-weight: 500;
+                                                    font-size: 18px;
+                                                    line-height: 1;
+                                                    color: #000000;
+                                                }
+                                            }
+
+                                            button[data-role-remove-marketing-event] {
+                                                position: absolute;
+                                                top: -7px;
+                                                right: -7px;
+                                                display: block;
+                                                width: 20px;
+                                                height: 20px;
+                                                background-image: url("../img/cancel.svg");
+                                                background-repeat: no-repeat;
+                                                background-position: center;
+                                                background-size: 24px 24px;
+                                                background-color: #ffffff;
+                                                border: none;
+                                                border-radius: 50%;
+                                                outline: none;
+
+                                            }
+                                        }
+                                    }
+
+                                    button[data-role="marketing-event-add-tab"] {
+                                        display: block;
+                                        position: relative;
+                                        background-color: transparent;
+                                        border: none;
+                                        outline: none;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: #dc0000;
+                                        margin-left: 41px;
+                                        padding-left: 35px;
+                                        margin-top: 10px;
+                                        cursor: pointer;
+                                        transition: opacity 0.2s;
+
+                                        &:before {
+                                            content: '';
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            display: block;
+                                            width: 21px;
+                                            height: 21px;
+                                            background-image: url("../img/plus.svg");
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            background-size: 21px 21px;
+                                        }
+
+                                        &:disabled {
+                                            opacity: 0.4;
+                                        }
+                                    }
+
+                                    &.block_active {
+                                        display: block;
+                                    }
+
+                                    &.block_disabled {
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            .pc_configuration_nav_wrapper {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-end;
+                                margin-bottom: 20px;
+
+                                .pc_configuration_nav_item {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    width: 372px;
+
+                                    a, button {
+                                        transition: color 0.2s, border-color 0.2s;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 46px;
+                                        height: 46px;
+                                        margin: 0;
+                                        padding: 0;
+                                        border: 2px solid #dcdcdc;
+                                        border-radius: 14px;
+                                        text-decoration: none;
+                                        font-style: normal;
+                                        font-weight: 700;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: #dcdcdc;
+
+                                        &.add_pc_config {
+                                            position: relative;
+                                            background: #dc0000;
+                                            border: none;
+                                            outline: none;
+                                            transition: opacity 0.2s;
+
+                                            &:before {
+                                                content: '';
+                                                position: absolute;
+                                                top: 50%;
+                                                right: 50%;
+                                                display: block;
+                                                width: 3px;
+                                                height: 17px;
+                                                background: #ffffff;
+                                                border-radius: 2px;
+                                                transform: translate(50%, -50%);
+                                            }
+
+                                            &:after {
+                                                content: '';
+                                                position: absolute;
+                                                top: 50%;
+                                                right: 50%;
+                                                display: block;
+                                                height: 3px;
+                                                width: 17px;
+                                                background: #ffffff;
+                                                border-radius: 2px;
+                                                transform: translate(50%, -50%);
+                                            }
+
+                                            &:disabled {
+                                                opacity: 0.4;
+                                            }
+                                        }
+                                    }
+
+                                    ul {
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: center;
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style: none;
+                                        counter-reset: count_list;
+
+                                        li {
+                                            position: relative;
+
+                                            a {
+                                                margin-right: 15px;
+                                                counter-increment: count_list;
+
+                                                &:before {
+                                                    content: counter(count_list);
+                                                    display: inline;
+                                                    font-style: normal;
+                                                    font-weight: 700;
+                                                    font-size: 18px;
+                                                    line-height: 1;
+                                                    color: #dcdcdc;
+                                                }
+
+                                                &.active {
+                                                    color: #000000;
+                                                    border-color: #000000;
+
+                                                    &:before {
+                                                        color: #000000;
+                                                    }
+                                                }
+                                            }
+
+                                            button {
+                                                position: absolute;
+                                                top: -8px;
+                                                right: 9px;
+                                                display: block;
+                                                width: 21px;
+                                                height: 21px;
+                                                border-radius: 50%;
+                                                border: none;
+                                                outline: none;
+                                                background-image: url("../img/cancel.svg");
+                                                background-color: #ffffff;
+                                                background-repeat: no-repeat;
+                                                background-position: center;
+                                                background-size: 24px 24px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .pc_configuration_content_wrapper {
+                                .tab:not(.active) {
+                                    display: none;
+                                }
+                            }
+
+                            .radiobox_wrapper {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                align-items: stretch;
+                                margin: 0 -15px;
+
+                                label {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: flex-start;
+                                    margin: 0 15px;
+
+                                    input {
+                                        opacity: 0;
+                                        position: absolute;
+                                        z-index: -1;
+                                    }
+
+                                    input:checked + .activator {
+                                        border-color: #dc0000;
+
+                                        span {
+                                            background-color: #dc0000;
+                                        }
+                                    }
+
+                                    .activator {
+                                        flex-shrink: 0;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: center;
+                                        width: 28px;
+                                        height: 28px;
+                                        border: 4px solid #000000;
+                                        border-radius: 50%;
+                                        margin-right: 12px;
+                                        transition: border-color 0.2s;
+
+                                        span {
+                                            display: block;
+                                            background-color: transparent;
+                                            width: 16px;
+                                            height: 16px;
+                                            border-radius: 50%;
+                                            transition: background-color 0.2s;
+                                        }
+                                    }
+
+                                    span {
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: #000000;
+                                    }
+                                }
+                            }
+
+                            .work_time_wrapper {
+                                padding: 50px 0 0;
+
+                                .work_time_item {
+                                    label {
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: flex-start;
+
+                                        input {
+                                            opacity: 0;
+                                            position: absolute;
+                                            z-index: -1;
+                                        }
+
+                                        input:checked + .activator {
+                                            border-color: #dc0000;
+
+                                            span {
+                                                background-color: #dc0000;
+                                            }
+                                        }
+
+                                        .activator {
+                                            flex-shrink: 0;
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 28px;
+                                            height: 28px;
+                                            border: 3px solid #000000;
+                                            border-radius: 6px;
+                                            margin-right: 16px;
+                                            transition: border-color 0.2s;
+
+                                            span {
+                                                display: block;
+                                                background-color: transparent;
+                                                border-radius: 2px;
+                                                width: 16px;
+                                                height: 16px;
+                                                transition: background-color 0.2s;
+                                            }
+                                        }
+
+                                        span {
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            font-size: 18px;
+                                            line-height: 1;
+                                            color: #000000;
+                                        }
+                                    }
+                                }
+
+                                &.block_active {
+                                    display: block;
+                                }
+
+                                &.block_disabled {
+                                    display: none;
                                 }
                             }
 
@@ -1783,19 +4153,19 @@ body .remodal-wrapper {
                                             flex-direction: row;
                                             align-items: center;
                                             justify-content: center;
-                                            width: 40px;
-                                            height: 40px;
-                                            border: 4px solid #000000;
+                                            width: 28px;
+                                            height: 28px;
+                                            border: 3px solid #000000;
                                             border-radius: 6px;
-                                            margin-right: 16px;
+                                            margin-right: 12px;
                                             transition: border-color 0.2s;
 
                                             span {
                                                 display: block;
                                                 background-color: transparent;
                                                 border-radius: 2px;
-                                                width: 24px;
-                                                height: 24px;
+                                                width: 16px;
+                                                height: 16px;
                                                 transition: background-color 0.2s;
                                             }
                                         }
@@ -1803,11 +4173,68 @@ body .remodal-wrapper {
                                         span {
                                             font-style: normal;
                                             font-weight: 500;
-                                            font-size: 26px;
+                                            font-size: 18px;
                                             line-height: 1;
                                             color: #000000;
                                         }
                                     }
+                                }
+                            }
+
+                            .preview_wrapper {
+                                .club_card {
+                                    width: 294px;
+                                    margin: 0 auto;
+                                }
+                            }
+                        }
+                    }
+
+                    .form_btn_wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                        .form_btn_item {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+
+                            button {
+                                display: block;
+                                padding: 14px 32px;
+                                border: none;
+                                outline: none;
+                                border-radius: 14px;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 1;
+                                text-align: center;
+                                color: #ffffff;
+                                cursor: pointer;
+                                transition: box-shadow 0.2s;
+                                background: #dc0000;
+
+                                &:hover {
+                                    box-shadow: 0 0 6px #dc0000;
+                                }
+                            }
+
+                            .save_draft {
+                                background: #bfbfbf;
+
+                                &:hover {
+                                    box-shadow: 0 0 6px #bfbfbf;
+                                }
+                            }
+
+                            .prev_btn {
+                                background: #ffffff;
+                                color: #000000;
+
+                                &:hover {
+                                    box-shadow: none;
                                 }
                             }
                         }
@@ -1817,6 +4244,235 @@ body .remodal-wrapper {
         }
     }
 }
+
+.club_page_modals_wrapper .remodal-wrapper {
+    padding: 0;
+    background-color: #212121;
+
+    .remodal.show_club_price_list_modal {
+        vertical-align: top;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        background-color: #212121;
+        margin-bottom: 0;
+
+        .remodal-close {
+            width: 129px;
+            top: 43px;
+            left: unset;
+            right: 60px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1;
+            color: #ffffff;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 23px;
+                height: 23px;
+                position: absolute;
+                top: 50%;
+                left: -2px;
+                background-image: url("../img/white_cancel.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 23px 23px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    .remodal.show_club_photo_modal {
+        position: unset;
+        max-width: 1000px;
+        background-color: transparent;
+        //max-width: 100%;
+        //width: 100%;
+        //min-height: 100vh;
+        //background-color: #212121;
+        //margin-bottom: 0;
+        //display: flex;
+        //flex-direction: row;
+        //align-items: center;
+        //justify-content: center;
+
+        .remodal-close {
+            width: 129px;
+            top: 43px;
+            left: unset;
+            right: 60px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1;
+            color: #ffffff;
+
+            &:before {
+                content: '';
+                display: block;
+                width: 23px;
+                height: 23px;
+                position: absolute;
+                top: 50%;
+                left: -2px;
+                background-image: url("../img/white_cancel.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 23px 23px;
+                transform: translateY(-50%);
+            }
+        }
+
+        .remodal-content {
+            .club_photo_modal_wrapper {
+                position: relative;
+                width: 922px;
+                height: 518px;
+                margin: 0 auto;
+
+                img {
+                    display: block;
+                    width: 922px;
+                    height: 518px;
+                }
+
+                .slick-arrow {
+                    display: block;
+                    width: 46px;
+                    height: 46px;
+                    position: absolute;
+                    background: none;
+                    border: none;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    img {
+                        display: block;
+                        width: 46px;
+                        height: 46px;
+                    }
+
+                    &.slick-next {
+                        right: -120px;
+                    }
+
+                    &.slick-prev {
+                        left: -120px;
+                    }
+                }
+
+                .slick-dots {
+                    position: absolute;
+                    bottom: -3px;
+                    right: 23px;
+                    counter-reset: dot-current dot-total;
+
+                    .presentation {
+                        display: block;
+                        font-size: 0;
+                        width: 0;
+                        height: 0;
+                        counter-increment: dot-current dot-total;
+                        white-space: nowrap;
+
+                        span {
+                            display: none;
+                        }
+
+                        &.active ~ .presentation {
+                            counter-increment: dot-total;
+                        }
+                    }
+
+                    .presentation:last-child {
+                        display: block;
+                        position: absolute;
+                        right: 40px;
+                        width: 90px;
+                        height: auto;
+                        text-align: center;
+
+                        &:before {
+                            content: counter(dot-current);
+                            color: white;
+                            display: inline-block;
+                            font-size: 30px;
+                        }
+
+                        &:after {
+                            content: '/' counter(dot-total);
+                            font-size: 16px;
+                            color: white;
+                            display: inline-block;
+                        }
+                    }
+                }
+
+                &:not(.slick-initialized) {
+                    .slide_item:not(:first-child) {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.show_club_phone_modal {
+    width: 548px;
+    height: 96px;
+    background: #ffffff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 16px;
+
+    .remodal-close {
+        width: 28px;
+        height: 28px;
+        left: unset;
+        left: auto;
+        right: -10px;
+        top: -10px;
+        opacity: 1;
+        background-image: url("../img/cancel.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 34px 34px;
+        background-color: #ffffff;
+        border-radius: 50%;
+
+
+        &:before {
+            content: none;
+            display: none;
+        }
+    }
+
+    .remodal-content {
+        .club_phone_wrapper {
+            border: 2px solid #dc0000;
+            border-radius: 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                margin: 0;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 26px;
+                line-height: 1;
+                text-align: center;
+                color: #000000;
+            }
+        }
+    }
+
+}
 /*! MODALS END */
 
 /*! FOOTER START */
@@ -1824,7 +4480,7 @@ body .remodal-wrapper {
     background: #f5f5f5;
 
     .footer_top {
-        padding: 48px 0 30px;
+        padding: 32px 0;
         border-bottom: 1px solid #d3d3d3;
         display: flex;
         flex-direction: row;
@@ -1832,14 +4488,14 @@ body .remodal-wrapper {
         align-items: flex-start;
 
         .footer_logo_wrapper {
-            margin-right: 128px;
+            margin-right: 90px;
 
             .logo_wrapper {
                 a {
                     display: block;
                     text-decoration: none;
-                    width: 274px;
-                    height: 64px;
+                    width: 198px;
+                    height: 46px;
 
                     img {
                         display: block;
@@ -1856,16 +4512,16 @@ body .remodal-wrapper {
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: flex-start;
-                margin: 0 -64px;
+                margin: 0 -45px;
 
                 .footer_content_item {
-                    margin: 0 64px;
+                    margin: 0 45px;
 
                     h4 {
-                        margin: 0 0 20px;
+                        margin: 0 0 12px;
                         font-style: normal;
                         font-weight: 700;
-                        font-size: 24px;
+                        font-size: 18px;
                         line-height: 1;
                         color: #212121;
                     }
@@ -1881,10 +4537,10 @@ body .remodal-wrapper {
                                 text-decoration: none;
                                 font-style: normal;
                                 font-weight: normal;
-                                font-size: 24px;
+                                font-size: 18px;
                                 line-height: 1;
                                 color: #212121;
-                                margin-bottom: 20px;
+                                margin-bottom: 12px;
                                 transition: color 0.2s;
 
                                 &:hover {
@@ -1899,7 +4555,7 @@ body .remodal-wrapper {
     }
 
     .footer_bottom {
-        padding: 50px 0;
+        padding: 32px 0;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -1910,7 +4566,7 @@ body .remodal-wrapper {
                 margin: 0;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 24px;
+                font-size: 18px;
                 line-height: 1;
                 color: #212121;
             }
@@ -1921,15 +4577,15 @@ body .remodal-wrapper {
             flex-direction: row;
             justify-content: flex-start;
             align-items: center;
-            margin: 0 -24px;
+            margin: 0 -16px;
 
             a {
                 display: block;
-                margin: 0 24px;
+                margin: 0 16px;
                 text-decoration: none;
                 font-style: normal;
                 font-weight: normal;
-                font-size: 24px;
+                font-size: 18px;
                 line-height: 1;
                 color: #212121;
                 transition: color 0.2s;

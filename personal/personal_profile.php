@@ -33,25 +33,26 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                 <div class="user_profile_form_wrapper">
                     <form action="" method="post" id="user-profile-form">
                         <div class="forma">
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label for="user-name-input">ФИО представителя</label>
                                 <input id="user-name-input" name="name" type="text" placeholder="" required>
                             </div>
-                            <div class="form-group">
-                                <label for="user-phone-input">Контактный телефон</label>
-                                <input id="user-phone-input" name="phone" type="tel" placeholder="" required>
+                            <div class="form-group required">
+                                <label for="user-phone-input">Мобильный телефон</label>
+                                <input id="user-phone-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group required">
                                 <label for="user-email-input">Email</label>
                                 <input id="user-email-input" name="email" type="email" placeholder="" required>
                             </div>
 
-                        <div class="form-group">
+                        <div class="form-group required">
                             <label for="user-position-input">Должность представителя</label>
                             <div class="select2_wrapper select_user_position_wrapper">
-                                <select id="user-position-input" name="user_position" class="select2_input">
-                                    <option value="1">Выбрать из списка</option>
-                                    <option value="2">Директор</option>
+                                <select id="user-position-input" name="user_position" class="select2_input" data-placeholder="Выбрать из списка">
+                                    <option value=""></option>
+                                    <option value="1">Директор</option>
+                                    <option value="2">Администратор</option>
                                 </select>
                             </div>
                         </div>

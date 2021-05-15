@@ -28,7 +28,7 @@
             $prevButton.on('click', goToPrevTab);
 
             this.on('input change', 'input, textarea, select', function() {
-                setInputError(this).text('');
+                setInputError(this, '');
             });
 
             function showTab(index) {
