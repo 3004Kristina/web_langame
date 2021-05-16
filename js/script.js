@@ -255,13 +255,13 @@ jQuery(function() {
     jQuery('.show_club_price_list_modal').remodal({
         appendTo: jQuery('.club_page_modals_wrapper'),
         hashTracking: false,
-        closeOnOutsideClick: false,
+        closeOnOutsideClick: false
     });
 
     jQuery('.show_club_photo_modal').remodal({
         appendTo: jQuery('.club_page_modals_wrapper'),
         hashTracking: false,
-        closeOnOutsideClick: false,
+        closeOnOutsideClick: false
     });
 
     jQuery('.club_page_reviews_list').slick({
@@ -273,21 +273,43 @@ jQuery(function() {
         nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>'
     });
 
-    jQuery('[data-remodal-id="club_photo_modal"]')
-        .on('opened', function() {
-            jQuery('.club_photo_modal_wrapper').slick({
+    /**
+     * show all club photo modal
+     */
+    (() => {
+        let $modal = jQuery('[data-remodal-id="club_photo_modal"]'),
+            $slick = jQuery('.club_photo_modal_wrapper'),
+            $counter = jQuery('#show_club_photo_counter_slide');
+
+        if ($modal.length === 0) {
+            return;
+        }
+
+        let total_count = $slick.find('.slide_item').length;
+        setCounterText(0);
+
+        $modal.on('opened', function() {
+            $slick.slick({
                 infinite: true,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                dots: true,
                 prevArrow: '<button type="button" class="slick-prev slick-arrow"><img src="../img/left.svg" alt="arrow"></button>',
                 nextArrow: '<button type="button" class="slick-next slick-arrow"><img src="../img/right.svg" alt="arrow"></button>'
             });
-        })
-        .on('closed', function(){
+
+            $slick.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+                setCounterText(nextSlide);
+            });
+        });
+
+        $modal.on('closed', function() {
             jQuery('.club_photo_modal_wrapper').slick('unslick');
         });
 
+        function setCounterText(slide){
+            $counter.text(`${slide + 1} / ${total_count}`);
+        }
+    })();
 
     ymaps.ready(init);
 

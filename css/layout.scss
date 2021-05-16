@@ -4286,24 +4286,15 @@ section.langame_software_wrapper {
     }
 
     .remodal.show_club_photo_modal {
-        position: unset;
+        position: relative;
         max-width: 1000px;
         background-color: transparent;
-        //max-width: 100%;
-        //width: 100%;
-        //min-height: 100vh;
-        //background-color: #212121;
-        //margin-bottom: 0;
-        //display: flex;
-        //flex-direction: row;
-        //align-items: center;
-        //justify-content: center;
 
         .remodal-close {
             width: 129px;
-            top: 43px;
+            top: -43px;
             left: unset;
-            right: 60px;
+            right: -60px;
             font-style: normal;
             font-weight: 500;
             font-size: 18px;
@@ -4326,7 +4317,21 @@ section.langame_software_wrapper {
             }
         }
 
+        .counter_slide{
+            position: absolute;
+            width: 100%;
+            top: -60px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 1;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
         .remodal-content {
+            position: relative;
+
             .club_photo_modal_wrapper {
                 position: relative;
                 width: 922px;
@@ -4361,53 +4366,6 @@ section.langame_software_wrapper {
 
                     &.slick-prev {
                         left: -120px;
-                    }
-                }
-
-                .slick-dots {
-                    position: absolute;
-                    bottom: -3px;
-                    right: 23px;
-                    counter-reset: dot-current dot-total;
-
-                    .presentation {
-                        display: block;
-                        font-size: 0;
-                        width: 0;
-                        height: 0;
-                        counter-increment: dot-current dot-total;
-                        white-space: nowrap;
-
-                        span {
-                            display: none;
-                        }
-
-                        &.active ~ .presentation {
-                            counter-increment: dot-total;
-                        }
-                    }
-
-                    .presentation:last-child {
-                        display: block;
-                        position: absolute;
-                        right: 40px;
-                        width: 90px;
-                        height: auto;
-                        text-align: center;
-
-                        &:before {
-                            content: counter(dot-current);
-                            color: white;
-                            display: inline-block;
-                            font-size: 30px;
-                        }
-
-                        &:after {
-                            content: '/' counter(dot-total);
-                            font-size: 16px;
-                            color: white;
-                            display: inline-block;
-                        }
                     }
                 }
 
