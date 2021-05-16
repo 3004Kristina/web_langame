@@ -19,19 +19,33 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                             Добавьте информацию о нём на портал LanGame. Это абсолютно <span class="text_decor">бесплатно!</span>
                         </p>
                     </div>
-                    <div class="form-group">
-                        <label for="add-club-start-input">Номер телефона</label>
-                        <input id="add-club-start-input" name="add_club_start_phone" type="tel" placeholder="+7 (___) ___-__-__" required>
-                    </div>
-                    <div class="checkbox_wrapper">
-                        <div class="checkbox_item">
-                            <label>
-                                <input type="checkbox" name="add_club_request_user_agree" required>
-                                <span class="activator"><span></span></span>
-                                <span>Согласен с условиями обработки персональных данных</span>
-                            </label>
+                    <div class="add_club_start_content">
+                        <div class="add_club_start_content_item">
+                            <div class="form-group">
+                                <label for="add-club-start-input">Номер телефона</label>
+                                <input id="add-club-start-input" name="add_club_start_phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                            <div class="checkbox_wrapper">
+                                <div class="checkbox_item">
+                                    <label>
+                                        <input type="checkbox" name="add_club_request_user_agree" required>
+                                        <span class="activator"><span></span></span>
+                                        <span>Согласен с условиями обработки персональных данных</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add_club_start_content_item">
+                            <p>Введите код, отправленный на номер +7 999 832 32 18</p>
+                            <div class="code_wrapper">
+                                <input type="text" name="add_club_phone_code">
+                                <input type="text" name="add_club_phone_code">
+                                <input type="text" name="add_club_phone_code">
+                                <input type="text" name="add_club_phone_code">
+                            </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="btn_wrapper">
                     <a href="/log_in.php" class="log_in">Уже есть аккаунт?</a>
