@@ -6,9 +6,11 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     merge = require('merge-stream'),
     through2 = require('through2'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     scss = {
         'css/**/*.scss': 'css'
-};
+    };
 
 gulp.task('scss', () => {
     return merge(Object.keys(scss).map(source => {
@@ -34,5 +36,24 @@ gulp.task('scss', () => {
 gulp.task('scss:watch', gulp.series('scss', () => {
     gulp.watch(Object.keys(scss), gulp.series('scss'));
 }));
+
+gulp.task('js', () => {
+    return gulp.src('js/src/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('layout.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.mapSources(sourcePath  => `../src/${sourcePath}`))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('js/dest'));
+});
+
+gulp.task('js:watch', gulp.series('js', () => {
+    gulp.watch('js/src/*.js', gulp.series('js'));
+}));
+
+gulp.task('all:watch', gulp.series('scss', () => {
+    gulp.watch(Object.keys(scss), gulp.series('scss'));
+    gulp.watch('js/src/*.js', gulp.series('js'));
+}))
 
 gulp.task('default', gulp.series('scss:watch'));

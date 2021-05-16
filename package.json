@@ -2,9 +2,11 @@
     "devDependencies": {
         "@types/jquery": "^3.5.4",
         "gulp": "^4.0.2",
+        "gulp-concat": "^2.6.1",
         "gulp-csso": "^4.0.1",
         "gulp-sass": "^4.1.0",
         "gulp-sourcemaps": "^2.6.5",
+        "gulp-uglify": "^3.0.2",
         "merge-stream": "^2.0.0",
         "through2": "^4.0.2"
     }

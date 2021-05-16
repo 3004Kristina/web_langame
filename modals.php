@@ -102,4 +102,11 @@
         </div>
     </div>
 </div>
+
+<div class="remodal success_modal" data-remodal-id="success_modal" data-remodal-options="hashTracking: false">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div class="remodal-content">
+        <p class="title">Успешно!</p>
+    </div>
+</div>
 <!--MODALS END-->

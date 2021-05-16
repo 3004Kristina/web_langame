@@ -1104,6 +1104,107 @@ section.personal_page_wrapper {
                                 }
                             }
 
+                            .confirm_mobile_wrapper {
+                                display: none;
+                                text-align: right;
+
+                                p {
+                                    margin: 0 0 26px;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: #c4c4c4;
+                                    text-align: right;
+                                }
+
+                                .code_wrapper {
+                                    width: 100%;
+                                    position: relative;
+
+                                    .code_input_wrapper{
+                                        display: flex;
+                                        flex-direction: row;
+                                        justify-content: flex-end;
+                                        align-items: stretch;
+                                        margin: 0 -15px 26px;
+
+                                        input {
+                                            display: block;
+                                            outline: none;
+                                            width: 46px;
+                                            height: 46px;
+                                            border: 2px solid rgba(0, 0, 0, 0.25);
+                                            border-radius: 14px;
+                                            margin: 0 15px;
+                                            text-align: center;
+                                            padding: 5px;
+                                        }
+                                    }
+
+                                    .error {
+                                        position: absolute;
+                                        right: 0px;
+                                        top: -44px;
+                                        display: block;
+                                        width: 372px;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: #dc0000;
+                                    }
+                                }
+
+                                .code_resend {
+                                    display: inline-block;
+                                    position: relative;
+                                    pointer-events: auto;
+                                    text-decoration: none;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: #000000;
+                                    text-align: right;
+                                    padding-left: 36px;
+
+                                    &:before {
+                                        content: '';
+                                        position: absolute;
+                                        left: 0;
+                                        top: 50%;
+                                        display: block;
+                                        width: 24px;
+                                        height: 24px;
+                                        background-image: url("../img/refresh.svg");
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                        background-size: 24px 24px;
+                                        transform: translateY(-50%);
+                                        transition: opacity 0.2s;
+                                    }
+
+
+                                    span.hide {
+                                        display: none;
+                                    }
+
+                                    &.disabled {
+                                        pointer-events: none;
+
+                                        &:before {
+                                            opacity: 0;
+                                        }
+
+
+                                        span.hide {
+                                            display: inline;
+                                        }
+                                    }
+                                }
+                            }
+
                             .select_user_position_wrapper {
                                 width: 372px;
 
@@ -1246,6 +1347,15 @@ section.personal_page_wrapper {
 
                         &:hover {
                             box-shadow: 0 0 6px #dc0000;
+                        }
+
+                        &.disabled {
+                            pointer-events: none;
+                            background: #bfbfbf;
+
+                            &:hover {
+                                box-shadow: none;
+                            }
                         }
                     }
                 }
@@ -2508,26 +2618,25 @@ section.add_club_page_start_wrapper {
             color: #000000;
         }
 
+        .add_club_start_info {
+            margin-bottom: 32px;
+
+            p {
+                margin: 0;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 1.3;
+                color: #000000;
+            }
+        }
+
         .add_club_start_wrapper {
-            form {
+            #add-club-start-form {
                 width: 100%;
 
                 .forma {
                     margin-bottom: 46px;
-
-                    .add_club_start_info {
-                        margin-bottom: 32px;
-
-                        p {
-                            margin: 0;
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 18px;
-                            line-height: 1.3;
-                            color: #000000;
-                        }
-                    }
-
 
                     .form-group {
                         display: flex;
@@ -2674,6 +2783,147 @@ section.add_club_page_start_wrapper {
                     }
 
                     .log_in {
+                        display: block;
+                        outline: none;
+                        text-decoration: none;
+                        border-radius: 14px;
+                        padding: 14px 32px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #000000;
+                    }
+                }
+            }
+
+            #add-club-code-confirm-form {
+                display: none;
+                width: 100%;
+
+                .forma {
+                    margin-bottom: 46px;
+
+                    p {
+                        margin: 0 0 26px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #c4c4c4;
+                    }
+
+                    .code_wrapper {
+                        margin: 0 -15px 26px;
+                        width: 505px;
+                        position: relative;
+
+                        .code_input_wrapper {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-end;
+                            align-items: stretch;
+
+                            input {
+                                display: block;
+                                outline: none;
+                                width: 46px;
+                                height: 46px;
+                                border: 2px solid rgba(0, 0, 0, 0.25);
+                                border-radius: 14px;
+                                margin: 0 15px;
+                                text-align: center;
+                                padding: 5px;
+                            }
+                        }
+
+                        .error {
+                            position: absolute;
+                            right: 15px;
+                            bottom: -22px;
+                            display: block;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #dc0000;
+                        }
+                    }
+
+                    .code_resend {
+                        display: block;
+                        pointer-events: auto;
+                        position: relative;
+                        text-decoration: none;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                        //padding-left: 36px;
+
+                        //&:before{
+                        //    content: '';
+                        //    position: absolute;
+                        //    left: 0;
+                        //    top: 50%;
+                        //    display: block;
+                        //    width: 24px;
+                        //    height: 24px;
+                        //    background-image: url("../img/refresh.svg");
+                        //    background-repeat: no-repeat;
+                        //    background-position: center;
+                        //    background-size: 24px 24px;
+                        //    transform: translateY(-50%);
+                        //    transition: opacity 0.2s;
+                        //}
+
+                        span.hide {
+                            display: none;
+                        }
+
+                        &.disabled {
+                            pointer-events: none;
+
+                            //&:before{
+                            //    opacity: 0;
+                            //}
+
+                            span.hide {
+                                display: inline;
+                            }
+                        }
+                    }
+                }
+
+                .btn_wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    button {
+                        display: block;
+                        border: none;
+                        outline: none;
+                        background: #dc0000;
+                        border-radius: 14px;
+                        padding: 14px 32px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: center;
+                        color: #ffffff;
+                        cursor: pointer;
+
+                        &:hover {
+                            box-shadow: 0 0 6px #dc0000;
+                        }
+                    }
+
+                    .step_back {
                         display: block;
                         outline: none;
                         text-decoration: none;
@@ -4317,7 +4567,7 @@ section.langame_software_wrapper {
             }
         }
 
-        .counter_slide{
+        .counter_slide {
             position: absolute;
             width: 100%;
             top: -60px;
@@ -4325,7 +4575,7 @@ section.langame_software_wrapper {
             font-weight: 500;
             font-size: 18px;
             line-height: 1;
-            color: #FFFFFF;
+            color: #ffffff;
             text-align: center;
         }
 

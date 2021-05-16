@@ -37,9 +37,18 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <label for="user-name-input">ФИО представителя</label>
                                 <input id="user-name-input" name="name" type="text" placeholder="" required>
                             </div>
-                            <div class="form-group required">
-                                <label for="user-phone-input">Мобильный телефон</label>
-                                <input id="user-phone-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                            <div class="user_phone_wrapper">
+                                <div class="form-group required">
+                                    <label for="user-phone-input">Мобильный телефон</label>
+                                    <input id="user-phone-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" value="+7 (892) 323-59-51" required>
+                                    <div class="confirm_mobile_wrapper">
+                                        <p class="confirm_mobile_descr"></p>
+                                        <div class="code_wrapper">
+                                            <input type="text" name="code">
+                                        </div>
+                                        <a href="#" class="code_resend disabled" id="reSendCodeProfile">Отправить повторно <span class="hide">через</span> <span id="countdown">3:00</span></a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group required">
                                 <label for="user-email-input">Email</label>
@@ -49,7 +58,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                         <div class="form-group required">
                             <label for="user-position-input">Должность представителя</label>
                             <div class="select2_wrapper select_user_position_wrapper">
-                                <select id="user-position-input" name="user_position" class="select2_input" data-placeholder="Выбрать из списка">
+                                <select id="user-position-input" name="user_position" class="select2_input" data-placeholder="Выбрать из списка" required>
                                     <option value=""></option>
                                     <option value="1">Директор</option>
                                     <option value="2">Администратор</option>
@@ -61,7 +70,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
 
                             <div class="user_password">
                                 <input id="user-password-input" name="password" type="password" placeholder="Новый пароль" required>
-                                <input id="user-password-again-input" name="password" type="password" placeholder="Повторите" required>
+                                <input id="user-password-again-input" name="password_again" type="password" placeholder="Повторите" required>
                             </div>
                         </div>
                         </div>
@@ -73,6 +82,10 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
     </div>
 </section>
 <!--SECTION PERSONAL PAGE END-->
+
+<?php
+require($_SERVER["DOCUMENT_ROOT"] . "/modals.php");
+?>
 
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/.footer.php");

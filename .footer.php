@@ -53,6 +53,7 @@
 <!--FOOTER END-->
 
 
+<script src="https://api-maps.yandex.ru/2.1/?apikey=79ca1998-f254-447d-8081-bcd9647a8fb9&lang=ru_RU" type="text/javascript"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"
         integrity="sha512-a/KwXZUMuN0N2aqT/nuvYp6mg1zKg8OfvovbIlh4ByLw+BJ4sDrJwQM/iSOd567gx+yS0pQixA4EnxBlHgrL6A=="
@@ -69,8 +70,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"
         integrity="sha512-sR3EKGp4SG8zs7B0MEUxDeq8rw9wsuGVYNfbbO/GLCJ59LBE4baEfQBVsP2Y/h2n8M19YV1mujFANO1yA3ko7Q=="
         crossorigin="anonymous"></script>
-<script src="/js/form-wizard.jquery.js?t=<?= \filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/form-wizard.jquery.js'); ?>"></script>
-<script src="/js/layout.js?t=<?= \filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/layout.js'); ?>"></script>
-<script src="/js/script.js?t=<?= \filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/script.js'); ?>"></script>
+<script src="/js/dest/layout.js?t=<?= \filemtime($_SERVER['DOCUMENT_ROOT'] . '/js/dest/layout.js'); ?>"></script>
 </body>
 </html>
