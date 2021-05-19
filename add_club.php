@@ -28,7 +28,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <label>
                                     <input type="checkbox" name="add_club_request_user_agree" required>
                                     <span class="activator"><span></span></span>
-                                    <span>Согласен с условиями обработки персональных данных</span>
+                                    <span>Согласен с условиями использования сервиса</span>
                                 </label>
                             </div>
                         </div>

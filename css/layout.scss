@@ -3163,11 +3163,11 @@ section.contacts_page_content_wrapper {
                 align-items: center;
 
                 .address_img_wrapper {
-                    margin-right: 10px;
+                    margin-right: 12px;
 
                     img {
                         display: block;
-                        width: 18px;
+                        width: 23px;
                         height: 23px;
                     }
                 }
@@ -3323,6 +3323,91 @@ section.contacts_page_content_wrapper {
             }
         }
     }
+
+    @media (max-width: 700px){
+        padding: 64px 0 77px;
+
+        .contacts_page_title {
+            font-size: 26px;
+            margin-bottom: 28px;
+        }
+
+        .contacts_page_info_wrapper {
+            margin-bottom: 32px;
+        }
+
+        .contact_us_wrapper {
+            form {
+                width: 100%;
+
+                .forma {
+                    margin-bottom: 32px;
+
+                    .form-group {
+                        display: block;
+                        margin-bottom: 20px;
+
+                        label {
+                            display: inline-block;
+                            margin-bottom: 14px;
+                        }
+
+                        input {
+                            width: 100%;
+                        }
+
+                        &.required {
+                            label {
+                                position: relative;
+
+                                &:before {
+                                    content: '*';
+                                    position: absolute;
+                                    top: 0;
+                                    right: -10px;
+                                    display: block;
+                                    width: 3px;
+                                    height: 3px;
+                                    color: #dc0000;
+                                }
+                            }
+                        }
+
+                        &.descr {
+                            align-items: flex-start;
+
+                            label {
+                                margin-top: 20px;
+                            }
+
+                            textarea {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                button {
+                    display: block;
+                    border: none;
+                    background: #dc0000;
+                    border-radius: 14px;
+                    padding: 14px 32px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    text-align: center;
+                    color: #ffffff;
+                    margin-left: auto;
+
+                    &:hover {
+                        box-shadow: 0 0 6px #dc0000;
+                    }
+                }
+            }
+        }
+    }
 }
 /*! SECTION CONTACTS PAGE END */
 
@@ -3474,7 +3559,6 @@ section.log_in_page_wrapper {
     }
 }
 /*! SECTION LOG IN PAGE END */
-
 
 /*! SECTION PASSWORD RECOVERY PAGE START */
 section.password_recovery_page_wrapper {
@@ -3680,15 +3764,7 @@ section.add_club_page_start_wrapper {
                             &::placeholder {
                                 color: rgba(0, 0, 0, 0.25);
                             }
-
-                            &#min-price-input {
-                                background-image: url("../img/rub.svg");
-                                background-repeat: no-repeat;
-                                background-size: 12px 18px;
-                                background-position: center right 10px;
-                            }
                         }
-
 
                         &.required {
                             label {
@@ -3944,6 +4020,386 @@ section.add_club_page_start_wrapper {
                         line-height: 1;
                         text-align: center;
                         color: #000000;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 980px){
+        padding: 64px 0 130px;
+        height: auto;
+    }
+
+    @media (max-width: 700px){
+        .add_club_page_start_content {
+            width: 100%;
+            margin: 0 auto;
+
+            .add_club_page_title {
+                margin: 0 0 16px;
+                font-size: 26px;
+            }
+
+            .add_club_start_info {
+                margin-bottom: 46px;
+            }
+
+            .add_club_start_wrapper {
+                #add-club-start-form {
+                    width: 100%;
+
+                    .forma {
+                        .form-group {
+                            display: block;
+
+                            label {
+                                display: inline-block;
+                                margin-bottom: 14px;
+                            }
+
+                            input {
+                                width: 100%;
+                            }
+
+                            &.required {
+                                label {
+                                    position: relative;
+
+                                    &:before {
+                                        content: '*';
+                                        position: absolute;
+                                        top: 0;
+                                        right: -10px;
+                                        display: block;
+                                        width: 3px;
+                                        height: 3px;
+                                        color: #dc0000;
+                                    }
+                                }
+                            }
+                        }
+
+                        .checkbox_wrapper {
+                            .checkbox_item {
+                                label {
+                                    span {
+                                        font-size: 16px;
+                                    }
+
+                                    .activator{
+                                        margin-right: 9px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                #add-club-code-confirm-form {
+                    display: none;
+                    width: 100%;
+
+                    .forma {
+                        margin-bottom: 46px;
+
+                        p {
+                            margin: 0 0 26px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #c4c4c4;
+                        }
+
+                        .code_wrapper {
+                            margin: 0 -15px 26px;
+                            width: 505px;
+                            position: relative;
+
+                            .code_input_wrapper {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-end;
+                                align-items: stretch;
+
+                                input {
+                                    display: block;
+                                    outline: none;
+                                    width: 46px;
+                                    height: 46px;
+                                    border: 2px solid rgba(0, 0, 0, 0.25);
+                                    border-radius: 14px;
+                                    margin: 0 15px;
+                                    text-align: center;
+                                    padding: 5px;
+                                }
+                            }
+
+                            .error {
+                                position: absolute;
+                                right: 15px;
+                                bottom: -22px;
+                                display: block;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 1;
+                                color: #dc0000;
+                            }
+                        }
+
+                        .code_resend {
+                            display: block;
+                            pointer-events: auto;
+                            position: relative;
+                            text-decoration: none;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #000000;
+                            //padding-left: 36px;
+
+                            //&:before{
+                            //    content: '';
+                            //    position: absolute;
+                            //    left: 0;
+                            //    top: 50%;
+                            //    display: block;
+                            //    width: 24px;
+                            //    height: 24px;
+                            //    background-image: url("../img/refresh.svg");
+                            //    background-repeat: no-repeat;
+                            //    background-position: center;
+                            //    background-size: 24px 24px;
+                            //    transform: translateY(-50%);
+                            //    transition: opacity 0.2s;
+                            //}
+
+                            span.hide {
+                                display: none;
+                            }
+
+                            &.disabled {
+                                pointer-events: none;
+
+                                //&:before{
+                                //    opacity: 0;
+                                //}
+
+                                span.hide {
+                                    display: inline;
+                                }
+                            }
+                        }
+                    }
+
+                    .btn_wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        align-items: center;
+
+                        button {
+                            display: block;
+                            border: none;
+                            outline: none;
+                            background: #dc0000;
+                            border-radius: 14px;
+                            padding: 14px 32px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            text-align: center;
+                            color: #ffffff;
+                            cursor: pointer;
+
+                            &:hover {
+                                box-shadow: 0 0 6px #dc0000;
+                            }
+                        }
+
+                        .step_back {
+                            display: block;
+                            outline: none;
+                            text-decoration: none;
+                            border-radius: 14px;
+                            padding: 14px 32px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            text-align: center;
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 400px){
+        .add_club_page_start_content {
+
+            .add_club_start_wrapper {
+                #add-club-start-form {
+                    .btn_wrapper {
+                        display: block;
+
+                        button {
+                            margin-left: auto;
+                        }
+
+                        .log_in {
+                            display: block;
+                            width: 170px;
+                            margin-left: auto;
+                            margin-bottom: 18px;
+                            padding: 14px 0;
+                        }
+                    }
+                }
+
+                #add-club-code-confirm-form {
+                    display: none;
+                    width: 100%;
+
+                    .forma {
+                        margin-bottom: 46px;
+
+                        p {
+                            margin: 0 0 26px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #c4c4c4;
+                        }
+
+                        .code_wrapper {
+                            margin: 0 -15px 26px;
+                            width: 505px;
+                            position: relative;
+
+                            .code_input_wrapper {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-end;
+                                align-items: stretch;
+
+                                input {
+                                    display: block;
+                                    outline: none;
+                                    width: 46px;
+                                    height: 46px;
+                                    border: 2px solid rgba(0, 0, 0, 0.25);
+                                    border-radius: 14px;
+                                    margin: 0 15px;
+                                    text-align: center;
+                                    padding: 5px;
+                                }
+                            }
+
+                            .error {
+                                position: absolute;
+                                right: 15px;
+                                bottom: -22px;
+                                display: block;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 1;
+                                color: #dc0000;
+                            }
+                        }
+
+                        .code_resend {
+                            display: block;
+                            pointer-events: auto;
+                            position: relative;
+                            text-decoration: none;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #000000;
+                            //padding-left: 36px;
+
+                            //&:before{
+                            //    content: '';
+                            //    position: absolute;
+                            //    left: 0;
+                            //    top: 50%;
+                            //    display: block;
+                            //    width: 24px;
+                            //    height: 24px;
+                            //    background-image: url("../img/refresh.svg");
+                            //    background-repeat: no-repeat;
+                            //    background-position: center;
+                            //    background-size: 24px 24px;
+                            //    transform: translateY(-50%);
+                            //    transition: opacity 0.2s;
+                            //}
+
+                            span.hide {
+                                display: none;
+                            }
+
+                            &.disabled {
+                                pointer-events: none;
+
+                                //&:before{
+                                //    opacity: 0;
+                                //}
+
+                                span.hide {
+                                    display: inline;
+                                }
+                            }
+                        }
+                    }
+
+                    .btn_wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        align-items: center;
+
+                        button {
+                            display: block;
+                            border: none;
+                            outline: none;
+                            background: #dc0000;
+                            border-radius: 14px;
+                            padding: 14px 32px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            text-align: center;
+                            color: #ffffff;
+                            cursor: pointer;
+
+                            &:hover {
+                                box-shadow: 0 0 6px #dc0000;
+                            }
+                        }
+
+                        .step_back {
+                            display: block;
+                            outline: none;
+                            text-decoration: none;
+                            border-radius: 14px;
+                            padding: 14px 32px;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            text-align: center;
+                            color: #000000;
+                        }
                     }
                 }
             }
