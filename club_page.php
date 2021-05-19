@@ -213,12 +213,6 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
             <div class="club_page_pc_configuration_list toggle_block">
                 <div class="table_wrapper">
                     <table>
-<!--                        <colgroup>-->
-<!--                            <col width="200">-->
-<!--                            <col width="120">-->
-<!--                            <col width="auto">-->
-<!--                            <col width="auto">-->
-<!--                        </colgroup>-->
                         <thead>
                             <tr>
                                 <th>Оборудование</th>
@@ -238,7 +232,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <td>Видеокарта</td>
                                 <td>Nvidia RTX 2060</td>
                                 <td>Nvidia RTX 2080</td>
-                                <td>Nvidia RTX 2080 Nvidia RTX 2080 Nvidia RTX 2080</td>
+                                <td>Nvidia RTX 2080</td>
                             </tr>
                             <tr>
                                 <td>Оперативная память</td>

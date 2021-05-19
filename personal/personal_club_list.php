@@ -107,16 +107,16 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                                 Ленинградский проспект 71КБ
                                             </div>
                                         </div>
-                                        <div class="checkbox_qty_wrapper">
+                                        <div class="checkbox_wrapper">
                                             <label>
-                                                <input type="checkbox" name="vip_pc" data-toggle-block='[data-block="vip_pc"]'>
+                                                <input type="checkbox" name="hide_from_search">
                                                 <span class="activator"><span></span></span>
-                                                <span>Скрыто из поиска? Нет</span>
+                                                <span>Скрыть из поиска</span>
                                             </label>
                                         </div>
                                         <div class="club_price_wrapper">
                                             <div class="club_price"></div>
-                                            <div class="club_booking">Забронировать</div>
+                                            <div class="club_edit">Редактировать</div>
                                         </div>
                                     </div>
                                 </a>
@@ -173,43 +173,16 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                                 Ленинградский проспект 71КБ
                                             </div>
                                         </div>
-                                        <div class="club_features_wrapper">
-                                            <div class="club_features_item">
-                                                <div class="club_features_img_wrapper">
-                                                    <img src="/img/pc.svg" alt="icon">
-                                                </div>
-                                                <div class="club_features_qty">
-                                                    <span>20</span>
-                                                </div>
-                                            </div>
-                                            <div class="club_features_item">
-                                                <div class="club_features_img_wrapper">
-                                                    <img src="/img/playstation.svg" alt="icon">
-                                                </div>
-                                                <div class="club_features_qty">
-                                                    <span>20</span>
-                                                </div>
-                                            </div>
-                                            <div class="club_features_item">
-                                                <div class="club_features_img_wrapper">
-                                                    <img src="/img/vr.svg" alt="icon">
-                                                </div>
-                                                <div class="club_features_qty">
-                                                    <span>20</span>
-                                                </div>
-                                            </div>
-                                            <div class="club_features_item">
-                                                <div class="club_features_img_wrapper">
-                                                    <img src="/img/drive.svg" alt="icon">
-                                                </div>
-                                                <div class="club_features_qty">
-                                                    <span>20</span>
-                                                </div>
-                                            </div>
+                                        <div class="checkbox_wrapper">
+                                            <label>
+                                                <input type="checkbox" name="hide_from_search">
+                                                <span class="activator"><span></span></span>
+                                                <span>Скрыть из поиска</span>
+                                            </label>
                                         </div>
                                         <div class="club_price_wrapper">
-                                            <div class="club_price">от 80 ₽/час</div>
-                                            <div class="club_booking">Забронировать</div>
+                                            <div class="club_price"></div>
+                                            <div class="club_edit">Редактировать</div>
                                         </div>
                                     </div>
                                 </a>
@@ -217,10 +190,137 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                         </div>
                     </div>
                     <div class="tab" id="tab2" style="display: none">
-
+                        <div class="club_list_content_moderation">
+                            <div class="club_list_item">
+                                <a href="#" class="club_card">
+                                    <div class="search_club_img_wrapper">
+                                        <div class="search_club_img">
+                                            <img src="/img/club6.png" alt="club">
+                                        </div>
+                                        <div class="club_services">
+                                            <img src="/img/vip.svg" alt="icon">
+                                            <img src="/img/fastfood.svg" alt="icon">
+                                            <img src="/img/drink.svg" alt="icon">
+                                        </div>
+                                        <div class="club_distance">
+                                            <img src="/img/walk.svg" alt="icon">
+                                            <span>5 км. от вас</span>
+                                        </div>
+                                        <div class="club_promotion">
+                                            <span>Акция</span>
+                                        </div>
+                                    </div>
+                                    <div class="search_club_info">
+                                        <div class="club_name">
+                                            <span>F5 - Центр Киберспорта</span>
+                                        </div>
+                                        <div class="rating_wrapper">
+                                            <div class="rating_stars">
+                                                <img src="/img/star.svg" alt="star">
+                                                <img src="/img/star.svg" alt="star">
+                                                <img src="/img/star.svg" alt="star">
+                                                <img src="/img/star.svg" alt="star">
+                                                <img src="/img/star0.svg" alt="star">
+                                            </div>
+                                            <div class="reviews_qty">
+                                                <span>47 отзывов</span>
+                                            </div>
+                                        </div>
+                                        <div class="club_subway_wrapper">
+                                            <div class="subway_img_wrapper">
+                                                <img src="/img/metro.svg" alt="subway">
+                                            </div>
+                                            <div class="subway_station">
+                                                <span>Сокол</span>
+                                                <span class="subway_time_to">(1 мин.)</span>
+                                            </div>
+                                        </div>
+                                        <div class="club_address_wrapper">
+                                            <div class="address_img_wrapper">
+                                                <img src="/img/point-red.svg" alt="location">
+                                            </div>
+                                            <div class="club_address">
+                                                Ленинградский проспект 71КБ
+                                            </div>
+                                        </div>
+                                        <div class="club_status_wrapper">
+                                            <img src="/img/time-slot.svg" alt="icon">
+                                            <span>На модерации</span>
+                                        </div>
+                                        <div class="club_price_wrapper">
+                                            <div class="club_edit">Редактировать</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab" id="tab3" style="display: none">
-
+                        <div class="club_list_content">
+                            <div class="club_list_item">
+                                <a href="#" class="club_card">
+                                    <div class="search_club_img_wrapper">
+                                        <div class="search_club_img">
+                                            <img src="/img/club6.png" alt="club">
+                                        </div>
+                                        <div class="club_services">
+                                            <img src="/img/vip.svg" alt="icon">
+                                            <img src="/img/fastfood.svg" alt="icon">
+                                            <img src="/img/drink.svg" alt="icon">
+                                        </div>
+                                        <div class="club_distance">
+                                            <img src="/img/walk.svg" alt="icon">
+                                            <span>5 км. от вас</span>
+                                        </div>
+                                        <div class="club_promotion">
+                                            <span>Акция</span>
+                                        </div>
+                                    </div>
+                                    <div class="search_club_info">
+                                        <div class="club_name">
+                                            <span>F5 - Центр Киберспорта</span>
+                                        </div>
+                                        <div class="rating_wrapper">
+                                            <div class="rating_stars">
+                                                <img src="/img/star.svg" alt="star">
+                                                <img src="/img/star.svg" alt="star">
+                                                <img src="/img/star.svg" alt="star">
+                                                <img src="/img/star.svg" alt="star">
+                                                <img src="/img/star0.svg" alt="star">
+                                            </div>
+                                            <div class="reviews_qty">
+                                                <span>47 отзывов</span>
+                                            </div>
+                                        </div>
+                                        <div class="club_subway_wrapper">
+                                            <div class="subway_img_wrapper">
+                                                <img src="/img/metro.svg" alt="subway">
+                                            </div>
+                                            <div class="subway_station">
+                                                <span>Сокол</span>
+                                                <span class="subway_time_to">(1 мин.)</span>
+                                            </div>
+                                        </div>
+                                        <div class="club_address_wrapper">
+                                            <div class="address_img_wrapper">
+                                                <img src="/img/point-red.svg" alt="location">
+                                            </div>
+                                            <div class="club_address">
+                                                Ленинградский проспект 71КБ
+                                            </div>
+                                        </div>
+                                        <div class="club_status_wrapper">
+                                            <img src="/img/draft.svg" alt="icon">
+                                            <span>Черновик</span>
+                                        </div>
+                                        <div class="club_price_wrapper">
+                                            <div class="club_price"></div>
+                                            <div class="club_edit">Редактировать</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -32,20 +32,21 @@
                             Сортировать:
                         </div>
 
-                        <a href="#" class="active">По цене</a>
+                        <div class="sort_by_options">
+                            <a href="#" class="active">По цене</a>
 
-                        <a href="#">По рейтингу</a>
+                            <a href="#">По рейтингу</a>
 
-                        <a href="#">По близости</a>
-
+                            <a href="#">По близости</a>
+                        </div>
                     </div>
                 </div>
                 <div class="search_club_show">
                     <div class="show_by_list">
-                        <a href="#">Список</a>
+                        <a href="#"><span>Список</span></a>
                     </div>
                     <div class="show_by_map">
-                        <a href="#">На карте</a>
+                        <a href="#"><span>На карте</span></a>
                     </div>
                 </div>
             </div>
@@ -634,7 +635,9 @@
                             <div class="article_descr">
                                 Мощная аппаратура, тянет все игры, часто
                                 бываю здесь и один, и Мощная аппаратура,
-                                тянет все игры, часто бываю...
+                                тянет все игры, часто бываю ddfdfdff
+                                fdfdfdf dfd fdfdf dfdfdfd dfdfdfdf dfdf
+                                dfdffd dfdfdfd dffdfd  dfdfdf dfdfd dfdf
                             </div>
                             <p>Читать дальше</p>
                         </div>

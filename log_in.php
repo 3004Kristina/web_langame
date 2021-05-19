@@ -19,7 +19,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                             <label for="log-in-password-input">Пароль</label>
                             <div class="input_wrapper">
                                 <input id="log-in-password-input" name="log_in_password" type="password" placeholder="" required>
-                                <a href="#" class="forgot_password">Забыл пароль</a>
+                                <a href="/password_recovery.php" class="forgot_password">Забыл пароль</a>
                             </div>
                         </div>
                     </div>
