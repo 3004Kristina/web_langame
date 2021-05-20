@@ -31,6 +31,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
             </div>
             <div class="personal_main_content_wrapper">
                 <div class="user_profile_form_wrapper">
+                    <div class="user_profile_title">Профиль</div>
                     <form action="" method="post" id="user-profile-form">
                         <div class="forma">
                             <div class="form-group required">
@@ -40,7 +41,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                             <div class="user_phone_wrapper">
                                 <div class="form-group required">
                                     <label for="user-phone-input">Мобильный телефон</label>
-                                    <input id="user-phone-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" value="+7 (892) 323-59-51" required>
+                                    <input id="user-phone-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
                                     <div class="confirm_mobile_wrapper">
                                         <p class="confirm_mobile_descr"></p>
                                         <div class="code_wrapper">
@@ -69,8 +70,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                             <label for="user-password-input">Сменить пароль</label>
 
                             <div class="user_password">
-                                <input id="user-password-input" name="password" type="password" placeholder="Новый пароль" required>
-                                <input id="user-password-again-input" name="password_again" type="password" placeholder="Повторите" required>
+                                <input id="user-password-input" name="password" type="password" placeholder="Новый пароль">
+                                <input id="user-password-again-input" name="password_again" type="password" placeholder="Повторите">
                             </div>
                         </div>
                         </div>

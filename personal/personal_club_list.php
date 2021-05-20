@@ -49,7 +49,10 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                             </a>
                         </li>
                     </ul>
-                    <button type="button" class="add_club" data-remodal-target="add_club_modal">Добавить</button>
+                    <div class="btn_wrapper">
+                        <div class="club_list_title">Список клубов</div>
+                        <button type="button" class="add_club" data-remodal-target="add_club_modal">Добавить</button>
+                    </div>
                 </div>
 
                 <div class="club_list_content_tabs">
@@ -190,7 +193,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                         </div>
                     </div>
                     <div class="tab" id="tab2" style="display: none">
-                        <div class="club_list_content_moderation">
+                        <div class="club_list_content moderation">
                             <div class="club_list_item">
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">

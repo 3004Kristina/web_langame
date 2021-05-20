@@ -150,6 +150,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                    <img src="/img/icons/fastfood.svg" alt="icons">
                    <span>Можно со своей едой</span>
                </div>
+               <button class="club_services_mobile_toggle"></button>
            </div>
        </div>
    </div>
@@ -219,6 +220,9 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <th>Общий зал</th>
                                 <th>VIP</th>
                                 <th>VIP</th>
+                                <th>VIP</th>
+                                <th>VIP</th>
+                                <th>VIP</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -227,10 +231,16 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <td>i5 9600</td>
                                 <td>i7 9700</td>
                                 <td>i7 9700</td>
+                                <td>i7 9700</td>
+                                <td>i7 9700</td>
+                                <td>i7 9700</td>
                             </tr>
                             <tr>
                                 <td>Видеокарта</td>
                                 <td>Nvidia RTX 2060</td>
+                                <td>Nvidia RTX 2080</td>
+                                <td>Nvidia RTX 2080</td>
+                                <td>Nvidia RTX 2080</td>
                                 <td>Nvidia RTX 2080</td>
                                 <td>Nvidia RTX 2080</td>
                             </tr>
@@ -239,15 +249,24 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <td>16 GB DRR4</td>
                                 <td>32 GB DRR4</td>
                                 <td>32 GB DRR4</td>
+                                <td>32 GB DRR4</td>
+                                <td>32 GB DRR4</td>
+                                <td>32 GB DRR4</td>
                             </tr>
                             <tr>
                                 <td>Жёсткий диск</td>
                                 <td>SSD 512гб</td>
                                 <td>SSD 1тб</td>
                                 <td>SSD 1тб</td>
+                                <td>SSD 1тб</td>
+                                <td>SSD 1тб</td>
+                                <td>SSD 1тб</td>
                             </tr>
                             <tr>
                                 <td>Клавиатура</td>
+                                <td>Logitech</td>
+                                <td>Logitech</td>
+                                <td>Logitech</td>
                                 <td>Logitech</td>
                                 <td>Logitech</td>
                                 <td>Logitech</td>
@@ -257,9 +276,15 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <td>Logitech</td>
                                 <td>Logitech</td>
                                 <td>Logitech</td>
+                                <td>Logitech</td>
+                                <td>Logitech</td>
+                                <td>Logitech</td>
                             </tr>
                             <tr>
                                 <td>Гарнитура</td>
+                                <td>Logitech</td>
+                                <td>Logitech</td>
+                                <td>Logitech</td>
                                 <td>Logitech</td>
                                 <td>Logitech</td>
                                 <td>Logitech</td>
@@ -269,15 +294,24 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <td>DxRacer</td>
                                 <td>DxRacer</td>
                                 <td>DxRacer</td>
+                                <td>DxRacer</td>
+                                <td>DxRacer</td>
+                                <td>DxRacer</td>
                             </tr>
                             <tr>
                                 <td>Монитор</td>
                                 <td>27’ 240 Гц</td>
                                 <td>27’ 360 Гц</td>
                                 <td>27’ 360 Гц</td>
+                                <td>27’ 360 Гц</td>
+                                <td>27’ 360 Гц</td>
+                                <td>27’ 360 Гц</td>
                             </tr>
                             <tr>
                                 <td>Интернет</td>
+                                <td>1 Гбит/с</td>
+                                <td>1 Гбит/с</td>
+                                <td>1 Гбит/с</td>
                                 <td>1 Гбит/с</td>
                                 <td>1 Гбит/с</td>
                                 <td>1 Гбит/с</td>
@@ -730,6 +764,15 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="bottom_nav_mobile">
+    <div class="container">
+        <div class="club_price_wrapper">
+            <div class="club_price">от 80 ₽/час</div>
+            <div class="club_booking">Забронировать</div>
         </div>
     </div>
 </section>

@@ -44,6 +44,19 @@ html, body {
     }
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 @media(max-width: 980px) {
     body.mobile-menu-opened {
         overflow: hidden;
@@ -407,10 +420,15 @@ html, body {
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: center;
+                background-color: transparent !important;
+                box-shadow: none;
+                outline: none;
+                background: transparent !important;
 
                 input {
                     opacity: 0;
                     position: absolute;
+                    left: -9999px;
                     z-index: -1;
                 }
 
@@ -1882,6 +1900,16 @@ section.personal_page_wrapper {
             .user_profile_form_wrapper {
                 padding: 70px 0 0;
 
+                .user_profile_title{
+                    display: none;
+                    margin-bottom: 45px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 1;
+                    color: #000000;
+                }
+
                 #user-profile-form {
                     width: 670px;
 
@@ -1925,7 +1953,7 @@ section.personal_page_wrapper {
                                 display: none;
                                 text-align: right;
 
-                                p {
+                                .confirm_mobile_descr {
                                     margin: 0 0 26px;
                                     font-style: normal;
                                     font-weight: 500;
@@ -1933,6 +1961,10 @@ section.personal_page_wrapper {
                                     line-height: 1;
                                     color: #c4c4c4;
                                     text-align: right;
+
+                                    &.error{
+                                        color:  #DC0000;
+                                    }
                                 }
 
                                 .code_wrapper {
@@ -1957,19 +1989,6 @@ section.personal_page_wrapper {
                                             text-align: center;
                                             padding: 5px;
                                         }
-                                    }
-
-                                    .error {
-                                        position: absolute;
-                                        right: 0px;
-                                        top: -44px;
-                                        display: block;
-                                        width: 372px;
-                                        font-style: normal;
-                                        font-weight: 500;
-                                        font-size: 18px;
-                                        line-height: 1;
-                                        color: #dc0000;
                                     }
                                 }
 
@@ -2013,7 +2032,6 @@ section.personal_page_wrapper {
                                         &:before {
                                             opacity: 0;
                                         }
-
 
                                         span.hide {
                                             display: inline;
@@ -2229,44 +2247,55 @@ section.personal_page_wrapper {
                     }
                 }
 
-                .add_club {
-                    display: block;
-                    position: relative;
-                    padding: 14px 32px;
-                    margin-left: 60px;
-                    border: none;
-                    outline: none;
-                    width: 179px;
-                    background: #dc0000;
-                    border-radius: 14px;
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 18px;
-                    line-height: 1;
-                    text-align: right;
-                    color: #ffffff;
-                    transition: box-shadow 0.2s;
-
-                    &:before {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 35px;
-                        display: block;
-                        width: 24px;
-                        height: 24px;
-                        background-image: url("../img/add.svg");
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        background-size: 24px 24px;
-                        transform: translateY(-50%);
-
+                .btn_wrapper{
+                    .club_list_title{
+                        display: none;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 26px;
+                        line-height: 1;
+                        color: #000000;
                     }
+                    .add_club {
+                        display: block;
+                        position: relative;
+                        padding: 14px 32px;
+                        margin-left: 60px;
+                        border: none;
+                        outline: none;
+                        width: 179px;
+                        background: #dc0000;
+                        border-radius: 14px;
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        text-align: right;
+                        color: #ffffff;
+                        transition: box-shadow 0.2s;
 
-                    &:hover {
-                        box-shadow: 0 0 6px #dc0000;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 35px;
+                            display: block;
+                            width: 24px;
+                            height: 24px;
+                            background-image: url("../img/add.svg");
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            background-size: 24px 24px;
+                            transform: translateY(-50%);
+
+                        }
+
+                        &:hover {
+                            box-shadow: 0 0 6px #dc0000;
+                        }
                     }
                 }
+
             }
 
             .club_list_content_tabs {
@@ -2286,63 +2315,294 @@ section.personal_page_wrapper {
                             margin: 0 39px 32px;
                         }
 
+                        &.moderation{
+                            .club_list_item {
+                                width: calc(100% / 2 - 78px);
+                                margin: 0 39px 32px;
+
+                                .club_card {
+                                    pointer-events: none;
+
+                                    .club_price_wrapper {
+                                        .club_edit {
+                                            position: relative;
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: flex-end;
+                                            align-items: center;
+                                            padding: 0 12px;
+                                            margin-left: auto;
+                                            width: 173px;
+                                            height: 34px;
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            font-size: 18px;
+                                            line-height: 23px;
+                                            text-align: center;
+                                            color: #dcdcdc;
+                                            border-radius: 12px;
+                                            border: 2px solid #dcdcdc;
+
+                                            &:before {
+                                                content: '';
+                                                display: block;
+                                                width: 18px;
+                                                height: 18px;
+                                                position: absolute;
+                                                top: 50%;
+                                                left: 10px;
+                                                background-image: url("../img/edit-gray.svg");
+                                                background-repeat: no-repeat;
+                                                background-position: center;
+                                                background-size: 13px 13px;
+                                                transform: translateY(-50%);
+                                            }
+                                        }
+                                    }
+
+                                    &:hover {
+                                        box-shadow: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 980px){
+        .personal_page {
+            display: block;
+            padding: 64px 0 79px;
+
+            .personal_menu_wrapper {
+                display: none;
+            }
+
+            .personal_main_content_wrapper {
+                .user_profile_form_wrapper {
+                    padding: 0;
+
+                    .user_profile_title{
+                        display: block;
                     }
 
-                    .club_list_content_moderation {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-start;
-                        align-items: stretch;
-                        margin: 0 -39px;
+                    #user-profile-form {
+                        width: 100%;
 
-                        .club_list_item {
-                            width: calc(100% / 2 - 78px);
-                            margin: 0 39px 32px;
+                        .forma {
+                            margin-bottom: 32px;
 
-                            .club_card {
-                                pointer-events: none;
+                            .form-group {
+                                display: block;
+                                margin-bottom: 20px;
 
-                                .club_price_wrapper {
-                                    .club_edit {
-                                        position: relative;
-                                        display: flex;
-                                        flex-direction: row;
-                                        justify-content: flex-end;
-                                        align-items: center;
-                                        padding: 0 12px;
-                                        margin-left: auto;
-                                        width: 173px;
-                                        height: 34px;
-                                        font-style: normal;
-                                        font-weight: 500;
-                                        font-size: 18px;
-                                        line-height: 23px;
+                                label {
+                                    display: inline-block;
+                                    margin-bottom: 14px;
+                                }
+
+                                input {
+                                    width: 100%;
+                                }
+
+                                .confirm_mobile_wrapper {
+                                    display: none;
+                                    text-align: center;
+
+                                    .confirm_mobile_descr {
+                                        margin: 22px 0 22px;
                                         text-align: center;
-                                        color: #dcdcdc;
-                                        border-radius: 12px;
-                                        border: 2px solid #dcdcdc;
+                                    }
 
-                                        &:before {
-                                            content: '';
-                                            display: block;
-                                            width: 18px;
-                                            height: 18px;
-                                            position: absolute;
-                                            top: 50%;
-                                            left: 10px;
-                                            background-image: url("../img/edit-gray.svg");
-                                            background-repeat: no-repeat;
-                                            background-position: center;
-                                            background-size: 13px 13px;
-                                            transform: translateY(-50%);
+                                    .code_wrapper {
+                                        width: 100%;
+                                        position: relative;
+
+                                        .code_input_wrapper{
+                                            justify-content: center;
+                                        }
+                                    }
+
+                                    .code_resend {
+                                        text-align: center;
+                                        margin-bottom: 20px;
+
+                                        &.disabled{
+                                            padding-left: 0;
                                         }
                                     }
                                 }
 
-                                &:hover {
-                                    box-shadow: none;
+                                .select_user_position_wrapper {
+                                    width: 100%;
+                                }
+
+                                .user_password {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-start;
+                                    margin: 0 -4px;
+
+                                    input {
+                                        width: calc(100%/2 - 8px);
+                                        margin: 0 4px 0;
+                                    }
                                 }
                             }
+                        }
+                    }
+                }
+
+                .club_list_navigation_wrapper {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    align-items: stretch;
+                    justify-content: flex-start;
+                    margin-top: 0;
+
+                    .club_list_navigation_tabs {
+                        max-width: 100%;
+                        width: max-content;
+                        overflow-x: scroll;
+                        overflow-y: hidden;
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        margin: 0 -9px;
+
+                        li {
+                            flex-shrink: 0;
+                            a {
+                                display: block;
+                                position: relative;
+                                text-decoration: none;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 1;
+                                color: #000000;
+                                padding: 5px 0;
+                                margin: 0 9px;
+
+                                &.active {
+
+                                    &:before {
+                                        content: '';
+                                        position: absolute;
+                                        top: 90%;
+                                        left: 0;
+                                        display: block;
+                                        width: 100%;
+                                        height: 3px;
+                                        background-color: #dc0000;
+                                        border-radius: 2px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .btn_wrapper{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 43px;
+
+                        .club_list_title{
+                            display: block;
+                        }
+                        .add_club {
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                .club_list_content_tabs {
+                    width: 100%;
+                    padding: 38px 0 0;
+
+                    .tab {
+                        .club_list_content {
+                            display: block;
+                            margin: 0;
+
+                            .club_list_item {
+                                width: 294px;
+                                margin: 0 auto 45px;
+                            }
+
+                            &.moderation{
+                                .club_list_item {
+                                    width: 294px;
+                                    margin: 0 auto 45px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 400px){
+        .personal_page {
+            .personal_main_content_wrapper {
+                .user_profile_form_wrapper {
+                    #user-profile-form {
+                        .forma {
+                            .form-group {
+                                .confirm_mobile_wrapper {
+                                    p {
+                                        max-width: 225px;
+                                        margin: 22px auto;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .club_list_navigation_wrapper {
+
+                    .btn_wrapper{
+                        .add_club {
+                            margin-left: 0;
+                            padding: 14px 10px;
+                            width: 130px;
+                            text-align: right;
+
+                            &:before{
+                                left: 12px;
+                                width: 20px;
+                                height: 20px;
+                                background-size: 20px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 340px){
+        .personal_page {
+            .personal_main_content_wrapper {
+
+                .club_list_navigation_wrapper {
+
+                    .btn_wrapper{
+                        display: block;
+
+                        .club_list_title{
+                            margin-bottom: 32px;
                         }
                     }
                 }
@@ -2538,6 +2798,193 @@ section.club_page_main_info_wrapper {
         background-color: #ffffff;
         box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
     }
+
+    @media (max-width: 980px){
+        padding: 278px 0 0;
+        position: static;
+        z-index: 100;
+        top: 0;
+        background-color: #f5f5f5;
+        transition: background-color 0.2s, box-shadow 0.2s;
+
+        .club_page_main_info_top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+
+            .main_info_title {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 34px;
+                line-height: 1.2;
+                color: #000000;
+            }
+
+            .main_info_btn_wrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                justify-content: flex-end;
+
+                button {
+                    display: block;
+                    padding: 14px 32px;
+                    border: none;
+                    outline: none;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    text-align: center;
+                    color: #ffffff;
+                    border-radius: 14px;
+                    cursor: pointer;
+                    transition: box-shadow 0.2s;
+
+                    &.club_calling {
+                        margin-right: 18px;
+                        background: #000000;
+
+                        &:hover {
+                            box-shadow: 0 0 8px #000000;
+                        }
+                    }
+
+                    &.club_booking {
+                        background: #dc0000;
+
+                        &:hover {
+                            box-shadow: 0 0 8px #dc0000;
+                        }
+                    }
+                }
+            }
+        }
+
+        .club_page_main_info_bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            .rating_wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin: 0 32px 0 0;
+
+                .rating_stars {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: stretch;
+                    margin: 0 12px 0 -5px;
+
+                    img {
+                        display: block;
+                        width: 23px;
+                        height: 23px;
+                        margin: 0 5px;
+                    }
+                }
+
+                .reviews_qty {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #000000;
+                }
+            }
+
+            .club_subway_wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-right: 15px;
+
+                .subway_img_wrapper {
+                    margin-right: 8px;
+
+                    img {
+                        display: block;
+                        width: 23px;
+                        height: 23px;
+                    }
+                }
+
+                .subway_station {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #000000;
+                }
+
+            }
+
+            .club_address_wrapper {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                margin-right: 36px;
+
+                .address_img_wrapper {
+                    margin-right: 10px;
+
+                    img {
+                        display: block;
+                        width: 18px;
+                        height: 23px;
+                    }
+                }
+
+                .club_address {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 1.3;
+                    color: #000000;
+                }
+            }
+
+            .club_distance {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+
+                img {
+                    display: block;
+                    width: 23px;
+                    height: 23px;
+                    margin-right: 8px;
+                }
+
+                span {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #000000;
+                }
+            }
+        }
+
+        &.not-sticky {
+            box-shadow: unset;
+        }
+
+        &.sticky {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+        }
+    }
 }
 
 section.club_page_content_wrapper {
@@ -2667,6 +3114,10 @@ section.club_page_content_wrapper {
                     line-height: 1;
                     color: #000000;
                 }
+            }
+
+            .club_services_mobile_toggle{
+                display: none;
             }
         }
     }
@@ -2807,7 +3258,8 @@ section.club_page_content_wrapper {
             width: 920px;
 
             .table_wrapper {
-                width: 872px;
+                max-width: 100%;
+                width: auto;
                 overflow: auto;
 
                 table {
@@ -3131,6 +3583,583 @@ section.club_page_content_wrapper {
             }
         }
     }
+
+    @media (max-width: 980px){
+        background: #f5f5f5;
+
+        .club_page_title {
+            font-size: 26px;
+            margin-bottom: 16px;
+        }
+
+        .club_page_photo_wrapper {
+            position: absolute;
+            top: 98px;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 272px;
+            padding: 0;
+
+            .container{
+                width: 100%;
+                height: 100%;
+                padding: 0;
+            }
+
+            .club_page_photo_list {
+                display: block;
+                border-radius: 0;
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+                .club_page_photo_item {
+                    width: 100%;
+                    height: 100%;
+                    display: none;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    &:first-child {
+                        display: block;
+                    }
+                }
+
+                button {
+                    position: absolute;
+                    right: 32px;
+                    bottom: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 177px;
+                    height: 35px;
+                    background: rgba(85, 85, 85, 0.5);
+                    backdrop-filter: blur(10.4615px);
+                    border-radius: 8px;
+                    border: none;
+                    outline: none;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    text-align: center;
+                    color: #ffffff;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .club_page_services_wrapper {
+            margin-bottom: 32px;
+
+            .club_page_services_list {
+                display: grid;
+                grid-auto-flow: column;
+                grid-template-rows: repeat(6, auto);
+                column-gap: 35px;
+                row-gap: 29px;
+                padding: 24px;
+                background: #ffffff;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                border-radius: 14px;
+
+                .club_page_services_item {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    img {
+                        display: block;
+                        width: 35px;
+                        height: 35px;
+                        margin-right: 12px;
+                    }
+
+                    span {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                    }
+                }
+            }
+        }
+
+        .club_page_prices_wrapper {
+            margin-bottom: 18px;
+
+            .club_page_prices {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 24px;
+                background: #ffffff;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                border-radius: 14px;
+
+                .club_page_min_price {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    color: #000000;
+                    margin-right: 60px;
+                }
+
+                .show_price_list {
+                    position: relative;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 1;
+                    text-decoration: underline;
+                    color: #000000;
+                    cursor: pointer;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -28px;
+                        display: block;
+                        width: 25px;
+                        height: 25px;
+                        background-image: url("../img/price_list.svg");
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: 20px 23px;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+
+        .club_page_marketing_event_wrapper {
+            margin-bottom: 32px;
+
+            .marketing_event_title {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 1;
+                color: #000000;
+                margin-bottom: 16px;
+            }
+
+            .club_page_marketing_event_list {
+                padding: 24px;
+                background: #ffffff;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                border-radius: 14px;
+
+                ul {
+                    li {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                    }
+
+                    li + li {
+                        margin-top: 28px;
+                    }
+                }
+            }
+        }
+
+        .club_page_payment_wrapper {
+            margin-bottom: 32px;
+
+            .club_page_payment_title {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 22px;
+                line-height: 1;
+                color: #000000;
+                margin-bottom: 32px;
+            }
+
+            .club_page_payment_list {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: stretch;
+                margin: 0 -4px;
+
+                .club_page_payment_item {
+                    background: #000000;
+                    border: 2px solid #000000;
+                    border-radius: 19px;
+                    padding: 14px 16px;
+                    margin: 0 4px;
+
+                    span {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+
+        .club_page_pc_configuration_wrapper {
+            margin-bottom: 32px;
+
+            .club_page_pc_configuration_list {
+                display: none;
+                padding: 24px;
+                background: #ffffff;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                border-radius: 14px;
+                width: 920px;
+
+                .table_wrapper {
+                    max-width: 100%;
+                    width: auto;
+                    overflow: auto;
+
+                    table {
+                        width: 100%;
+                        border: none;
+                        border-collapse: collapse;
+                        table-layout: fixed;
+
+                        thead {
+                            tr {
+                                th {
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: #000000;
+                                    padding: 0 0 26px 0;
+                                    text-align: center;
+                                    min-width: 170px;
+
+                                    &:first-child {
+                                        text-align: left;
+                                    }
+
+                                    &:nth-child(1) {
+                                        min-width: 200px;
+                                    }
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+                                td {
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 18px;
+                                    line-height: 1;
+                                    color: #000000;
+                                    padding: 14px 32px;
+                                    text-align: center;
+
+                                    &:first-child {
+                                        text-align: left;
+                                        padding: 14px 32px 14px 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .club_page_map_wrapper {
+            margin-bottom: 32px;
+
+            .club_page_map {
+                width: 100%;
+                height: 408px;
+                border-radius: 14px;
+                overflow: hidden;
+            }
+        }
+
+        .club_page_reviews_wrapper {
+            margin-bottom: 32px;
+            overflow: hidden;
+
+            .club_page_reviews {
+
+                .club_page_reviews_list {
+
+                    .slick-list {
+                        padding: 10px;
+                        overflow: visible;
+                    }
+
+                    .slick-arrow {
+                        display: none !important;
+                    }
+
+                    .club_page_reviews_item {
+                        width: 378px;
+                        height: 320px;
+                        flex-shrink: 0;
+                        background: #ffffff;
+                        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+                        border-radius: 14px;
+                        padding: 12px;
+                        margin: 0 16px;
+
+
+                        .user_info {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            align-items: center;
+                            margin-bottom: 5px;
+
+                            .user_avatar {
+                                margin-right: 8px;
+
+                                img {
+                                    width: 32px;
+                                    height: 32px;
+                                    border-radius: 50%;
+                                    object-fit: contain;
+                                }
+                            }
+
+                            .user_name {
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 1.3;
+                                color: #000000;
+                            }
+                        }
+
+                        .rating_wrapper {
+                            padding-left: 40px;
+                            margin-bottom: 12px;
+
+                            .rating_stars {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-start;
+                                margin: 0 -4px;
+
+                                img {
+                                    display: block;
+                                    width: 16px;
+                                    height: 16px;
+                                    margin: 0 4px;
+                                }
+                            }
+                        }
+
+                        .review_content_wrapper {
+                            height: 210px;
+                            overflow: auto;
+
+                            .review_content {
+                                height: auto;
+                                padding-left: 40px;
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 18px;
+                                line-height: 1.2;
+                                color: #000000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .club_page_description_wrapper {
+            margin-bottom: 32px;
+
+            .club_page_description {
+                padding: 24px;
+                background: #ffffff;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                border-radius: 14px;
+
+                p {
+                    margin: 0;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1.5;
+                    color: #000000;
+                }
+            }
+        }
+
+        .club_page_contacts_wrapper {
+            padding: 0 0 120px;
+
+            .club_page_contacts_list {
+                display: none;
+                padding: 24px;
+                background: #ffffff;
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+                border-radius: 14px;
+
+                .club_page_contacts_list_title {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 22px;
+                    line-height: 1;
+                    color: #000000;
+                    margin-bottom: 30px;
+                }
+
+                .club_page_schedule {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: stretch;
+                    margin: 0 -10px 30px;
+
+                    .club_page_schedule_item {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 10px;
+
+                        span {
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #000000;
+                        }
+
+                        span + span {
+                            margin-top: 40px;
+                        }
+                    }
+                }
+
+                .club_page_contacts_item {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    margin-bottom: 25px;
+                    padding-left: 16px;
+
+                    .club_city {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 18px;
+                        line-height: 1;
+                        color: #000000;
+                    }
+
+                    .club_subway_wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        margin-right: 11px;
+
+                        .subway_img_wrapper {
+                            margin-right: 7px;
+
+                            img {
+                                display: block;
+                                width: 23px;
+                                height: 23px;
+                            }
+                        }
+
+                        .subway_station {
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #000000;
+                        }
+
+                    }
+
+                    .club_address_wrapper {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        .address_img_wrapper {
+                            margin-right: 10px;
+
+                            img {
+                                display: block;
+                                width: 18px;
+                                height: 23px;
+                            }
+                        }
+
+                        .club_address {
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 18px;
+                            line-height: 1.3;
+                            color: #000000;
+                        }
+                    }
+
+                    .club_contact {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+
+                        img {
+                            display: block;
+                            width: 23px;
+                            height: 23px;
+                            margin-right: 12px;
+                        }
+
+                        a {
+                            display: block;
+                            text-decoration: none;
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: #000000;
+                            transition: color 0.2s;
+
+                            &:hover {
+                                color: #dc0000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+section.bottom_nav_mobile{
+    display: none;
 }
 /*! SECTION CLUB PAGE END */
 
@@ -3557,6 +4586,79 @@ section.log_in_page_wrapper {
             }
         }
     }
+
+    @media (max-width: 980px){
+        padding: 64px 0 130px;
+        height: auto;
+    }
+
+    @media (max-width: 700px){
+        .log_in_page_content {
+            width: 100%;
+
+            .log_in_page_title {
+                margin: 0 0 46px;
+                font-size: 26px;
+            }
+
+            .log_in_wrapper {
+                form {
+                    width: 100%;
+
+                    .forma {
+                        margin-bottom: 46px;
+
+                        .form-group {
+                            display: block;
+                            margin-bottom: 20px;
+
+                            input{
+                                width: 100%;
+                            }
+
+                            label {
+                                display: inline-block;
+                                margin-bottom: 14px;
+                            }
+
+                            .input_wrapper {
+                                .forgot_password {
+                                    display: block;
+                                    width: 126px;
+                                    margin-left: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 340px){
+        .log_in_page_content {
+            .log_in_wrapper {
+                form {
+                    .btn_wrapper {
+                        display: block;
+
+                        button {
+                            margin-left: auto;
+                        }
+
+                        .registration {
+                            display: block;
+                            width: 170px;
+                            text-align: right;
+                            margin-left: auto;
+                            margin-bottom: 18px;
+                            padding: 14px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 /*! SECTION LOG IN PAGE END */
 
@@ -3618,13 +4720,6 @@ section.password_recovery_page_wrapper {
                             &::placeholder {
                                 color: rgba(0, 0, 0, 0.25);
                             }
-
-                            &#min-price-input {
-                                background-image: url("../img/rub.svg");
-                                background-repeat: no-repeat;
-                                background-size: 12px 18px;
-                                background-position: center right 10px;
-                            }
                         }
 
 
@@ -3685,6 +4780,72 @@ section.password_recovery_page_wrapper {
                         line-height: 1;
                         text-align: center;
                         color: #000000;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 980px){
+        padding: 64px 0 130px;
+        height: auto;
+    }
+
+    @media (max-width: 700px){
+        .password_recovery_content {
+            width: 100%;
+
+            .password_recovery_title {
+                margin: 0 0 46px;
+                font-size: 26px;
+            }
+
+            .password_recovery_wrapper {
+                form {
+                    width: 100%;
+
+                    .forma {
+                        margin-bottom: 46px;
+
+                        .form-group {
+                            display: block;
+                            margin-bottom: 20px;
+
+                            label {
+                                display: inline-block;
+                                margin-bottom: 14px;
+                            }
+
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 400px){
+        .password_recovery_content {
+
+            .password_recovery_wrapper {
+                form {
+                    .btn_wrapper {
+                        display: block;
+
+                        button {
+                            margin-left: auto;
+                        }
+
+                        .step_back {
+                            display: block;
+                            text-align: right;
+                            width: 170px;
+                            margin-left: auto;
+                            margin-bottom: 18px;
+                            padding: 14px 0;
+                        }
                     }
                 }
             }
@@ -3946,23 +5107,6 @@ section.add_club_page_start_wrapper {
                         font-size: 18px;
                         line-height: 1;
                         color: #000000;
-                        //padding-left: 36px;
-
-                        //&:before{
-                        //    content: '';
-                        //    position: absolute;
-                        //    left: 0;
-                        //    top: 50%;
-                        //    display: block;
-                        //    width: 24px;
-                        //    height: 24px;
-                        //    background-image: url("../img/refresh.svg");
-                        //    background-repeat: no-repeat;
-                        //    background-position: center;
-                        //    background-size: 24px 24px;
-                        //    transform: translateY(-50%);
-                        //    transition: opacity 0.2s;
-                        //}
 
                         span.hide {
                             display: none;
@@ -3970,10 +5114,6 @@ section.add_club_page_start_wrapper {
 
                         &.disabled {
                             pointer-events: none;
-
-                            //&:before{
-                            //    opacity: 0;
-                            //}
 
                             span.hide {
                                 display: inline;
@@ -4104,94 +5244,31 @@ section.add_club_page_start_wrapper {
                         margin-bottom: 46px;
 
                         p {
-                            margin: 0 0 26px;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 18px;
-                            line-height: 1;
-                            color: #c4c4c4;
+                            max-width: 327px;
+                            line-height: 1.2;
+                            margin: 0 auto 26px;
+                            text-align: center;
                         }
 
                         .code_wrapper {
-                            margin: 0 -15px 26px;
-                            width: 505px;
-                            position: relative;
+                            width: 100%;
+                            margin: 0 0 26px;
 
                             .code_input_wrapper {
                                 display: flex;
                                 flex-direction: row;
-                                justify-content: flex-end;
+                                justify-content: center;
                                 align-items: stretch;
-
-                                input {
-                                    display: block;
-                                    outline: none;
-                                    width: 46px;
-                                    height: 46px;
-                                    border: 2px solid rgba(0, 0, 0, 0.25);
-                                    border-radius: 14px;
-                                    margin: 0 15px;
-                                    text-align: center;
-                                    padding: 5px;
-                                }
                             }
 
                             .error {
-                                position: absolute;
-                                right: 15px;
-                                bottom: -22px;
-                                display: block;
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 18px;
-                                line-height: 1;
-                                color: #dc0000;
+                                right: 50%;
+                                transform: translateX(50%);
                             }
                         }
 
                         .code_resend {
-                            display: block;
-                            pointer-events: auto;
-                            position: relative;
-                            text-decoration: none;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 18px;
-                            line-height: 1;
-                            color: #000000;
-                            //padding-left: 36px;
-
-                            //&:before{
-                            //    content: '';
-                            //    position: absolute;
-                            //    left: 0;
-                            //    top: 50%;
-                            //    display: block;
-                            //    width: 24px;
-                            //    height: 24px;
-                            //    background-image: url("../img/refresh.svg");
-                            //    background-repeat: no-repeat;
-                            //    background-position: center;
-                            //    background-size: 24px 24px;
-                            //    transform: translateY(-50%);
-                            //    transition: opacity 0.2s;
-                            //}
-
-                            span.hide {
-                                display: none;
-                            }
-
-                            &.disabled {
-                                pointer-events: none;
-
-                                //&:before{
-                                //    opacity: 0;
-                                //}
-
-                                span.hide {
-                                    display: inline;
-                                }
-                            }
+                            text-align: center;
                         }
                     }
 
@@ -4242,7 +5319,6 @@ section.add_club_page_start_wrapper {
 
     @media (max-width: 400px){
         .add_club_page_start_content {
-
             .add_club_start_wrapper {
                 #add-club-start-form {
                     .btn_wrapper {
@@ -4258,147 +5334,6 @@ section.add_club_page_start_wrapper {
                             margin-left: auto;
                             margin-bottom: 18px;
                             padding: 14px 0;
-                        }
-                    }
-                }
-
-                #add-club-code-confirm-form {
-                    display: none;
-                    width: 100%;
-
-                    .forma {
-                        margin-bottom: 46px;
-
-                        p {
-                            margin: 0 0 26px;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 18px;
-                            line-height: 1;
-                            color: #c4c4c4;
-                        }
-
-                        .code_wrapper {
-                            margin: 0 -15px 26px;
-                            width: 505px;
-                            position: relative;
-
-                            .code_input_wrapper {
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: flex-end;
-                                align-items: stretch;
-
-                                input {
-                                    display: block;
-                                    outline: none;
-                                    width: 46px;
-                                    height: 46px;
-                                    border: 2px solid rgba(0, 0, 0, 0.25);
-                                    border-radius: 14px;
-                                    margin: 0 15px;
-                                    text-align: center;
-                                    padding: 5px;
-                                }
-                            }
-
-                            .error {
-                                position: absolute;
-                                right: 15px;
-                                bottom: -22px;
-                                display: block;
-                                font-style: normal;
-                                font-weight: 500;
-                                font-size: 18px;
-                                line-height: 1;
-                                color: #dc0000;
-                            }
-                        }
-
-                        .code_resend {
-                            display: block;
-                            pointer-events: auto;
-                            position: relative;
-                            text-decoration: none;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 18px;
-                            line-height: 1;
-                            color: #000000;
-                            //padding-left: 36px;
-
-                            //&:before{
-                            //    content: '';
-                            //    position: absolute;
-                            //    left: 0;
-                            //    top: 50%;
-                            //    display: block;
-                            //    width: 24px;
-                            //    height: 24px;
-                            //    background-image: url("../img/refresh.svg");
-                            //    background-repeat: no-repeat;
-                            //    background-position: center;
-                            //    background-size: 24px 24px;
-                            //    transform: translateY(-50%);
-                            //    transition: opacity 0.2s;
-                            //}
-
-                            span.hide {
-                                display: none;
-                            }
-
-                            &.disabled {
-                                pointer-events: none;
-
-                                //&:before{
-                                //    opacity: 0;
-                                //}
-
-                                span.hide {
-                                    display: inline;
-                                }
-                            }
-                        }
-                    }
-
-                    .btn_wrapper {
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: flex-end;
-                        align-items: center;
-
-                        button {
-                            display: block;
-                            border: none;
-                            outline: none;
-                            background: #dc0000;
-                            border-radius: 14px;
-                            padding: 14px 32px;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 18px;
-                            line-height: 1;
-                            text-align: center;
-                            color: #ffffff;
-                            cursor: pointer;
-
-                            &:hover {
-                                box-shadow: 0 0 6px #dc0000;
-                            }
-                        }
-
-                        .step_back {
-                            display: block;
-                            outline: none;
-                            text-decoration: none;
-                            border-radius: 14px;
-                            padding: 14px 32px;
-                            font-style: normal;
-                            font-weight: 500;
-                            font-size: 18px;
-                            line-height: 1;
-                            text-align: center;
-                            color: #000000;
                         }
                     }
                 }
@@ -5950,6 +6885,390 @@ section.langame_software_wrapper {
 
                                 &:hover {
                                     box-shadow: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 700px){
+        padding: 0 15px 40px;
+
+        .remodal.person_add_club_modal {
+
+            .remodal-close {
+                top: 43px;
+                right: -12px;
+            }
+
+            .remodal-content {
+                #add-club-form {
+                    width: 100%;
+                    margin: 0 auto;
+
+                    .forma {
+                        .form_tab_wrapper {
+                            margin-bottom: 42px;
+
+                            .form_tab {
+                                .form_tab_title {
+                                    margin-bottom: 56px;
+                                }
+
+                                .form-group {
+                                    display: block;
+
+                                    label {
+                                        display: inline-block;
+                                        margin-bottom: 14px;
+                                    }
+
+                                    input {
+                                        width: 100%;
+                                    }
+
+                                    &.descr {
+
+                                        textarea {
+                                            width: 100%;
+                                            height: 230px;
+                                        }
+                                    }
+
+                                    .add_file_wrapper {
+                                        label {
+                                            width: 100%;
+                                        }
+                                    }
+
+                                    .input_wrapper {
+                                        position: relative;
+
+                                        &.block_active {
+                                           display: block;
+                                        }
+
+                                        &.block_disabled {
+                                            display: none;
+                                        }
+
+                                        .error {
+                                            position: absolute;
+                                            left: 0;
+                                            top: 100%;
+                                            display: block;
+                                            width: 100%;
+                                            text-align: center;
+                                            color: rgba(220, 0, 0, 0.4);
+                                        }
+
+                                        .work_time_select {
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: flex-start;
+                                            align-items: stretch;
+                                            margin: 0 -12px;
+
+                                            .select2_wrapper {
+                                                width: 161px;
+                                                margin: 0 12px;
+
+                                                .select2 {
+                                                    height: 46px;
+
+                                                    .select2-selection__rendered {
+                                                        padding: 12px;
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        .pc_config_select {
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: flex-start;
+                                            align-items: stretch;
+                                            width: 100%;
+                                            margin: 0 -10px;
+
+                                            .select2_wrapper {
+                                                flex-shrink: 0;
+                                                width: calc(50% - 10px);
+                                                margin: 0 10px;
+                                            }
+                                        }
+
+                                        .console_select {
+                                            display: flex;
+                                            flex-direction: row;
+                                            justify-content: flex-start;
+                                            width: 100%;
+
+                                            .select2_wrapper {
+                                                width: calc(50% - 6px);
+                                                margin-right: 12px;
+                                            }
+
+                                            input {
+                                                width: calc(50% - 6px);
+                                            }
+                                        }
+                                    }
+
+                                    .select2_wrapper {
+                                        width: 100%;
+                                    }
+
+                                    .pc_config {
+                                        input {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+
+                                .payment_method_wrapper {
+                                    padding: 48px 0 0;
+                                    max-width: 100%;
+
+                                    .payment_method_list {
+                                        .payment_method_item {
+                                            margin: 0 3px 20px;
+
+                                            label {
+                                                .activator {
+                                                    padding: 14px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .add_photo_wrapper {
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: flex-end;
+                                    align-items: center;
+                                    flex-wrap: wrap;
+                                    padding: 32px 0;
+
+                                    .add_photo_title {
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: #000000;
+                                        margin-right: 15px;
+                                    }
+
+                                    .add_photo_list {
+                                        display: grid;
+                                        grid-template-columns: repeat(6, 46px);
+                                        grid-template-rows: repeat(2, 46px);
+                                        grid-gap: 8px;
+                                        margin-right: 0;
+                                        margin-bottom: 16px;
+
+                                        .add_photo_item {
+                                            width: 46px;
+                                            height: 46px;
+                                            background: #d3d3d3;
+                                            border-radius: 14px;
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: center;
+                                            justify-content: center;
+                                            font-style: normal;
+                                            font-weight: 500;
+                                            font-size: 18px;
+                                            line-height: 1;
+                                            color: #ffffff;
+
+
+                                            &:first-child {
+                                                grid-column: 1/3;
+                                                grid-row: 1/3;
+                                                width: 100px;
+                                                height: 100px;
+                                                background-image: url("../img/fill-white.svg");
+                                                background-repeat: no-repeat;
+                                                background-position: center;
+                                                background-size: 46px 46px;
+                                            }
+                                        }
+                                    }
+
+                                    .add_photo {
+                                        label {
+                                            position: relative;
+                                            flex-shrink: 0;
+                                            display: flex;
+                                            flex-direction: row;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 237px;
+                                            max-width: unset;
+                                            height: 46px;
+                                            border: 2px solid rgba(0, 0, 0, 1);
+                                            border-radius: 14px;
+                                            outline: none;
+                                            background-color: transparent;
+                                            transition: background-color 0.2s, border-color 0.2s;
+
+                                            input {
+                                                opacity: 0;
+                                                position: absolute;
+                                                z-index: -1;
+                                            }
+
+                                            span {
+                                                font-weight: 500;
+                                                font-size: 18px;
+                                                line-height: 1;
+                                                color: #000000;
+                                                transition: color 0.2s;
+                                            }
+
+                                            &:before {
+                                                content: '';
+                                                position: absolute;
+                                                top: 50%;
+                                                left: 10px;
+                                                display: block;
+                                                width: 24px;
+                                                height: 24px;
+                                                background-image: url("../img/fill.svg");
+                                                background-repeat: no-repeat;
+                                                background-position: center;
+                                                background-size: 24px 24px;
+                                                transform: translateY(-50%);
+                                            }
+
+                                            &:hover {
+                                                background-color: #dc0000;
+                                                border-color: #dc0000;
+
+                                                span {
+                                                    color: #ffffff;
+                                                }
+
+                                                &:before {
+                                                    background-image: url("../img/fill-white.svg");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .marketing_event_wrapper {
+                                    padding: 38px 0 0;
+
+                                    .marketing_event {
+                                        .marketing_event_list {
+                                            .form-group {
+                                                button[data-role-remove-marketing-event] {
+                                                    top: 25px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .pc_configuration_nav_wrapper {
+
+                                    .pc_configuration_nav_item {
+                                        width: 100%;
+
+                                        a, button {
+                                            &.add_pc_config {
+
+                                                &:disabled {
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+
+                                        ul {
+                                            li {
+
+                                                a {
+                                                    margin-right: 10px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .radiobox_wrapper {
+                                    flex-wrap: wrap;
+
+                                    label {
+                                        margin: 0 15px 20px;
+                                    }
+                                }
+
+                                .checkbox_wrapper {
+                                    display: block;
+
+                                    .checkbox_item {
+                                        width: 100%;
+                                        margin-bottom: 26px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .form_btn_wrapper {
+                            display: flex;
+                            flex-direction: column-reverse;
+                            justify-content: space-between;
+                            align-items: flex-end;
+
+                            .form_btn_item {
+                                button {
+                                    padding: 14px 27px;
+                                }
+                            }
+
+                            .form_btn_item + .form_btn_item{
+                                margin-bottom: 32px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 400px){
+        .remodal.person_add_club_modal {
+            .remodal-content {
+                #add-club-form {
+                    .forma {
+                        .form_tab_wrapper {
+                            .form_tab {
+                                .payment_method_wrapper {
+                                    .payment_method_title {
+                                        span {
+                                            &:before {
+                                                top: 22px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .add_photo_wrapper {
+                                    justify-content: center;
+
+                                    .add_photo_title {
+                                        margin-bottom: 16px;
+                                    }
+
+                                    .add_photo_list {
+                                        grid-gap: 7px;
+                                    }
                                 }
                             }
                         }

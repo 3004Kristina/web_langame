@@ -8,7 +8,7 @@ $code = $_POST['code'] ?? null;
 $error = null;
 
 if (\strpos($code, "1") !== 0) {
-    $error = 'Код подтверждения неправильный';
+    $error = 'Неправильный код';
 }
 
 echo \json_encode([

@@ -46,7 +46,7 @@ jQuery(function() {
 
         jQuery.ajax({
             type: 'POST',
-            url: '/confirm-phone-code.php',
+            url: '',
             data: {code: $this.val()},
             success: function(json) {
                 if (json.error) {
