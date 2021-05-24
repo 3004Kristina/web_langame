@@ -77,7 +77,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
            <div class="club_page_title">
                <span>Услуги</span>
            </div>
-           <div class="club_page_services_list">
+           <div class="club_page_services_list mob_toggle">
                <div class="club_page_services_item">
                    <img src="/img/icons/pc.svg" alt="icons">
                    <span>40 компьютеров</span>
@@ -91,16 +91,16 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                    <span>10 компьютеров</span>
                </div>
                <div class="club_page_services_item">
-                   <img src="/img/icons/club-fastfood.svg" alt="icons">
-                   <span>Горячее питание</span>
+                   <img src="/img/icons/drive.svg" alt="icons">
+                   <span>1 устройство</span>
                </div>
                <div class="club_page_services_item">
                    <img src="/img/icons/vr.svg" alt="icons">
                    <span>2 устройства</span>
                </div>
                <div class="club_page_services_item">
-                   <img src="/img/icons/drive.svg" alt="icons">
-                   <span>1 устройство</span>
+                   <img src="/img/icons/club-fastfood.svg" alt="icons">
+                   <span>Горячее питание</span>
                </div>
                <div class="club_page_services_item">
                    <img src="/img/icons/hook.svg" alt="icons">
@@ -110,43 +110,43 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                    <img src="/img/icons/alcohol.svg" alt="icons">
                    <span>Алкоголь</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/toilet.svg" alt="icons">
                    <span>Санузел</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/cloakroom.svg" alt="icons">
                    <span>Гардероб</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/wpf.svg" alt="icons">
                    <span>Кондиционер</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/printer.svg" alt="icons">
                    <span>Принтер</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/record.svg" alt="icons">
                    <span>Стримерская</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/account1.svg" alt="icons">
                    <span>Клубные аккаунты</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/download.svg" alt="icons">
                    <span>Можно скачивать игры и приложения</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/smoke.svg" alt="icons">
                    <span>Можно курить вейпы, электронные сигареты</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/keyboard.svg" alt="icons">
                    <span>Можно со своими девайсами</span>
                </div>
-               <div class="club_page_services_item">
+               <div class="club_page_services_item mob_hide">
                    <img src="/img/icons/fastfood.svg" alt="icons">
                    <span>Можно со своей едой</span>
                </div>
@@ -771,8 +771,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
 <section class="bottom_nav_mobile">
     <div class="container">
         <div class="club_price_wrapper">
-            <div class="club_price">от 80 ₽/час</div>
-            <div class="club_booking">Забронировать</div>
+            <div class="club_price">Аренда от 80 ₽/час</div>
+            <button type="button" class="club_calling" data-remodal-target="club_phone_modal">Позвонить</button>
         </div>
     </div>
 </section>

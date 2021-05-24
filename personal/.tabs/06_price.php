@@ -26,8 +26,9 @@ declare(strict_types=1);
     <div class="input_wrapper">
         <div class="add_file_wrapper">
             <label>
-                <input id="add-price-file-input" name="price_file" type="file">
-                <span>Загрузить файл</span>
+                <input id="add-price-file-input" type="file">
+                <input type="hidden" id="add-price-file-hidden-input" name="club_price_file">
+                <span id="add-price-file-text">Загрузить файл</span>
             </label>
         </div>
         <div class="error"></div>

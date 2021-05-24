@@ -203,6 +203,12 @@ jQuery(function() {
         });
     })();
 
+    jQuery('.club_page_services_list .club_services_mobile_toggle').on('click', function(e) {
+        jQuery(this).toggleClass('active')
+            .closest('.club_page_services_list').toggleClass('mob_toggle')
+            .find('.mob_hide').toggleClass('active');
+    });
+
     jQuery('#add-club-form').formWizard({
         inputWrapperSelector: '.form-group',
         inputErrorSelector: '.error',
@@ -212,6 +218,8 @@ jQuery(function() {
         nextButtonSelector: '[data-role="next-tab-button"]',
         nextButtonText: 'Продолжить',
         tabSelector: '.form_tab'
+    }).on('show-tab', function(e, tabIndex) {
+        jQuery('.person_add_club_modal_wrapper .remodal-wrapper').stop().animate({scrollTop: 0}, 300);
     });
 
     jQuery('input[type="tel"]').inputmask({
@@ -269,7 +277,16 @@ jQuery(function() {
         slidesToShow: 4,
         slidesToScroll: 1,
         variableWidth: true,
-        prevArrow: '<button type="button" class="slick-prev slick-arrow"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>',
-        nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>'
+        prevArrow: '<button type="button" class="slick-prev slick-arrow"><img src="../../img/left1.svg" alt="arrow"></button>',
+        nextArrow: '<button type="button" class="slick-next slick-arrow"><img src="../../img/right1.svg" alt="arrow"></button>',
+        responsive: [
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
 });

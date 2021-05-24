@@ -110,6 +110,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                                 Ленинградский проспект 71КБ
                                             </div>
                                         </div>
+                                        <form action="" method="post" class="hide-from-search-form">
                                         <div class="checkbox_wrapper">
                                             <label>
                                                 <input type="checkbox" name="hide_from_search">
@@ -117,6 +118,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                                 <span>Скрыть из поиска</span>
                                             </label>
                                         </div>
+                                        </form>
                                         <div class="club_price_wrapper">
                                             <div class="club_price"></div>
                                             <div class="club_edit">Редактировать</div>
@@ -176,13 +178,15 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                                 Ленинградский проспект 71КБ
                                             </div>
                                         </div>
-                                        <div class="checkbox_wrapper">
-                                            <label>
-                                                <input type="checkbox" name="hide_from_search">
-                                                <span class="activator"><span></span></span>
-                                                <span>Скрыть из поиска</span>
-                                            </label>
-                                        </div>
+                                        <form action="" method="post" class="hide-from-search-form">
+                                            <div class="checkbox_wrapper">
+                                                <label>
+                                                    <input type="checkbox" name="hide_from_search">
+                                                    <span class="activator"><span></span></span>
+                                                    <span>Скрыть из поиска</span>
+                                                </label>
+                                            </div>
+                                        </form>
                                         <div class="club_price_wrapper">
                                             <div class="club_price"></div>
                                             <div class="club_edit">Редактировать</div>

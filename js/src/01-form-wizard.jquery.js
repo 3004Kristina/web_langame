@@ -3,7 +3,8 @@
 
     jQuery.fn.extend({
         formWizard(options = {}) {
-            let inputWrapperSelector = options.inputWrapperSelector || '.form-group',
+            let self = this,
+                inputWrapperSelector = options.inputWrapperSelector || '.form-group',
                 inputErrorSelector = options.inputErrorSelector || '.error',
                 submitButtonSelector = options.submitButtonSelector || '[type="submit"]',
                 prevButtonSelector = options.prevButtonSelector || '[data-role="prev-tab-button"]',
@@ -13,13 +14,13 @@
                 tabSelector = options.tabSelector || '[data-role="tabs"]',
                 activeTab = options.activeTab || 0;
 
-            let $submitButton = this.find(submitButtonSelector),
-                $prevButton = this.find(prevButtonSelector),
-                $nextButton = this.find(nextButtonSelector),
-                $tabs = this.find(tabSelector);
+            let $submitButton = self.find(submitButtonSelector),
+                $prevButton = self.find(prevButtonSelector),
+                $nextButton = self.find(nextButtonSelector),
+                $tabs = self.find(tabSelector);
 
             if ($tabs.length <= 1) {
-                return;
+                return self;
             }
 
             showTab(activeTab);
@@ -41,6 +42,8 @@
                 $nextButton.toggle(index < $tabs.length - 1).text(activeTabNextButtonText);
 
                 activeTab = index;
+
+                self.trigger('show-tab', [activeTab]);
             }
 
             function goToNextTab() {
@@ -108,6 +111,8 @@
 
                 $error.text(error || '');
             }
+
+            return self;
         }
     });
 })();

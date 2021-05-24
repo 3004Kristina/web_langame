@@ -18,20 +18,21 @@ declare(strict_types=1);
 
 <div class="add_photo_wrapper">
     <div class="add_photo_title">Фото</div>
+    <input id="club_photos_input" type="hidden" name="club_photos" value="">
     <div class="add_photo_list">
         <div class="add_photo_item"></div>
-        <div class="add_photo_item">2</div>
-        <div class="add_photo_item">3</div>
-        <div class="add_photo_item">4</div>
-        <div class="add_photo_item">5</div>
-        <div class="add_photo_item">6</div>
-        <div class="add_photo_item">7</div>
-        <div class="add_photo_item">8</div>
-        <div class="add_photo_item">9</div>
+        <div class="add_photo_item"></div>
+        <div class="add_photo_item"></div>
+        <div class="add_photo_item"></div>
+        <div class="add_photo_item"></div>
+        <div class="add_photo_item"></div>
+        <div class="add_photo_item"></div>
+        <div class="add_photo_item"></div>
+        <div class="add_photo_item"></div>
     </div>
     <div class="add_photo">
         <label>
-            <input id="add-photo-input" name="add_club_photo" type="file">
+            <input id="add-photo-input" type="file" multiple accept="image/*">
             <span>Загрузить</span>
         </label>
     </div>
