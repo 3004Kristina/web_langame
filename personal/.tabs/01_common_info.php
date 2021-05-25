@@ -56,7 +56,7 @@ declare(strict_types=1);
 <div class="form-group">
     <label for="club-area-input">Общая площадь клуба</label>
     <div class="input_wrapper">
-        <input id="club-area-input" name="club_area" type="number" placeholder="м2">
+        <input id="club-area-input" name="club_area" type="number" min="1" step="1" placeholder="м2">
         <div class="error"></div>
     </div>
 </div>

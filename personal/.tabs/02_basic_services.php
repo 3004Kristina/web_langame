@@ -9,7 +9,7 @@ declare(strict_types=1);
 <div class="form-group required">
     <label for="qty_pc-input">Общее кол-во ПК</label>
     <div class="input_wrapper">
-        <input id="qty_pc-input" name="qty_pc" type="number" placeholder="Количество" required>
+        <input id="qty_pc-input" name="qty_pc" type="number" placeholder="Количество" min="1" step="1" required>
         <div class="error"></div>
     </div>
 </div>
@@ -22,7 +22,7 @@ declare(strict_types=1);
         </label>
     </div>
     <div class="input_wrapper" data-block="vip_pc">
-        <input id="qty_vip-input" name="qty_vip_pc" type="number" placeholder="Количество" required>
+        <input id="qty_vip-input" name="qty_vip_pc" type="number" placeholder="Количество" min="1" step="1" required>
         <div class="error"></div>
     </div>
 </div>
@@ -43,7 +43,7 @@ declare(strict_types=1);
                 </select>
                 <div class="error"></div>
             </div>
-            <input id="qty_console-input" name="qty_console" type="number" placeholder="Количество" required>
+            <input id="qty_console-input" name="qty_console" type="number" placeholder="Количество" min="1" step="1" required>
         </div>
     </div>
 </div>
@@ -74,7 +74,7 @@ declare(strict_types=1);
         </label>
     </div>
     <div class="input_wrapper" data-block="vr">
-        <input id="qty_vr-input" name="qty_vr" type="number" placeholder="Количество" required>
+        <input id="qty_vr-input" name="qty_vr" type="number" placeholder="Количество" min="1" step="1" required>
         <div class="error"></div>
     </div>
 </div>
@@ -87,7 +87,7 @@ declare(strict_types=1);
         </label>
     </div>
     <div class="input_wrapper" data-block="simulator">
-        <input id="qty_simulator-input" name="qty_simulator" type="number" placeholder="Количество" required>
+        <input id="qty_simulator-input" name="qty_simulator" type="number" placeholder="Количество" min="1" step="1" required>
         <div class="error"></div>
     </div>
 </div>

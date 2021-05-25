@@ -11,6 +11,16 @@ html, body {
     font-family: 'PTRootUI', sans-serif;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .svg_icons {
     display: block;
     position: absolute;
@@ -42,19 +52,6 @@ html, body {
         padding: 0 15px;
 
     }
-}
-
-.scrollbar-hidden::-webkit-scrollbar {
-    display: none;
-}
-
-.scrollbar-hidden {
-    -ms-overflow-style: none;
-    scrollbar-width: none; /* Firefox */
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
 }
 
 @media(max-width: 980px) {
@@ -4537,6 +4534,11 @@ section.log_in_page_wrapper {
         }
     }
 
+    @media (max-height: 850px){
+        padding: 64px 0 120px;
+        height: auto;
+    }
+
     @media (max-width: 980px) {
         padding: 64px 0 130px;
         height: auto;
@@ -5114,6 +5116,11 @@ section.add_club_page_start_wrapper {
                 }
             }
         }
+    }
+
+    @media (max-height: 850px){
+        padding: 64px 0 120px;
+        height: auto;
     }
 
     @media (max-width: 980px) {
@@ -6605,6 +6612,14 @@ section.langame_software_wrapper {
                                                 background-position: center;
                                                 background-size: 24px 24px;
                                             }
+
+                                            &.block_active {
+                                                display: block;
+                                            }
+
+                                            &.block_disabled {
+                                                display: none;
+                                            }
                                         }
                                     }
                                 }
@@ -6613,6 +6628,17 @@ section.langame_software_wrapper {
                             .pc_configuration_content_wrapper {
                                 .tab:not(.active) {
                                     display: none;
+                                }
+
+                                .tab.active {
+
+                                    &.block_active {
+                                        display: block;
+                                    }
+
+                                    &.block_disabled {
+                                        display: none;
+                                    }
                                 }
                             }
 
@@ -7563,7 +7589,6 @@ section.langame_software_wrapper {
             }
         }
     }
-
 }
 
 .success_modal{

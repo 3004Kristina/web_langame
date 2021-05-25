@@ -14,7 +14,7 @@ declare(strict_types=1);
         (без учёта акций и пакетов)
     </label>
     <div class="input_wrapper">
-        <input id="min-price-input" name="club_min_price" type="text" placeholder="Введите стоимость" required>
+        <input id="min-price-input" name="club_min_price" type="number" placeholder="Введите стоимость" min="1" required>
         <div class="error"></div>
     </div>
 </div>
@@ -50,7 +50,7 @@ declare(strict_types=1);
             <div class="form-group" >
                 <label for="marketing-event-input[1]">Акция №</label>
                 <div class="input_wrapper" >
-                    <input id="marketing-event-input[1]" name="marketing_event_descr[]" type="text" placeholder="Описание акции">
+                    <input id="marketing-event-input[1]" name="marketing_event_descr[]" type="text" placeholder="Описание акции" required>
                     <div class="error"></div>
                 </div>
             </div>

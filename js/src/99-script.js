@@ -170,7 +170,7 @@ jQuery(function() {
              <div class="form-group" >
                 <label for="marketing-event-input[${index}]">Акция №</label>
                 <div class="input_wrapper" >
-                    <input id="marketing-event-input[${index}]" name="marketing_event_descr[]" type="text" placeholder="Описание акции">
+                    <input id="marketing-event-input[${index}]" name="marketing_event_descr[]" type="text" placeholder="Описание акции" required>
                     <div class="error"></div>
                 </div>
                 <button type="button" data-role-remove-marketing-event></button>
@@ -227,6 +227,14 @@ jQuery(function() {
 
         onincomplete: function() {
             this.value = '';
+        }
+    });
+
+    jQuery('input[type="number"]').on('input change', function(e) {
+        let input_val = +jQuery(this).val();
+
+        if (input_val <= 0 || isNaN(input_val)){
+            jQuery(this).val('');
         }
     });
 

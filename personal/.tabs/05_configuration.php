@@ -14,7 +14,7 @@ declare(strict_types=1);
                 <li data-nav-tab="0">
                     <a href="#" data-show-tab="0" class="active"></a>
                 </li>
-                <li data-nav-tab="1">
+                <li data-nav-tab="1" data-block="vip_pc">
                     <a href="#" data-show-tab="1"></a>
                 </li>
             </ul>
@@ -188,7 +188,7 @@ declare(strict_types=1);
             </div>
         </div>
 
-        <div class="tab" data-tab="1" data-role="pc-configuration-tab">
+        <div class="tab" data-tab="1" data-role="pc-configuration-tab" data-block="vip_pc">
             <div class="form-group">
                 <div class="pc_config">Оборудование</div>
                 <div class="pc_config">

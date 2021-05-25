@@ -14,7 +14,7 @@ jQuery(function() {
                 status: $input.prop('checked') ? 'hidden' : 'active'
             },
             success: function() {
-                jQuery('[data-remodal-id="success_modal"]').remodal().open();
+
             }
         });
     });
