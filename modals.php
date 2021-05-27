@@ -6,6 +6,9 @@
         <form action="" method="post" id="add-club-form">
             <div class="forma">
                 <div class="form_tab_wrapper">
+                    <div class="form_tab form_tab_08_club_formalization" data-next-button-text="Отправить на модерацию">
+                        <?php require $_SERVER["DOCUMENT_ROOT"] . '/personal/.tabs/08_club_formalization.php'; ?>
+                    </div>
                     <div class="form_tab form_tab_01_common_info">
                         <?php require $_SERVER["DOCUMENT_ROOT"] . '/personal/.tabs/01_common_info.php'; ?>
                     </div>
@@ -32,10 +35,6 @@
 
                     <div class="form_tab form_tab_07_contact_information">
                         <?php require $_SERVER["DOCUMENT_ROOT"] . '/personal/.tabs/07_contact_information.php'; ?>
-                    </div>
-
-                    <div class="form_tab form_tab_08_club_formalization" data-next-button-text="Отправить на модерацию">
-                        <?php require $_SERVER["DOCUMENT_ROOT"] . '/personal/.tabs/08_club_formalization.php'; ?>
                     </div>
 
                     <div class="form_tab form_tab_09_club_preview">

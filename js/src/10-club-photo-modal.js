@@ -18,8 +18,8 @@ jQuery(function() {
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
-            prevArrow: '<button type="button" class="slick-prev slick-arrow"><img src="../img/left.svg" alt="arrow"></button>',
-            nextArrow: '<button type="button" class="slick-next slick-arrow"><img src="../img/right.svg" alt="arrow"></button>'
+            prevArrow: '<button type="button" class="slick-prev slick-arrow"><img src="/img/left.svg" alt="arrow"></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow"><img src="/img/right.svg" alt="arrow"></button>'
         });
 
         $slick.on('beforeChange', function(e, slick, currentSlide, nextSlide) {
