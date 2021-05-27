@@ -4534,7 +4534,7 @@ section.log_in_page_wrapper {
         }
     }
 
-    @media (max-height: 850px){
+    @media (max-height: 850px) {
         padding: 64px 0 120px;
         height: auto;
     }
@@ -5118,7 +5118,7 @@ section.add_club_page_start_wrapper {
         }
     }
 
-    @media (max-height: 850px){
+    @media (max-height: 850px) {
         padding: 64px 0 120px;
         height: auto;
     }
@@ -6279,41 +6279,16 @@ section.langame_software_wrapper {
                                 }
                             }
 
-                            .add_photo_list {
-                                display: grid;
-                                grid-template-columns: repeat(2, auto);
-                                grid-template-rows: repeat(7, auto);
-                                grid-gap: 14px;
-                                margin-bottom: 32px;
-
-                                .add_photo_item {
-                                    position: relative;
-                                    width: 328px;
-                                    height: 222px;
-                                    background: #d3d3d3;
-                                    border-radius: 14px;
-                                    display: flex;
-                                    flex-direction: row;
-                                    align-items: center;
-                                    justify-content: center;
-                                    font-style: normal;
-                                    font-weight: 500;
-                                    font-size: 18px;
-                                    line-height: 1;
-                                    color: #ffffff;
-
-                                    &:first-child {
+                            .photo_gallery {
+                                .add_photo_preview_wrapper {
+                                    .add_photo_preview {
                                         position: relative;
-                                        grid-column: 1/3;
-                                        grid-row: 1/3;
-                                        width: 670px;
-                                        height: 444px;
-                                        background-image: url("../img/fill-white.svg");
-                                        background-repeat: no-repeat;
-                                        background-position: center;
-                                        background-size: 46px 46px;
+                                        width: 100%;
+                                        height: 0;
+                                        padding-bottom: 66%;
+                                        margin-bottom: 14px;
 
-                                        &:before{
+                                        &:before {
                                             content: 'Превью клуба';
                                             position: absolute;
                                             top: 16px;
@@ -6327,45 +6302,95 @@ section.langame_software_wrapper {
                                             font-weight: 500;
                                             font-size: 18px;
                                             line-height: 1;
-                                            color: #FFFFFF;
+                                            color: #ffffff;
                                             text-align: center;
                                             background: rgba(85, 85, 85, 0.5);
                                             backdrop-filter: blur(8px);
                                             border-radius: 8px;
+                                            z-index: 2;
+                                        }
+
+                                        img {
+                                            display: block;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            object-position: center center;
+                                            border-radius: 14px;
+                                            box-shadow: 0 0 8px #ccc;
+                                            z-index: 1;
+                                        }
+
+                                        &:empty {
+                                            display: none;
                                         }
                                     }
+                                }
 
-                                    img {
-                                        display: block;
+                                .add_photo_list {
+                                    display: grid;
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-template-rows: auto;
+                                    grid-gap: 14px;
+                                    margin-bottom: 32px;
+
+                                    .add_photo_item {
+                                        position: relative;
                                         width: 100%;
-                                        height: 100%;
-                                        object-fit: cover;
-                                        object-position: center center;
+                                        height: 0;
+                                        padding-bottom: 66%;
+                                        background: #d3d3d3;
                                         border-radius: 14px;
-                                    }
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: center;
+                                        font-style: normal;
+                                        font-weight: 500;
+                                        font-size: 18px;
+                                        line-height: 1;
+                                        color: #ffffff;
 
-                                    .remove_photo {
-                                        position: absolute;
-                                        top: -9px;
-                                        right: -5px;
-                                        display: block;
-                                        width: 21px;
-                                        height: 21px;
-                                        border-radius: 50%;
-                                        border: 0;
-                                        outline: 0;
-                                        background-image: url(../img/cancel.svg);
-                                        background-color: #fff;
-                                        background-repeat: no-repeat;
-                                        background-position: center;
-                                        background-size: 24px 24px;
-                                    }
+                                        img {
+                                            display: block;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            object-position: center center;
+                                            border-radius: 14px;
+                                            box-shadow: 0 0 8px #ccc;
+                                        }
 
-                                    &:empty{
-                                        display: none;
+                                        .remove_photo {
+                                            position: absolute;
+                                            top: -9px;
+                                            right: -5px;
+                                            display: block;
+                                            width: 21px;
+                                            height: 21px;
+                                            border-radius: 50%;
+                                            border: 0;
+                                            outline: 0;
+                                            background-image: url(../img/cancel.svg);
+                                            background-color: #ffffff;
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            background-size: 24px 24px;
+                                        }
+
+                                        &:empty {
+                                            display: none;
+                                        }
                                     }
                                 }
                             }
+
 
                             .marketing_event_wrapper {
                                 padding: 48px 0 0;
@@ -7579,7 +7604,7 @@ section.langame_software_wrapper {
     }
 }
 
-.success_modal{
+.success_modal {
     width: 548px;
     height: 96px;
     background: #ffffff;

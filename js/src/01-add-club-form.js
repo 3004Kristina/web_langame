@@ -2,10 +2,14 @@ jQuery(function() {
     let $form = jQuery('#add-club-form'),
         $save_draft = $form.find('.save_draft'),
         $club_photo_hidden_input = jQuery('#club_photos_input'),
+        $main_preview_photo_hidden_input = jQuery('#main_preview_photo_input'),
         $club_photo_file_input = jQuery('#add-photo-input'),
         $club_price_file_input = jQuery('#add-price-file-input'),
         $club_price_hidden_input = jQuery('#add-price-file-hidden-input'),
-        $club_price_file_text = jQuery('#add-price-file-text');
+        $club_price_file_text = jQuery('#add-price-file-text'),
+        $add_photo_preview = jQuery('#add_photo_preview'),
+        $add_photo_list = jQuery('#add_photo_list'),
+        max_image_count = 10;
 
     if ($form.length === 0) {
         return;
@@ -48,12 +52,22 @@ jQuery(function() {
         });
     });
 
+    //upload photo gallery
     (() => {
-        let files = $club_photo_hidden_input.val().split(':').filter(x => !!x);
+        let files = $club_photo_hidden_input.val().split(':').filter(x => !!x),
+            main_file = $main_preview_photo_hidden_input.val();
 
         $club_photo_file_input.on('change', function() {
+            let current_gallery_image_count = files.length;
+
             for (let file of this.files) {
-                upload_file(file).then(data => {
+                if (current_gallery_image_count >= max_image_count) {
+                    break;
+                }
+
+                ++current_gallery_image_count;
+
+                upload_file(file).then((data) => {
                     addFile(data);
                 });
             }
@@ -73,10 +87,24 @@ jQuery(function() {
             removeFile(path);
         });
 
+        $form.on('click', '.add_photo_item img', function(e) {
+            e.preventDefault();
+
+            let $img = jQuery(this),
+                path = $img.attr('src');
+
+            selectMainFile(path);
+            renderFiles();
+        });
+
         renderFiles();
 
         function addFile(path) {
             files.push(path);
+
+            if (!main_file) {
+                selectMainFile(path);
+            }
 
             renderFiles();
         }
@@ -84,26 +112,37 @@ jQuery(function() {
         function removeFile(path) {
             files.splice(files.indexOf(path), 1);
 
+            if (path === main_file) {
+                selectMainFile(files.length > 0 ? files[0] : null);
+            }
+
             renderFiles();
         }
 
         function renderFiles() {
             $club_photo_hidden_input.val(files.join(':'));
+            $main_preview_photo_hidden_input.val(main_file || '');
 
-            jQuery('.add_photo_item').each(function(index) {
-                let $this = jQuery(this);
+            if (main_file) {
+                $add_photo_preview.html(`<img src="${main_file}"/>`);
+            } else {
+                $add_photo_preview.empty();
+            }
 
-                if (files[index]) {
-                    let path = files[index];
+            $add_photo_list.empty();
 
-                    $this.html(`
-<img src="${path}"/>
-<a href="#" class="remove_photo"></a>
+            files.forEach((path) => {
+                $add_photo_list.append(`
+<div class="add_photo_item">
+    <img src="${path}"/>
+    <a href="#" class="remove_photo"></a>
+</div>
 `);
-                } else {
-                    $this.empty();
-                }
             });
+        }
+
+        function selectMainFile(path) {
+            main_file = path;
         }
     })();
 
