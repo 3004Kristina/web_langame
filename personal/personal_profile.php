@@ -47,7 +47,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         <div class="code_wrapper">
                                             <input type="text" name="code">
                                         </div>
-                                        <a href="#" class="code_resend disabled" id="reSendCodeProfile">Отправить повторно <span class="hide">через</span> <span id="countdown">3:00</span></a>
+                                        <a href="#" class="code_resend disabled" id="reSendCodeProfile">Отправить повторно <span class="hide">через</span>
+                                            <span id="countdown">3:00</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -56,24 +57,24 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <input id="user-email-input" name="email" type="email" placeholder="" required>
                             </div>
 
-                        <div class="form-group required">
-                            <label for="user-position-input">Должность представителя</label>
-                            <div class="select2_wrapper select_user_position_wrapper">
-                                <select id="user-position-input" name="user_position" class="select2_input" data-placeholder="Выбрать из списка" required>
-                                    <option value=""></option>
-                                    <option value="1">Директор</option>
-                                    <option value="2">Администратор</option>
-                                </select>
+                            <div class="form-group required">
+                                <label for="user-position-input">Должность представителя</label>
+                                <div class="select2_wrapper select_user_position_wrapper">
+                                    <select id="user-position-input" name="user_position" class="select2_input" data-placeholder="Выбрать из списка" required>
+                                        <option value=""></option>
+                                        <option value="1">Директор</option>
+                                        <option value="2">Администратор</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group password">
-                            <label for="user-password-input">Сменить пароль</label>
+                            <div class="form-group password">
+                                <label for="user-password-input">Сменить пароль</label>
 
-                            <div class="user_password">
-                                <input id="user-password-input" name="password" type="password" placeholder="Новый пароль">
-                                <input id="user-password-again-input" name="password_again" type="password" placeholder="Повторите">
+                                <div class="user_password">
+                                    <input id="user-password-input" name="password" type="password" placeholder="Новый пароль">
+                                    <input id="user-password-again-input" name="password_again" type="password" placeholder="Повторите">
+                                </div>
                             </div>
-                        </div>
                         </div>
                         <button type="submit" class="user_profile_submit">Сохранить</button>
                     </form>

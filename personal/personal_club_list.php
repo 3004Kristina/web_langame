@@ -95,7 +95,9 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         </div>
                                         <div class="club_subway_wrapper">
                                             <div class="subway_img_wrapper">
-                                                <img src="/img/metro.svg" alt="subway">
+                                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                             </div>
                                             <div class="subway_station">
                                                 <span>Сокол</span>
@@ -111,13 +113,13 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                             </div>
                                         </div>
                                         <form action="" method="post" class="hide-from-search-form">
-                                        <div class="checkbox_wrapper">
-                                            <label>
-                                                <input type="checkbox" name="hide_from_search">
-                                                <span class="activator"><span></span></span>
-                                                <span>Скрыть из поиска</span>
-                                            </label>
-                                        </div>
+                                            <div class="checkbox_wrapper">
+                                                <label>
+                                                    <input type="checkbox" name="hide_from_search">
+                                                    <span class="activator"><span></span></span>
+                                                    <span>Скрыть из поиска</span>
+                                                </label>
+                                            </div>
                                         </form>
                                         <div class="club_price_wrapper">
                                             <div class="club_price"></div>
@@ -163,7 +165,9 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         </div>
                                         <div class="club_subway_wrapper">
                                             <div class="subway_img_wrapper">
-                                                <img src="/img/metro.svg" alt="subway">
+                                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                             </div>
                                             <div class="subway_station">
                                                 <span>Сокол</span>
@@ -235,7 +239,9 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         </div>
                                         <div class="club_subway_wrapper">
                                             <div class="subway_img_wrapper">
-                                                <img src="/img/metro.svg" alt="subway">
+                                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                             </div>
                                             <div class="subway_station">
                                                 <span>Сокол</span>
@@ -301,7 +307,9 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         </div>
                                         <div class="club_subway_wrapper">
                                             <div class="subway_img_wrapper">
-                                                <img src="/img/metro.svg" alt="subway">
+                                                <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                             </div>
                                             <div class="subway_station">
                                                 <span>Сокол</span>

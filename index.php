@@ -88,7 +88,9 @@
                             </div>
                             <div class="club_subway_wrapper">
                                 <div class="subway_img_wrapper">
-                                    <img src="/img/metro.svg" alt="subway">
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                 </div>
                                 <div class="subway_station">
                                     <span>Сокол</span>
@@ -181,7 +183,9 @@
                             </div>
                             <div class="club_subway_wrapper">
                                 <div class="subway_img_wrapper">
-                                    <img src="/img/metro.svg" alt="subway">
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                 </div>
                                 <div class="subway_station">
                                     <span>Сокол</span>
@@ -274,7 +278,9 @@
                             </div>
                             <div class="club_subway_wrapper">
                                 <div class="subway_img_wrapper">
-                                    <img src="/img/metro.svg" alt="subway">
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                 </div>
                                 <div class="subway_station">
                                     <span>Сокол</span>
@@ -367,7 +373,9 @@
                             </div>
                             <div class="club_subway_wrapper">
                                 <div class="subway_img_wrapper">
-                                    <img src="/img/metro.svg" alt="subway">
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                 </div>
                                 <div class="subway_station">
                                     <span>Сокол</span>
@@ -460,7 +468,9 @@
                             </div>
                             <div class="club_subway_wrapper">
                                 <div class="subway_img_wrapper">
-                                    <img src="/img/metro.svg" alt="subway">
+                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                        </svg>
                                 </div>
                                 <div class="subway_station">
                                     <span>Сокол</span>
@@ -552,8 +562,10 @@
                                 </div>
                             </div>
                             <div class="club_subway_wrapper">
-                                <div class="subway_img_wrapper">
-                                    <img src="/img/metro.svg" alt="subway">
+                                <div class="subway_img_wrapper" style="--subway-color: red">
+                                    <svg width="26" height=26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                                    </svg>
                                 </div>
                                 <div class="subway_station">
                                     <span>Сокол</span>
