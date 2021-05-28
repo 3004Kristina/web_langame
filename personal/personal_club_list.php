@@ -96,8 +96,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         <div class="club_subway_wrapper">
                                             <div class="subway_img_wrapper">
                                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
-                        </svg>
+                                                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                                                </svg>
                                             </div>
                                             <div class="subway_station">
                                                 <span>Сокол</span>
@@ -166,8 +166,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         <div class="club_subway_wrapper">
                                             <div class="subway_img_wrapper">
                                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
-                        </svg>
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                                                 </svg>
                                             </div>
                                             <div class="subway_station">
                                                 <span>Сокол</span>
@@ -240,8 +240,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         <div class="club_subway_wrapper">
                                             <div class="subway_img_wrapper">
                                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
-                        </svg>
+                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                                                 </svg>
                                             </div>
                                             <div class="subway_station">
                                                 <span>Сокол</span>
@@ -308,8 +308,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         <div class="club_subway_wrapper">
                                             <div class="subway_img_wrapper">
                                                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
-                        </svg>
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-svg-subway"></use>
+                                                </svg>
                                             </div>
                                             <div class="subway_station">
                                                 <span>Сокол</span>
