@@ -6279,6 +6279,15 @@ section.langame_software_wrapper {
                                 }
                             }
 
+                            .add_photo_instruction{
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 16px;
+                                line-height: 1;
+                                color: #C4C4C4;
+                                margin-bottom: 32px;
+                            }
+
                             .photo_gallery {
                                 .add_photo_preview_wrapper {
                                     .add_photo_preview {
@@ -6754,6 +6763,17 @@ section.langame_software_wrapper {
 
                             .work_time_wrapper {
                                 padding: 50px 0 0;
+                                position: relative;
+
+                                .error {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 25px;
+                                    display: block;
+                                    width: 100%;
+                                    text-align: left;
+                                    color: rgba(220, 0, 0, 0.4);
+                                }
 
                                 .work_time_item {
                                     label {

@@ -168,4 +168,21 @@ jQuery(function() {
             });
         });
     }
+
+    // schedule validation
+    (() => {
+        let $tab = jQuery('.form_tab_04_schedule'),
+            $input_week_schedule = jQuery('input[data-week-schedule]'),
+            $input_day_schedule = jQuery('input[data-day-schedule]');
+
+        $tab.on('change', 'input', function(e) {
+            if( $input_day_schedule.filter(':checked').length === 0 && $input_week_schedule.is(':checked')){
+                jQuery('.next_btn, .prev_btn').prop('disabled', true);
+                jQuery('.work_time_wrapper .error').text('Необходимо заполнить хотя бы один день');
+          }else{
+                jQuery('.next_btn, .prev_btn').prop('disabled', false);
+                jQuery('.work_time_wrapper .error').text('');
+            }
+        });
+    })();
 });
