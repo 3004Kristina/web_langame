@@ -52,6 +52,7 @@
                 }
 
                 if (validateActiveTab() === false) {
+                    self.trigger('error-tab');
                     return;
                 }
 
@@ -117,7 +118,10 @@
             }
 
             function setInputError(input, error) {
-                let $error = jQuery(input).closest(inputWrapperSelector).find(inputErrorSelector);
+                let $formGroup = jQuery(input).closest(inputWrapperSelector),
+                    $error = $formGroup.find(inputErrorSelector);
+
+                $formGroup.toggleClass('has-error', !!error);
 
                 $error.text(error || '');
             }
