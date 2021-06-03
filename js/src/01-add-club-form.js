@@ -201,6 +201,22 @@ jQuery(function() {
         });
     })();
 
+    // payment method validation
+    (() => {
+        let $tab = jQuery('.form_tab_06_price'),
+            $input_payment = jQuery('input[data-payment-method]');
+
+        $tab.on('change', 'input', function(e) {
+            if ($input_payment.filter(':checked').length === 0) {
+                jQuery('.next_btn, .prev_btn').prop('disabled', true);
+                jQuery('.payment_method_wrapper .error').text('Необходимо выбрать хотя бы один способ оплаты');
+            } else {
+                jQuery('.next_btn, .prev_btn').prop('disabled', false);
+                jQuery('.payment_method_wrapper .error').text('');
+            }
+        });
+    })();
+
     /**
      * Toggle blocks by checkbox and radio buttons
      */

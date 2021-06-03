@@ -4933,6 +4933,7 @@ section.add_club_page_start_wrapper {
                                 flex-direction: row;
                                 align-items: center;
                                 justify-content: flex-start;
+                                width: max-content;
 
                                 input {
                                     opacity: 0;
@@ -6158,6 +6159,7 @@ section.langame_software_wrapper {
                             .payment_method_wrapper {
                                 padding: 48px 0 0;
                                 max-width: 670px;
+                                position: relative;
 
                                 .payment_method_title {
                                     margin-bottom: 20px;
@@ -6228,6 +6230,16 @@ section.langame_software_wrapper {
                                             }
                                         }
                                     }
+                                }
+
+                                .error {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 100%;
+                                    display: block;
+                                    width: 100%;
+                                    text-align: left;
+                                    color: rgba(220, 0, 0, 0.4);
                                 }
                             }
 
@@ -6419,7 +6431,6 @@ section.langame_software_wrapper {
                                     }
                                 }
                             }
-
 
                             .marketing_event_wrapper {
                                 padding: 48px 0 0;
@@ -6783,6 +6794,7 @@ section.langame_software_wrapper {
                             }
 
                             .work_time_wrapper {
+                                position: relative;
                                 padding: 50px 0 0;
 
                                 .work_time_item {
@@ -6845,6 +6857,16 @@ section.langame_software_wrapper {
 
                                 &.block_disabled {
                                     display: none;
+                                }
+
+                                .error {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 25px;
+                                    display: block;
+                                    width: 100%;
+                                    text-align: left;
+                                    color: rgba(220, 0, 0, 0.4);
                                 }
                             }
 
@@ -6949,6 +6971,10 @@ section.langame_software_wrapper {
 
                                 &:hover {
                                     box-shadow: 0 0 6px #dc0000;
+                                }
+
+                                &:disabled{
+                                    box-shadow: none;
                                 }
                             }
 

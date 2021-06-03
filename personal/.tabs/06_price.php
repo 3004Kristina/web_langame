@@ -62,39 +62,39 @@ declare(strict_types=1);
 
 <div class="payment_method_wrapper">
     <div class="payment_method_title">
-        <span>Выберите способы оплаты (хотя бы один)</span>
+        <span>Выберите способы оплаты</span>
     </div>
     <div class="payment_method_list">
         <div class="payment_method_item">
             <label>
-                <input type="checkbox" name="payment_cash">
+                <input type="checkbox" name="payment_cash" checked data-payment-method>
                 <span class="activator"><span>Наличные</span></span>
             </label>
         </div>
         <div class="payment_method_item" >
             <label>
-                <input type="checkbox" name="payment_cards">
+                <input type="checkbox" name="payment_cards" data-payment-method>
                 <span class="activator"><span>Карты</span></span>
             </label>
         </div>
         <div class="payment_method_item">
             <label>
-                <input type="checkbox" name="payment_online">
+                <input type="checkbox" name="payment_online" data-payment-method>
                 <span class="activator"><span>Online-перевод</span></span>
             </label>
         </div>
         <div class="payment_method_item">
             <label>
-                <input type="checkbox" name="payment_web_wallet">
+                <input type="checkbox" name="payment_web_wallet" data-payment-method>
                 <span class="activator"><span>Web-кошельки</span></span>
             </label>
         </div>
         <div class="payment_method_item">
             <label>
-                <input type="checkbox" name="payment_account_number">
+                <input type="checkbox" name="payment_account_number" data-payment-method>
                 <span class="activator"><span>По счёту</span></span>
             </label>
         </div>
     </div>
-
+    <div class="error"></div>
 </div>
