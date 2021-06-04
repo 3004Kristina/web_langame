@@ -32,7 +32,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
             <div class="personal_main_content_wrapper">
                 <div class="user_profile_form_wrapper">
                     <div class="user_profile_title">Профиль</div>
-                    <form action="" method="post" id="user-profile-form">
+                    <form action="" method="post" id="user-profile-form" class="user_profile">
                         <div class="forma">
                             <div class="form-group required">
                                 <label for="user-name-input">ФИО представителя</label>
@@ -54,10 +54,10 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                     <div class="error"></div>
                                 </div>
                             </div>
-                            <div class="form-group required error">
+                            <div class="form-group required">
                                 <label for="user-email-input">Email</label>
                                 <input id="user-email-input" name="email" type="email" placeholder="" required>
-                                <div class="error">E-mail уже использован</div>
+                                <div class="error"></div>
                             </div>
 
                             <div class="form-group required">

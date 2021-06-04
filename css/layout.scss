@@ -1963,7 +1963,7 @@ section.personal_page_wrapper {
                     color: #000000;
                 }
 
-                #user-profile-form {
+                .user_profile {
                     width: 670px;
 
                     .forma {
@@ -2464,7 +2464,7 @@ section.personal_page_wrapper {
                         display: block;
                     }
 
-                    #user-profile-form {
+                    .user_profile {
                         width: 100%;
 
                         .forma {
@@ -2641,7 +2641,7 @@ section.personal_page_wrapper {
         .personal_page {
             .personal_main_content_wrapper {
                 .user_profile_form_wrapper {
-                    #user-profile-form {
+                    .user_profile {
                         .forma {
                             .form-group {
                                 .confirm_mobile_wrapper {
