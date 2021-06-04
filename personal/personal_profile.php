@@ -37,6 +37,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                             <div class="form-group required">
                                 <label for="user-name-input">ФИО представителя</label>
                                 <input id="user-name-input" name="name" type="text" placeholder="" required>
+                                <div class="error"></div>
                             </div>
                             <div class="user_phone_wrapper">
                                 <div class="form-group required">
@@ -50,11 +51,13 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         <a href="#" class="code_resend disabled" id="reSendCodeProfile">Отправить повторно <span class="hide">через</span>
                                             <span id="countdown">3:00</span></a>
                                     </div>
+                                    <div class="error"></div>
                                 </div>
                             </div>
-                            <div class="form-group required">
+                            <div class="form-group required error">
                                 <label for="user-email-input">Email</label>
                                 <input id="user-email-input" name="email" type="email" placeholder="" required>
+                                <div class="error">E-mail уже использован</div>
                             </div>
 
                             <div class="form-group required">
@@ -66,6 +69,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                         <option value="2">Администратор</option>
                                     </select>
                                 </div>
+                                <div class="error"></div>
                             </div>
                             <div class="form-group password">
                                 <label for="user-password-input">Сменить пароль</label>
@@ -74,6 +78,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                     <input id="user-password-input" name="password" type="password" placeholder="Новый пароль">
                                     <input id="user-password-again-input" name="password_again" type="password" placeholder="Повторите">
                                 </div>
+                                <div class="error"></div>
                             </div>
                         </div>
                         <button type="submit" class="user_profile_submit">Сохранить</button>

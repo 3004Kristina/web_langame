@@ -14,6 +14,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                         <div class="form-group">
                             <label for="log-in-phone-input">Номер телефона</label>
                             <input id="log-in-phone-input" name="log_in_phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                            <div class="error"></div>
                         </div>
                         <div class="form-group">
                             <label for="log-in-password-input">Пароль</label>
@@ -21,6 +22,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <input id="log-in-password-input" name="log_in_password" type="password" placeholder="" required>
                                 <a href="/password_recovery.php" class="forgot_password">Забыл пароль</a>
                             </div>
+                            <div class="error"></div>
                         </div>
                     </div>
                     <div class="btn_wrapper">

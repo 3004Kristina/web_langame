@@ -1970,6 +1970,7 @@ section.personal_page_wrapper {
                         margin-bottom: 32px;
 
                         .form-group {
+                            position: relative;
                             display: flex;
                             flex-direction: row;
                             justify-content: space-between;
@@ -2210,6 +2211,24 @@ section.personal_page_wrapper {
                                         height: 3px;
                                         color: #dc0000;
                                     }
+                                }
+                            }
+
+                            .error{
+                                position: absolute;
+                                left: 0;
+                                top: 100%;
+                                display: block;
+                                font-style: normal;
+                                font-weight: 500;
+                                font-size: 18px;
+                                line-height: 1;
+                                color: rgba(220, 0, 0, 0.6);
+                            }
+
+                            &.error{
+                                input{
+                                    border: 2px solid rgba(220, 0, 0, 0.6);
                                 }
                             }
                         }
@@ -4442,6 +4461,7 @@ section.log_in_page_wrapper {
                     margin-bottom: 46px;
 
                     .form-group {
+                        position: relative;
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
@@ -4514,6 +4534,24 @@ section.log_in_page_wrapper {
                                     height: 3px;
                                     color: #dc0000;
                                 }
+                            }
+                        }
+
+                        .error{
+                            position: absolute;
+                            left: 0;
+                            top: 100%;
+                            display: block;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: rgba(220, 0, 0, 0.6);
+                        }
+
+                        &.error{
+                            input{
+                                border: 2px solid rgba(220, 0, 0, 0.6);
                             }
                         }
                     }
@@ -4669,6 +4707,7 @@ section.password_recovery_page_wrapper {
                     margin-bottom: 46px;
 
                     .form-group {
+                        position: relative;
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
@@ -4703,7 +4742,6 @@ section.password_recovery_page_wrapper {
                             }
                         }
 
-
                         &.required {
                             label {
                                 position: relative;
@@ -4718,6 +4756,24 @@ section.password_recovery_page_wrapper {
                                     height: 3px;
                                     color: #dc0000;
                                 }
+                            }
+                        }
+
+                        .error{
+                            position: absolute;
+                            left: 0;
+                            top: 100%;
+                            display: block;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: rgba(220, 0, 0, 0.6);
+                        }
+
+                        &.error{
+                            input{
+                                border: 2px solid rgba(220, 0, 0, 0.6);
                             }
                         }
                     }
@@ -4874,6 +4930,7 @@ section.add_club_page_start_wrapper {
                     margin-bottom: 46px;
 
                     .form-group {
+                        position: relative;
                         display: flex;
                         flex-direction: row;
                         justify-content: space-between;
@@ -4922,6 +4979,24 @@ section.add_club_page_start_wrapper {
                                     height: 3px;
                                     color: #dc0000;
                                 }
+                            }
+                        }
+
+                        .error{
+                            position: absolute;
+                            right: 0;
+                            top: 100%;
+                            display: block;
+                            font-style: normal;
+                            font-weight: 500;
+                            font-size: 18px;
+                            line-height: 1;
+                            color: rgba(220, 0, 0, 0.6);
+                        }
+
+                        &.error{
+                            input{
+                                border: 2px solid rgba(220, 0, 0, 0.6);
                             }
                         }
                     }

@@ -22,6 +22,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                         <div class="form-group">
                             <label for="add-club-start-input">Номер телефона</label>
                             <input id="add-club-start-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                            <div class="error"></div>
                         </div>
                         <div class="checkbox_wrapper">
                             <div class="checkbox_item">
