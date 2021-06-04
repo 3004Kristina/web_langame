@@ -4923,7 +4923,7 @@ section.add_club_page_start_wrapper {
         }
 
         .add_club_start_wrapper {
-            #add-club-start-form {
+            .add_club_start {
                 width: 100%;
 
                 .forma {
@@ -5102,7 +5102,7 @@ section.add_club_page_start_wrapper {
                 }
             }
 
-            #add-club-code-confirm-form {
+            .add_class_confirm_code {
                 display: none;
                 width: 100%;
 
@@ -5250,7 +5250,7 @@ section.add_club_page_start_wrapper {
             }
 
             .add_club_start_wrapper {
-                #add-club-start-form {
+                .add_club_start {
                     width: 100%;
 
                     .forma {
@@ -5300,7 +5300,7 @@ section.add_club_page_start_wrapper {
                     }
                 }
 
-                #add-club-code-confirm-form {
+                .add_class_confirm_code {
                     display: none;
                     width: 100%;
 
@@ -5384,7 +5384,7 @@ section.add_club_page_start_wrapper {
     @media (max-width: 400px) {
         .add_club_page_start_content {
             .add_club_start_wrapper {
-                #add-club-start-form {
+                .add_club_start {
                     .btn_wrapper {
                         display: block;
 
