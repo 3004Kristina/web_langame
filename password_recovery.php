@@ -14,6 +14,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                         <div class="form-group">
                             <label for="password-recovery-input">Email</label>
                             <input id="password-recovery-input" name="email" type="email" placeholder="" required>
+                            <div class="error"></div>
                         </div>
                     </div>
                     <div class="btn_wrapper">

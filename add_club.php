@@ -17,11 +17,12 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                 </p>
             </div>
             <div class="add_club_start_wrapper">
-                <form action="" method="post" id="add-club-start-form">
+                <form action="" method="post" class="add_club_start" id="add-club-start-form">
                     <div class="forma">
                         <div class="form-group">
                             <label for="add-club-start-input">Номер телефона</label>
                             <input id="add-club-start-input" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                            <div class="error"></div>
                         </div>
                         <div class="checkbox_wrapper">
                             <div class="checkbox_item">
@@ -39,7 +40,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                     </div>
                 </form>
 
-                <form action="" method="post" id="add-club-code-confirm-form">
+                <form action="" method="post" class="add_class_confirm_code" id="add-club-code-confirm-form">
                     <div class="forma">
                         <p>Введите код, отправленный на номер <span class="user_phone"></span></p>
                         <div class="code_wrapper">
