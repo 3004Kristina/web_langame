@@ -15,7 +15,7 @@ jQuery(function() {
         return;
     }
 
-    $form.formWizard({
+    let formWizard = $form.formWizard({
         inputWrapperSelector: '.form-group',
         inputErrorSelector: '.error',
         submitButtonSelector: '[type="submit"]',
@@ -24,6 +24,14 @@ jQuery(function() {
         nextButtonSelector: '[data-role="next-tab-button"]',
         nextButtonText: 'Продолжить',
         tabSelector: '.form_tab'
+    });
+
+    $form.on('keydown', 'input', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+
+            formWizard.goToNextTab();
+        }
     });
 
     $form.on('show-tab', function(e, tabIndex) {

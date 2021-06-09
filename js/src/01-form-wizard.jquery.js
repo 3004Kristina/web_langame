@@ -20,7 +20,7 @@
                 $tabs = self.find(tabSelector);
 
             if ($tabs.length <= 1) {
-                return self;
+                return null;
             }
 
             showTab(activeTab);
@@ -126,7 +126,19 @@
                 $error.text(error || '');
             }
 
-            return self;
+            self.data('form-wizard', {
+                showTab,
+                goToNextTab,
+                goToPrevTab,
+                validateActiveTab,
+            });
+
+            return {
+                showTab,
+                goToNextTab,
+                goToPrevTab,
+                validateActiveTab,
+            };
         }
     });
 })();

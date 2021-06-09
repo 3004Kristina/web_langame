@@ -19,7 +19,7 @@ declare(strict_types=1);
                 </li>
             </ul>
 
-            <button class="add_pc_config" data-role="pc-configuration-create-tab"></button>
+            <button type="button" class="add_pc_config" data-role="pc-configuration-create-tab"></button>
         </div>
     </div>
 
