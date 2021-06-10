@@ -496,7 +496,7 @@ jQuery(function() {
                 vr = jQuery('#qty_vr-input').val(),
                 autosim = jQuery('#qty_simulator-input').val(),
                 marketingInput = jQuery('.marketing_event_wrapper .checkbox_wrapper input[type="checkbox"]'),
-                main_file = $main_preview_photo_hidden_input.val() || '/img/default-club-preview-image.png';
+                main_file = $main_preview_photo_hidden_input.val() || '/img/default-club-preview-image.svg';
 
             jQuery('.form_tab_09_club_preview .search_club_info .club_name span').text(clubName);
             jQuery('.form_tab_09_club_preview .club_address_wrapper .club_address').text(clubAddress);

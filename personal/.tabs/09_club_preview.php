@@ -12,7 +12,7 @@ declare(strict_types=1);
     <a href="#" class="club_card">
         <div class="search_club_img_wrapper">
             <div class="search_club_img">
-                <img src="/img/default-club-preview-image.png" alt="club">
+                <img src="/img/club6.png" alt="club">
             </div>
             <div class="club_services">
                 <img class="vip_services" src="/img/vip.svg" alt="icon">

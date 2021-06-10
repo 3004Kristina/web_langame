@@ -62,7 +62,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -132,7 +132,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -202,7 +202,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -272,7 +272,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -342,7 +342,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -412,7 +412,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -482,7 +482,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -552,7 +552,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -626,7 +626,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">
@@ -694,7 +694,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/.header.php");
                                 <a href="#" class="club_card">
                                     <div class="search_club_img_wrapper">
                                         <div class="search_club_img">
-                                            <img src="/img/default-club-preview-image.png" alt="club">
+                                            <img src="/img/club6.png" alt="club">
                                         </div>
                                         <div class="club_services">
                                             <img src="/img/vip.svg" alt="icon">

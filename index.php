@@ -55,7 +55,7 @@
                     <a href="#" class="club_card">
                         <div class="search_club_img_wrapper">
                             <div class="search_club_img">
-                                <img src="/img/default-club-preview-image.png" alt="club">
+                                <img src="/img/club6.png" alt="club">
                             </div>
                             <div class="club_services">
                                 <img src="/img/vip.svg" alt="icon">
@@ -150,7 +150,7 @@
                     <a href="#" class="club_card">
                         <div class="search_club_img_wrapper">
                             <div class="search_club_img">
-                                <img src="/img/default-club-preview-image.png" alt="club">
+                                <img src="/img/club6.png" alt="club">
                             </div>
                             <div class="club_services">
                                 <img src="/img/vip.svg" alt="icon">
@@ -245,7 +245,7 @@
                     <a href="#" class="club_card">
                         <div class="search_club_img_wrapper">
                             <div class="search_club_img">
-                                <img src="/img/default-club-preview-image.png" alt="club">
+                                <img src="/img/club6.png" alt="club">
                             </div>
                             <div class="club_services">
                                 <img src="/img/vip.svg" alt="icon">
@@ -340,7 +340,7 @@
                     <a href="#" class="club_card">
                         <div class="search_club_img_wrapper">
                             <div class="search_club_img">
-                                <img src="/img/default-club-preview-image.png" alt="club">
+                                <img src="/img/club6.png" alt="club">
                             </div>
                             <div class="club_services">
                                 <img src="/img/vip.svg" alt="icon">
@@ -435,7 +435,7 @@
                     <a href="#" class="club_card">
                         <div class="search_club_img_wrapper">
                             <div class="search_club_img">
-                                <img src="/img/default-club-preview-image.png" alt="club">
+                                <img src="/img/club6.png" alt="club">
                             </div>
                             <div class="club_services">
                                 <img src="/img/vip.svg" alt="icon">
@@ -530,7 +530,7 @@
                     <a href="#" class="club_card">
                         <div class="search_club_img_wrapper">
                             <div class="search_club_img">
-                                <img src="/img/default-club-preview-image.png" alt="club">
+                                <img src="/img/club6.png" alt="club">
                             </div>
                             <div class="club_services">
                                 <img src="/img/vip.svg" alt="icon">
@@ -638,7 +638,7 @@
                 <div class="articles_item">
                     <a href="article_page.php">
                         <div class="article_img_wrapper">
-                            <img src="/img/default-club-preview-image.png" alt="club">
+                            <img src="/img/club6.png" alt="club">
                         </div>
                         <div class="article_content_wrapper">
                             <div class="article_title">
@@ -658,7 +658,7 @@
                 <div class="articles_item">
                     <a href="article_page.php">
                         <div class="article_img_wrapper">
-                            <img src="/img/default-club-preview-image.png" alt="club">
+                            <img src="/img/club6.png" alt="club">
                         </div>
                         <div class="article_content_wrapper">
                             <div class="article_title">
@@ -676,7 +676,7 @@
                 <div class="articles_item">
                     <a href="article_page.php">
                         <div class="article_img_wrapper">
-                            <img src="/img/default-club-preview-image.png" alt="club">
+                            <img src="/img/club6.png" alt="club">
                         </div>
                         <div class="article_content_wrapper">
                             <div class="article_title">
