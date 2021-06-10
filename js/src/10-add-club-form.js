@@ -97,18 +97,20 @@ jQuery(function() {
             placeholder: $club_select_metro_input.data('placeholder'),
             dropdownParent: $club_select_metro_input.closest('.select2_wrapper'),
             width: '100%',
-            data: [],
+            data: []
         });
 
         $club_select_city_input.on('change', function() {
             $club_select_metro_input.select2('destroy');
             $club_select_metro_input.html('<option></option>');
             $club_select_metro_input.select2({
-                minimumResultsForSearch: Infinity,
+                minimumResultsForSearch: 1,
                 placeholder: $club_select_metro_input.data('placeholder'),
                 dropdownParent: $club_select_metro_input.closest('.select2_wrapper'),
                 width: '100%',
                 data: subway_options.filter(({city}) => city === $club_select_city_input.val())
+            }).on('select2:opening', function(e) {
+                $(this).data('select2').$dropdown.find(':input.select2-search__field').attr('placeholder', 'Поиск...');
             });
         });
     })();
@@ -313,6 +315,9 @@ jQuery(function() {
                     let $input = jQuery(this);
 
                     $input.prop('disabled', !state);
+                    if (!state) {
+                        $input.val('').trigger('change');
+                    }
                 });
             });
         }
@@ -496,25 +501,45 @@ jQuery(function() {
             jQuery('.form_tab_09_club_preview .search_club_info .club_name span').text(clubName);
             jQuery('.form_tab_09_club_preview .club_address_wrapper .club_address').text(clubAddress);
             jQuery('.form_tab_09_club_preview .club_subway_wrapper .subway_station').text(clubSubway);
-            jQuery('.form_tab_09_club_preview .club_subway_wrapper .subway_img_wrapper')[0].style.setProperty("--subway-color", clubSubwayLineColor);
+            jQuery('.form_tab_09_club_preview .club_subway_wrapper .subway_img_wrapper')[0].style.setProperty('--subway-color', clubSubwayLineColor);
             jQuery('.form_tab_09_club_preview .club_price_wrapper .club_price span').text(clubPrice);
+
             jQuery('.form_tab_09_club_preview .club_features_item .club_features_qty.total_pc').text(totalPc);
-            jQuery('.form_tab_09_club_preview .club_features_item .club_features_qty.console').text(consoleQty);
-            jQuery('.form_tab_09_club_preview .club_features_item .club_features_qty.vr').text(vr);
-            jQuery('.form_tab_09_club_preview .club_features_item .club_features_qty.autosim').text(autosim);
+            if (consoleQty === '') {
+                jQuery('.club_features_qty.console').closest('.club_features_item').hide();
+            } else {
+                jQuery('.club_features_qty.console').closest('.club_features_item').show();
+                jQuery('.form_tab_09_club_preview .club_features_item .club_features_qty.console').text(consoleQty);
+            }
+
+            if (vr === '') {
+                jQuery('.club_features_qty.vr').closest('.club_features_item').hide();
+            } else {
+                jQuery('.club_features_qty.vr').closest('.club_features_item').show();
+                jQuery('.form_tab_09_club_preview .club_features_item .club_features_qty.vr').text(vr);
+            }
+
+            if (autosim === '') {
+                jQuery('.club_features_qty.autosim').closest('.club_features_item').hide();
+            } else {
+                jQuery('.club_features_qty.autosim').closest('.club_features_item').show();
+                jQuery('.form_tab_09_club_preview .club_features_item .club_features_qty.autosim').text(autosim);
+            }
+
             jQuery('.form_tab_09_club_preview .search_club_img_wrapper .search_club_img img').attr('src', main_file);
 
-            if (marketingInput.prop('checked')) {
-                jQuery('.form_tab_09_club_preview .club_promotion').show();
+            if (jQuery('input[data-food-service]').filter(':checked').length > 0) {
+                jQuery('.form_tab_09_club_preview .club_services .food_services').show();
             } else {
-                jQuery('.form_tab_09_club_preview .club_promotion').hide();
+                jQuery('.form_tab_09_club_preview .club_services .food_services').hide();
             }
 
-            if($club_select_metro_input.val() === ''){
-                jQuery('.club_subway_wrapper').hide();
-            } else {
-                jQuery('.club_subway_wrapper').show();
-            }
+            jQuery('.form_tab_09_club_preview .club_services .drink__services').toggle(jQuery('input[data-alcohol-service]').prop('checked'));
+            jQuery('.form_tab_09_club_preview .club_services .hookah_services').toggle(jQuery('input[data-hookah-service]').prop('checked'));
+            jQuery('.form_tab_09_club_preview .club_services .vip_services').toggle(jQuery('input[data-vip-service]').prop('checked'));
+            jQuery('.form_tab_09_club_preview .club_promotion').toggle(marketingInput.prop('checked'));
+
+            jQuery('.club_subway_wrapper').toggle($club_select_metro_input.val() !== '');
         });
     })();
 

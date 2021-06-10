@@ -15,15 +15,10 @@ declare(strict_types=1);
                 <img src="/img/default-club-preview-image.png" alt="club">
             </div>
             <div class="club_services">
-                <div class="vip_services">
-                    <img src="/img/vip.svg" alt="icon">
-                </div>
-                <div class="food_services">
-                    <img src="/img/fastfood.svg" alt="icon">
-                </div>
-                <div class="drink_services">
-                    <img src="/img/drink.svg" alt="icon">
-                </div>
+                <img class="vip_services" src="/img/vip.svg" alt="icon">
+                <img class="food_services" src="/img/fastfood.svg" alt="icon">
+                <img class="drink__services" src="/img/drink.svg" alt="icon">
+                <img class="hookah_services" src="/img/hook-white.svg" alt="icon">
             </div>
 <!--            <div class="club_distance">-->
 <!--                <img src="/img/walk.svg" alt="icon">-->
@@ -56,35 +51,35 @@ declare(strict_types=1);
             </div>
             <div class="club_features_wrapper">
                 <div class="club_features_item">
+                    <div class="club_features_qty total_pc">
+                        <span></span>
+                    </div>
                     <div class="club_features_img_wrapper">
                         <img src="/img/pc.svg" alt="icon">
                     </div>
-                    <div class="club_features_qty total_pc">
-                        <span>0</span>
-                    </div>
                 </div>
                 <div class="club_features_item">
+                    <div class="club_features_qty console">
+                        <span></span>
+                    </div>
                     <div class="club_features_img_wrapper">
                         <img src="/img/playstation.svg" alt="icon">
                     </div>
-                    <div class="club_features_qty console">
-                        <span>0</span>
-                    </div>
                 </div>
                 <div class="club_features_item">
+                    <div class="club_features_qty vr">
+                        <span></span>
+                    </div>
                     <div class="club_features_img_wrapper">
                         <img src="/img/vr.svg" alt="icon">
                     </div>
-                    <div class="club_features_qty vr">
-                        <span>0</span>
-                    </div>
                 </div>
                 <div class="club_features_item">
+                    <div class="club_features_qty autosim">
+                        <span></span>
+                    </div>
                     <div class="club_features_img_wrapper">
                         <img src="/img/drive.svg" alt="icon">
-                    </div>
-                    <div class="club_features_qty autosim">
-                        <span>0</span>
                     </div>
                 </div>
             </div>
