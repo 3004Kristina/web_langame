@@ -41,7 +41,6 @@
                     <div class="form_tab form_tab_09_club_preview">
                         <?php require $_SERVER["DOCUMENT_ROOT"] . '/personal/.tabs/09_club_preview.php'; ?>
                     </div>
-
                 </div>
                 <div class="form_btn_wrapper">
                     <div class="form_btn_item">
