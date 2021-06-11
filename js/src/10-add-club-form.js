@@ -539,6 +539,15 @@ jQuery(function() {
             jQuery('.form_tab_09_club_preview .club_services .vip_services').toggle(jQuery('input[data-vip-service]').prop('checked'));
             jQuery('.form_tab_09_club_preview .club_promotion').toggle(marketingInput.prop('checked'));
 
+            if(!jQuery('input[data-alcohol-service]').prop('checked')
+                && !jQuery('input[data-hookah-service]').prop('checked')
+            && !jQuery('input[data-vip-service]').prop('checked')
+            && !jQuery('input[data-food-service]').filter(':checked').length > 0){
+                jQuery('.form_tab_09_club_preview .club_services').hide();
+            }else{
+                jQuery('.form_tab_09_club_preview .club_services').show();
+            }
+
             jQuery('.club_subway_wrapper').toggle($club_select_metro_input.val() !== '');
         });
     })();
