@@ -6,6 +6,7 @@
         <form action="" method="post" id="add-club-form">
             <div class="forma">
                 <div class="form_tab_wrapper">
+
                     <div class="form_tab form_tab_01_common_info">
                         <?php require $_SERVER["DOCUMENT_ROOT"] . '/personal/.tabs/01_common_info.php'; ?>
                     </div>

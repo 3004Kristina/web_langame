@@ -117,7 +117,9 @@ jQuery(function() {
 
     //upload photo gallery
     (() => {
-        let files = $club_photo_hidden_input.val().split(':').filter(x => !!x),
+        let $tab = jQuery('.form_tab_08_club_formalization'),
+            $photo_error = $tab.find('.add_photo_error'),
+            files = $club_photo_hidden_input.val().split(':').filter(x => !!x),
             main_file = $main_preview_photo_hidden_input.val();
 
         $club_photo_file_input.on('change', function() {
@@ -183,9 +185,9 @@ jQuery(function() {
         }
 
         function renderFiles() {
+            $photo_error.text('');
             $club_photo_hidden_input.val(files.join(':'));
             $main_preview_photo_hidden_input.val(main_file || '').trigger('change');
-
 
             if (main_file) {
                 $add_photo_preview.html(`<img src="${main_file}"/>`);
@@ -208,6 +210,21 @@ jQuery(function() {
         function selectMainFile(path) {
             main_file = path;
         }
+
+        $tab.data('form-wizard-tab-validation', function() {
+            return new Promise((resolve, reject) => {
+                let hasErrors = false;
+
+                $photo_error.text('');
+
+                if (!main_file) {
+                    $photo_error.text('Необходимо загрузить хотя бы одну фотографию');
+                    hasErrors = true;
+                }
+
+                return hasErrors ? reject() : resolve();
+            });
+        });
     })();
 
     function upload_file(file) {
@@ -539,12 +556,12 @@ jQuery(function() {
             jQuery('.form_tab_09_club_preview .club_services .vip_services').toggle(jQuery('input[data-vip-service]').prop('checked'));
             jQuery('.form_tab_09_club_preview .club_promotion').toggle(marketingInput.prop('checked'));
 
-            if(!jQuery('input[data-alcohol-service]').prop('checked')
+            if (!jQuery('input[data-alcohol-service]').prop('checked')
                 && !jQuery('input[data-hookah-service]').prop('checked')
-            && !jQuery('input[data-vip-service]').prop('checked')
-            && !jQuery('input[data-food-service]').filter(':checked').length > 0){
+                && !jQuery('input[data-vip-service]').prop('checked')
+                && !jQuery('input[data-food-service]').filter(':checked').length > 0) {
                 jQuery('.form_tab_09_club_preview .club_services').hide();
-            }else{
+            } else {
                 jQuery('.form_tab_09_club_preview .club_services').show();
             }
 

@@ -51,12 +51,13 @@
                     return;
                 }
 
-                if (validateActiveTab() === false) {
-                    self.trigger('error-tab');
-                    return;
-                }
-
-                showTab(activeTab + 1);
+                validateActiveTab()
+                    .then(() => {
+                        showTab(activeTab + 1);
+                    })
+                    .catch(() => {
+                        self.trigger('error-tab');
+                    });
             }
 
             function goToPrevTab() {
@@ -67,54 +68,68 @@
                 showTab(activeTab - 1);
             }
 
+            function validateStandardInputErrors() {
+                let $activeTab = $tabs.eq(activeTab);
+
+                return new Promise((resolve, reject) => {
+                    let hasErrors = false;
+
+                    $activeTab.find('input, select, textarea').each(function() {
+                        setInputError(this, '');
+                    });
+
+                    $activeTab.find(
+                        'input[required][type="text"]:not(:disabled),' +
+                        'input[required][type="password"]:not(:disabled),' +
+                        'input[required][type="email"]:not(:disabled),' +
+                        'input[required][type="tel"]:not(:disabled),' +
+                        'input[required][type="url"]:not(:disabled),' +
+                        'input[required][type="number"]:not(:disabled),' +
+                        'select[required]:not(:disabled),' +
+                        'textarea[required]:not(:disabled)'
+                    ).each(function() {
+                        let $input = jQuery(this),
+                            value = $input.val();
+
+                        if (!value) {
+                            hasErrors = true;
+                            setInputError(this, 'Необходимо заполнить данное поле');
+                        }
+                    });
+
+                    $activeTab.find('input[type="email"]:not(:disabled)').each(function() {
+                        let $input = jQuery(this),
+                            value = $input.val();
+
+                        if (value && /^.+@.+\..+$/.test(value) === false) {
+                            hasErrors = true;
+                            setInputError(this, 'Необходимо ввести валидный e-mail');
+                        }
+                    });
+
+                    $activeTab.find('input[type="url"]:not(:disabled)').each(function() {
+                        let $input = jQuery(this),
+                            value = $input.val();
+
+                        if (value && /^.+\..+$/.test(value) === false) {
+                            hasErrors = true;
+                            setInputError(this, 'Необходимо ввести валидный url');
+                        }
+                    });
+
+                    return hasErrors ? reject() : resolve();
+                });
+            }
+
             function validateActiveTab() {
                 let $activeTab = $tabs.eq(activeTab),
-                    hasErrors = false;
+                    standardValidation = validateStandardInputErrors(),
+                    customTabValidation = typeof $activeTab.data('form-wizard-tab-validation') === 'function' ? $activeTab.data('form-wizard-tab-validation')() : true;
 
-                $activeTab.find('input, select, textarea').each(function() {
-                    setInputError(this, '');
-                });
-
-                $activeTab.find(
-                    'input[required][type="text"]:not(:disabled),' +
-                    'input[required][type="password"]:not(:disabled),' +
-                    'input[required][type="email"]:not(:disabled),' +
-                    'input[required][type="tel"]:not(:disabled),' +
-                    'input[required][type="url"]:not(:disabled),' +
-                    'input[required][type="number"]:not(:disabled),' +
-                    'select[required]:not(:disabled),' +
-                    'textarea[required]:not(:disabled)'
-                ).each(function() {
-                    let $input = jQuery(this),
-                        value = $input.val();
-
-                    if (!value) {
-                        hasErrors = true;
-                        setInputError(this, 'Необходимо заполнить данное поле');
-                    }
-                });
-
-                $activeTab.find('input[type="email"]:not(:disabled)').each(function() {
-                    let $input = jQuery(this),
-                        value = $input.val();
-
-                    if (value && /^.+@.+\..+$/.test(value) === false) {
-                        hasErrors = true;
-                        setInputError(this, 'Необходимо ввести валидный e-mail');
-                    }
-                });
-
-                $activeTab.find('input[type="url"]:not(:disabled)').each(function() {
-                    let $input = jQuery(this),
-                        value = $input.val();
-
-                    if (value && /^.+\..+$/.test(value) === false) {
-                        hasErrors = true;
-                        setInputError(this, 'Необходимо ввести валидный url');
-                    }
-                });
-
-                return hasErrors === false;
+                return Promise.all([
+                    standardValidation,
+                    customTabValidation
+                ]);
             }
 
             function setInputError(input, error) {
@@ -130,14 +145,14 @@
                 showTab,
                 goToNextTab,
                 goToPrevTab,
-                validateActiveTab,
+                validateActiveTab
             });
 
             return {
                 showTab,
                 goToNextTab,
                 goToPrevTab,
-                validateActiveTab,
+                validateActiveTab
             };
         }
     });
